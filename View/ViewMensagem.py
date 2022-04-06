@@ -1,9 +1,9 @@
 from PyQt5 import uic, QtWidgets
 
 
-class ViewMensagem():
+class viewMensagem():
     def __init__(self):
-        self.tela = uic.loadUi(".\Telas\mensagem.ui")
+        self.tela = uic.loadUi(".\View\Telas\mensagem.ui")
 
 
 if __name__ == "__main__":
@@ -11,7 +11,7 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
 
     # Atribuindo o objeto
-    mensagem = ViewMensagem()
+    mensagem = viewMensagem()
 
     # Show das telas
     mensagem.tela.show()

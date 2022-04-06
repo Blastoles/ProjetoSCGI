@@ -1,9 +1,9 @@
 from PyQt5 import uic, QtWidgets
 
 
-class ViewMenu():
+class viewMenu():
     def __init__(self):
-        self.tela = uic.loadUi(".\Telas\Home.ui")
+        self.tela = uic.loadUi(".\View\Telas\Home.ui")
 
 
 if __name__ == "__main__":
@@ -11,7 +11,7 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
 
     # Atribuindo o objeto
-    menu = ViewMenu()
+    menu = viewMenu()
 
     # Show das telas
     menu.tela.show()

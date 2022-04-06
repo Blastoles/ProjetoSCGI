@@ -1,9 +1,9 @@
 from PyQt5 import uic, QtWidgets
 
 
-class ViewCadastroUser():
+class viewCadastroUser():
     def __init__(self):
-        self.tela = uic.loadUi(".\Telas\CadastroUsuario.ui")
+        self.tela = uic.loadUi(".\View\Telas\CadastroUsuario.ui")
 
 
 if __name__ == "__main__":
@@ -11,7 +11,7 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
 
     # Atribuindo o objeto
-    CadastroUser = ViewCadastroUser()
+    CadastroUser = viewCadastroUser()
 
     # Show das telas
     CadastroUser.tela.show()
