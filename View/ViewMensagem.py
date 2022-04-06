@@ -6,12 +6,14 @@ class viewMensagem():
         self.tela = uic.loadUi(".\View\Telas\mensagem.ui")
         self.Mensagem.BT_OK.clicked.connect(partial(self.MenClose))
 
+    def MenClose(self):
+        self.Mensagem.close()
+
     def MenShow(self,texto):
         self.Mensagem.TX_Atencao.setText(texto)
         self.Mensagem.show()
 
-    def MenClose(self):
-        self.Mensagem.close()
+    def
 
 
 if __name__ == "__main__":
