@@ -9,6 +9,7 @@ class Sistema(QDialog):
     def Iniciar(self):
         View.ViewLogin.Show(self.login)
 
+
     def __init__(self):
         self.login = View.ViewLogin()
 
