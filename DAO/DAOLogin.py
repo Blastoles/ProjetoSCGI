@@ -9,10 +9,7 @@ class DAOlogin():
         user_db = ''
         print(user,'usuario')
         try:
-            print('cursor')
-            cursor.execute("SELECT * FROM USUARIO")
-            print(cursor.fetchall())
-            cursor.execute("SELECT USUARIO FROM USUARIO")
+            cursor.execute("SELECT USUARIO FROM USUARIO WHERE USUARIO = '{}'".format(user))
             print('passou o cursor')
             user_db = cursor.fetchall()
             print(user_db,'teste')
@@ -25,6 +22,7 @@ class DAOlogin():
     def CheckSenha(self,senha):
         banco = sqlite3.connect('db_contator.db')
         cursor = banco.cursor()
+        senha_db = ''
         try:
             cursor.execute("SELECT SENHA FROM USUARIO WHERE SENHA = '{}'".format(senha))
             senha_db = cursor.fetchall()

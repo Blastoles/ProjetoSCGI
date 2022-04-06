@@ -17,12 +17,13 @@ class SistemaLogin(QDialog):
         print(user,senha)
         VeriUser = self.daolog.CheckUser(user)
         print(VeriUser,'aaa')
-        if VeriUser == user:
-            VeriSenha = DAOlogin.CheckSenha(senha)
+        if VeriUser[0][0] == user:
+            print('Passou')
+            VeriSenha = self.daolog.CheckSenha(senha)
             if VeriSenha[0][0] == senha:
                 print('passou')
             else:
-                print('não passou')
+                print('não passou1')
         else:
             print('não passou')
 
