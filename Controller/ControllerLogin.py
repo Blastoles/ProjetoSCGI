@@ -15,8 +15,9 @@ class SistemaLogin(QDialog):
     def Validar(self):
         user,senha = self.login.Dados()
         print(user,senha)
-        VeriUser = DAOlogin.CheckUser(user)
-        if VeriUser[0][0] == user:
+        VeriUser = self.daolog.CheckUser(user)
+        print(VeriUser,'aaa')
+        if VeriUser == user:
             VeriSenha = DAOlogin.CheckSenha(senha)
             if VeriSenha[0][0] == senha:
                 print('passou')
@@ -28,7 +29,7 @@ class SistemaLogin(QDialog):
 
     def __init__(self):
         self.login = viewLogin()
-
+        self.daolog = DAOlogin()
 
 
 
