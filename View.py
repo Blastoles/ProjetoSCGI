@@ -4,6 +4,8 @@ class ViewLogin():
     def __init__(self):
         self.tela = uic.loadUi(".\Telas\Login.ui")
         ##self.Login.BT_Cancelar.clicked.connect(partial(self.LoginClose))
+    def Show(self):
+        self.tela.show()
 
 class ViewMenu():
     def __init__(self):

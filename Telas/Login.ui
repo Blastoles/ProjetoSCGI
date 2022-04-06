@@ -118,8 +118,10 @@
           <widget class="QLabel" name="Tx_Login">
            <property name="font">
             <font>
-             <family>Marlboro</family>
-             <pointsize>15</pointsize>
+             <family>Arial Black</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
             </font>
            </property>
            <property name="text">
@@ -143,8 +145,10 @@
           <widget class="QLabel" name="Tx_Senha">
            <property name="font">
             <font>
-             <family>Marlboro</family>
-             <pointsize>15</pointsize>
+             <family>Arial Black</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
             </font>
            </property>
            <property name="text">
@@ -178,8 +182,10 @@
              <widget class="QPushButton" name="BT_Logar">
               <property name="font">
                <font>
-                <family>Marlboro</family>
-                <pointsize>15</pointsize>
+                <family>Arial Black</family>
+                <pointsize>12</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
                </font>
               </property>
               <property name="text">
@@ -191,8 +197,10 @@
              <widget class="QPushButton" name="BT_Cancelar">
               <property name="font">
                <font>
-                <family>Marlboro</family>
-                <pointsize>15</pointsize>
+                <family>Arial Black</family>
+                <pointsize>12</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
                </font>
               </property>
               <property name="styleSheet">
@@ -256,16 +264,30 @@
         <layout class="QGridLayout" name="gridLayout_3">
          <item row="0" column="0">
           <widget class="QLabel" name="Tx_Obs">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>263</width>
+             <height>21</height>
+            </size>
+           </property>
            <property name="maximumSize">
             <size>
-             <width>231</width>
+             <width>0</width>
              <height>21</height>
             </size>
            </property>
            <property name="font">
             <font>
-             <family>Marlboro</family>
-             <pointsize>13</pointsize>
+             <family>Arial Black</family>
+             <pointsize>9</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
             </font>
            </property>
            <property name="text">
