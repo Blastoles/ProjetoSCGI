@@ -4,16 +4,17 @@ from functools import partial
 class viewMensagem():
     def __init__(self):
         self.tela = uic.loadUi(".\View\Telas\mensagem.ui")
-        self.Mensagem.BT_OK.clicked.connect(partial(self.MenClose))
+
+    def MsgShow(self):
+        self.tela.show()
 
     def MenClose(self):
-        self.Mensagem.close()
+        self.tela.close()
 
-    def MenShow(self,texto):
-        self.Mensagem.TX_Atencao.setText(texto)
-        self.Mensagem.show()
+    def MsgErroLogin(self):
+        self.tela.TX_Atencao.setText("Usuário ou Senha invalido(s)\nTente novamente!!")
+        self.MsgShow()
 
-    def
 
 
 if __name__ == "__main__":

@@ -4,6 +4,7 @@ from View.ViewLogin import viewLogin
 from Model.ModelLogin import modelLogin
 from functools import partial
 from DAO.DAOLogin import DAOlogin
+from Controller.ControllerMensagem import SistemaMensagem
 
 
 class SistemaLogin(QDialog):
@@ -14,24 +15,22 @@ class SistemaLogin(QDialog):
 
     def Validar(self):
         user,senha = self.login.Dados()
-        print(user,senha)
         VeriUser = self.daolog.CheckUser(user)
-        print(VeriUser)
-        if VeriUser != [] and VeriUser[0][0] == user:
-            print('Passou')
+        if VeriUser != [] and VeriUser[0][0] == user.upper():
             VeriSenha = self.daolog.CheckSenha(senha)
             if VeriSenha != [] and VeriSenha[0][0] == senha:
                 print('passou')
 
             else:
-                print('não passou senha')
+                self.msg.MsgErroLogin()
         else:
-            print('não passou user')
+            self.msg.MsgErroLogin()
 
 
     def __init__(self):
         self.login = viewLogin()
         self.daolog = DAOlogin()
+        self.msg = SistemaMensagem()
 
 
 

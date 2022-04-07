@@ -15,6 +15,10 @@ class viewLogin():
         senha = self.tela.CP_Senha.text()
         return usuario,senha
 
+    def Mensagem(self):
+
+
+
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
