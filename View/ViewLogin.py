@@ -15,8 +15,8 @@ class viewLogin():
         senha = self.tela.CP_Senha.text()
         return usuario,senha
 
-    def Mensagem(self):
-
+    def MensagemErro(self):
+        self.tela.Tx_Status.setText("Usuário ou Senha invalido(s)!!")
 
 
 if __name__ == "__main__":

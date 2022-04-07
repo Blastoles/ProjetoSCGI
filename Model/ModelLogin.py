@@ -1,4 +1,3 @@
-from View.ViewLogin import viewLogin
 from DAO.DAOLogin import DAOlogin
 import bcrypt
 

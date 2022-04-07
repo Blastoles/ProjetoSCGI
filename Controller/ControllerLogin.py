@@ -1,10 +1,10 @@
 from PyQt5 import uic, QtWidgets
 from PyQt5.QtWidgets import QDialog
 from View.ViewLogin import viewLogin
-from Model.ModelLogin import modelLogin
 from functools import partial
 from DAO.DAOLogin import DAOlogin
 from Controller.ControllerMensagem import SistemaMensagem
+from Controller.ControllerMenu import SistemaMenu
 
 
 class SistemaLogin(QDialog):
@@ -19,11 +19,13 @@ class SistemaLogin(QDialog):
         if VeriUser != [] and VeriUser[0][0] == user.upper():
             VeriSenha = self.daolog.CheckSenha(senha)
             if VeriSenha != [] and VeriSenha[0][0] == senha:
-                print('passou')
-
+                self.menu.Show()
+                self.login.Close()
             else:
+                self.login.MensagemErro()
                 self.msg.MsgErroLogin()
         else:
+            self.login.MensagemErro()
             self.msg.MsgErroLogin()
 
 
@@ -31,6 +33,7 @@ class SistemaLogin(QDialog):
         self.login = viewLogin()
         self.daolog = DAOlogin()
         self.msg = SistemaMensagem()
+        self.menu = SistemaMenu()
 
 
 

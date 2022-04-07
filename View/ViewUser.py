@@ -2,6 +2,16 @@ from PyQt5 import uic, QtWidgets
 
 
 class viewUser():
+    def Show(self):
+        self.tela.show()
+
+    def Close(self):
+        self.tela.close()
+
+    def Dados(self):
+        texto = str(self.tela.BR_Pesquisa.text())
+        return texto
+
     def __init__(self):
         self.tela = uic.loadUi(".\View\Telas\CD_Usuario.ui")
 
