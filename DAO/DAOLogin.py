@@ -7,12 +7,9 @@ class DAOlogin():
         banco = sqlite3.connect('db_contator.db')
         cursor = banco.cursor()
         user_db = ''
-        print(user,'usuario')
         try:
             cursor.execute("SELECT USUARIO FROM USUARIO WHERE USUARIO = '{}'".format(user))
-            print('passou o cursor')
             user_db = cursor.fetchall()
-            print(user_db,'teste')
         except:
             print()
             #Mensagem Erro
