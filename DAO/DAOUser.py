@@ -2,26 +2,46 @@ import sqlite3
 
 
 class DAOuser():
+
+    def TodaLista(self):
+        banco = sqlite3.connect('db_contator.db')
+        cursor = banco.cursor()
+        try:
+            cursor.execute("SELECT "
+                               "NOME,"
+                               "USUARIO,"
+                               "EMAIL,"
+                               "TELEFONE,"
+                               "ATIVO "
+                           "FROM "
+                               "USUARIO")
+            lista = cursor.fetchall()
+        except:
+            print()
+            # Mensagem Erro
+        banco.close()
+        return lista
+
     def Pesquisa(self,texto):
         banco = sqlite3.connect('db_contator.db')
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT "
-                           "NOME,"
-                           "USUARIO,"
-                           "EMAIL,"
-                           "TELEFONE,"
-                           "ATIVO "
+                               "NOME,"
+                               "USUARIO,"
+                               "EMAIL,"
+                               "TELEFONE,"
+                               "ATIVO "
                            "FROM "
-                           "USUARIO "
+                               "USUARIO "
                            "WHERE "
-                           "NOME LIKE '%{}%' "
+                               "NOME LIKE '%{}%' "
                            "OR "
-                           "USUARIO LIKE '%{}%' "
+                               "USUARIO LIKE '%{}%' "
                            "OR "
-                           "EMAIL LIKE '%{}%' "
+                               "EMAIL LIKE '%{}%' "
                            "OR "
-                           "TELEFONE LIKE '%{}%'"
+                               "TELEFONE LIKE '%{}%'"
                            "".format(texto,texto,texto,texto))
             lista = cursor.fetchall()
         except:

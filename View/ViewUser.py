@@ -10,7 +10,11 @@ class viewUser():
 
     def Dados(self):
         texto = str(self.tela.BR_Pesquisa.text())
+        self.tela.BR_Pesquisa.setText("")
         return texto
+
+    def Lista(self,i,j,texto):
+        self.tela.TB_Cadastro.setItem(i, j, QtWidgets.QTableWidgetItem(texto))
 
     def __init__(self):
         self.tela = uic.loadUi(".\View\Telas\CD_Usuario.ui")
