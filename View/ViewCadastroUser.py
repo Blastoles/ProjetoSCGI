@@ -17,6 +17,16 @@ class viewCadastroUser():
         self.tela.CP_Administrador.setCheckState(0)
         self.tela.CP_Ativo.setCheckState(-1)
 
+    def ColetaDados(self):
+        Nome = self.tela.CP_Nome.text().upper()
+        Email = self.tela.CP_Email.text()
+        Telefone = self.tela.CP_Telefone.text()
+        Usuario = self.tela.CP_Usuario.text().upper()
+        Senha = self.tela.CP_Senha.text()
+        Admin = self.tela.CP_Administrador.isChecked()
+        Ativo = self.tela.CP_Ativo.isChecked()
+        lista = [Nome,Email,Telefone,Usuario,Senha,Admin,Ativo]
+        return lista
 
     def __init__(self):
         self.tela = uic.loadUi(".\View\Telas\CadastroUsuario.ui")

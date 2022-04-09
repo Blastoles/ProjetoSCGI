@@ -1,5 +1,4 @@
 from PyQt5 import uic, QtWidgets
-from functools import partial
 
 class viewMensagem():
     def __init__(self):
@@ -13,9 +12,12 @@ class viewMensagem():
 
     def MsgErroLogin(self):
         self.tela.TX_Atencao.setText("Usuário ou Senha invalido(s)\nTente novamente!!")
-        self.MsgShow()
 
+    def MsgFaltaDados(self):
+        self.tela.TX_Atencao.setText("Falta informações\nFavor Insira todas as informações")
 
+    def MsgErroBando(self):
+        self.tela.TX_Atencao.setText("Ocorreu um erro com o Banco de Dados!!")
 
 if __name__ == "__main__":
     import sys

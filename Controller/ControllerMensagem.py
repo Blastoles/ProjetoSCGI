@@ -7,6 +7,16 @@ class SistemaMensagem():
 
     def MsgErroLogin(self):
         self.msg.MsgErroLogin()
+        self.msg.MsgShow()
+
+    def MsgFaltaDados(self):
+        self.msg.MsgFaltaDados()
+        self.msg.MsgShow()
+
+    def MsgErroBancoDados(self):
+        self.msg.MsgErroBando()
+        self.msg.MsgShow()
+
 
     def __init__(self):
         self.msg = viewMensagem()

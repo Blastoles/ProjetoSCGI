@@ -1,5 +1,5 @@
 import sqlite3
-
+from Controller.ControllerMensagem import SistemaMensagem
 
 class DAOuser():
 
@@ -17,8 +17,7 @@ class DAOuser():
                                "USUARIO")
             lista = cursor.fetchall()
         except:
-            print()
-            # Mensagem Erro
+            self.msg.MsgErroBancoDados()
         banco.close()
         return lista
 
@@ -45,7 +44,9 @@ class DAOuser():
                            "".format(texto,texto,texto,texto))
             lista = cursor.fetchall()
         except:
-            print()
-            # Mensagem Erro
+            self.msg.MsgErroBancoDados()
         banco.close()
         return lista
+
+    def __init__(self):
+        self.msg = SistemaMensagem()
