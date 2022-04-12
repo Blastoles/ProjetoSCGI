@@ -1,5 +1,6 @@
 import sqlite3
 from Controller.ControllerMensagem import SistemaMensagem
+import bcrypt
 
 class DAOCadastraruser():
 
