@@ -1,5 +1,4 @@
 from PyQt5 import uic, QtWidgets
-from PyQt5.QtWidgets import QDialog
 from functools import partial
 from View.ViewMenu import viewMenu
 from Controller.ControllerUser import SistemaUser
@@ -9,10 +8,17 @@ class SistemaMenu():
     def Show(self):
         self.menu.Show()
 
+    def Close(self):
+        self.menu.tela.close()
+
+    def UserShow(self):
+        self.user.Show()
+
+
     def __init__(self):
         self.menu = viewMenu()
         self.user = SistemaUser()
-        self.menu.tela.BT_Usuario.clicked.connect(partial(self.user.Show))
+        self.menu.tela.BT_Usuario.clicked.connect(self.UserShow)
 """        self.menu.tela.BT_Impressora.clicked.connect(partial())
         self.menu.tela.BT_Setor.clicked.connect(partial())
         self.menu.tela.BT_Contagem.clicked.connect(partial())

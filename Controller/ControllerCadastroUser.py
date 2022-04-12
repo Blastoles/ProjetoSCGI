@@ -1,7 +1,5 @@
 from PyQt5 import uic, QtWidgets
-from functools import partial
 from View.ViewCadastroUser import viewCadastroUser
-from Controller.ControllerMensagem import SistemaMensagem
 
 class SistemaCadastroUser():
     def Show(self):
@@ -24,12 +22,11 @@ class SistemaCadastroUser():
         if ddColetado[0] != '' and ddColetado[3] != '' and ddColetado[4] != '':
             print('tem dados')
         else:
-            self.msg.MsgFaltaDados()
-        print(ddColetado)
+            self.cduser.Aviso()
+
 
 
     def __init__(self):
-        self.msg = SistemaMensagem()
         self.cduser = viewCadastroUser()
         self.cduser.tela.BT_Cancelar.clicked.connect(self.Close)
-        self.cduser.tela.BT_Salvar.clicked.connect(partial(self.InsertDados))
+        self.cduser.tela.BT_Salvar.clicked.connect(self.InsertDados)

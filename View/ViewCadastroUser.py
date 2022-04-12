@@ -8,6 +8,10 @@ class viewCadastroUser():
     def Close(self):
         self.tela.close()
 
+    def Aviso(self):
+        self.tela.TX_Aviso.setText("Falta informações\nInsira todas as informações")
+
+
     def LimparDados(self):
         self.tela.CP_Nome.setText("")
         self.tela.CP_Email.setText("")
@@ -16,6 +20,7 @@ class viewCadastroUser():
         self.tela.CP_Senha.setText("")
         self.tela.CP_Administrador.setCheckState(0)
         self.tela.CP_Ativo.setCheckState(-1)
+        self.tela.TX_Aviso.setText("")
 
     def ColetaDados(self):
         Nome = self.tela.CP_Nome.text().upper()

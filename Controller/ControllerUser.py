@@ -1,15 +1,22 @@
 from PyQt5 import uic, QtWidgets
 from functools import partial
+
+import Controller.ControllerMenu
 from View.ViewUser import viewUser
 from DAO.DAOUser import DAOuser
 from Model.ModelUser import Modeluser
 from Controller.ControllerCadastroUser import SistemaCadastroUser
+
 
 class SistemaUser():
     def Show(self):
         self.user.Show()
         lista = self.banco.TodaLista()
         self.model.Tabela(self.user,lista)
+
+    def Close(self):
+        self.user.tela.close()
+
 
     def PesquisarCadastro(self):
         texto = self.user.Dados()
@@ -26,7 +33,7 @@ class SistemaUser():
         self.banco = DAOuser()
         self.model = Modeluser()
         self.cduser = SistemaCadastroUser()
-        self.user.tela.BT_Voltar.clicked.connect(partial(self.user.Close))
+        self.user.tela.BT_Voltar.clicked.connect(self.Close)
         self.user.tela.TB_Cadastro.setColumnWidth(0, 254)
         self.user.tela.BT_Pesquisar.clicked.connect(partial(self.PesquisarCadastro))
         self.user.tela.BT_Criar.clicked.connect(partial(self.Criar))

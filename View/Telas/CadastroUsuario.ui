@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>484</width>
-    <height>455</height>
+    <height>409</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -110,31 +110,10 @@
        <item row="2" column="1">
         <widget class="QLineEdit" name="CP_Telefone"/>
        </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="TX_Senha">
-         <property name="text">
-          <string>Senha</string>
-         </property>
-        </widget>
-       </item>
        <item row="3" column="0">
         <widget class="QLabel" name="TX_Usuario">
          <property name="text">
           <string>Usuário</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="TX_Administrador">
-         <property name="text">
-          <string>Administrador</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0">
-        <widget class="QLabel" name="TX_Ativo">
-         <property name="text">
-          <string>Usuário Ativo</string>
          </property>
         </widget>
        </item>
@@ -145,10 +124,24 @@
          </property>
         </widget>
        </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="TX_Senha">
+         <property name="text">
+          <string>Senha</string>
+         </property>
+        </widget>
+       </item>
        <item row="4" column="1">
         <widget class="QLineEdit" name="CP_Senha">
          <property name="echoMode">
           <enum>QLineEdit::Password</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="TX_Administrador">
+         <property name="text">
+          <string>Administrador</string>
          </property>
         </widget>
        </item>
@@ -162,6 +155,13 @@
          </property>
          <property name="checkable">
           <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="TX_Ativo">
+         <property name="text">
+          <string>Usuário Ativo</string>
          </property>
         </widget>
        </item>
@@ -213,6 +213,33 @@
         </widget>
        </item>
       </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="TX_Aviso">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial Black</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
      </widget>
     </item>
    </layout>
