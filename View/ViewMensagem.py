@@ -16,6 +16,9 @@ class viewMensagem():
     def MsgFaltaDados(self):
         self.tela.TX_Atencao.setText("Falta informações\nFavor Insira todas as informações")
 
+    def MsgUserCadastrado(self):
+        self.tela.TX_Atencao.setText("Já existe um usuário cadastrado com esse usuário!!")
+
     def MsgErroBando(self):
         self.tela.TX_Atencao.setText("Ocorreu um erro com o Banco de Dados!!")
 

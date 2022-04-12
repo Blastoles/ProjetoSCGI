@@ -17,6 +17,9 @@ class SistemaMensagem():
         self.msg.MsgErroBando()
         self.msg.MsgShow()
 
+    def MsgUserJaCadastrado(self):
+        self.msg.MsgUserCadastrado()
+        self.msg.MsgShow()
 
     def __init__(self):
         self.msg = viewMensagem()

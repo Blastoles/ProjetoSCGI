@@ -11,6 +11,8 @@ class viewCadastroUser():
     def Aviso(self):
         self.tela.TX_Aviso.setText("Falta informações\nInsira todas as informações")
 
+    def Duplicidade(self):
+        self.tela.TX_Aviso.setText("Já existe um usuário cadastrado com esse usuário!!")
 
     def LimparDados(self):
         self.tela.CP_Nome.setText("")
