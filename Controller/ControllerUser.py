@@ -11,6 +11,9 @@ from Controller.ControllerCadastroUser import SistemaCadastroUser
 class SistemaUser():
     def Show(self):
         self.user.Show()
+        self.Tabela()
+
+    def Tabela(self):
         lista = self.banco.TodaLista()
         self.model.Tabela(self.user,lista)
 
@@ -24,9 +27,10 @@ class SistemaUser():
         self.model.Tabela(self.user,lista)
 
     def Criar(self):
-        self.cduser.Show()
+        self.cduser.Show('Incluir',self)
 
-
+    def AlterarCadastro(self):
+        self.cduser.Show('Alterar',self)
 
 
     def __init__(self):
@@ -35,9 +39,9 @@ class SistemaUser():
         self.model = Modeluser()
         self.cduser = SistemaCadastroUser()
         self.user.tela.BT_Voltar.clicked.connect(self.Close)
-        self.user.tela.BT_Pesquisar.clicked.connect(partial(self.PesquisarCadastro))
-        self.user.tela.BT_Criar.clicked.connect(partial(self.Criar))
-        #self.user.tela.BT_Alterar.clicked.connect(partial(self.AlterarCadastro))
+        self.user.tela.BT_Pesquisar.clicked.connect(self.PesquisarCadastro)
+        self.user.tela.BT_Criar.clicked.connect(self.Criar)
+        self.user.tela.BT_Alterar.clicked.connect(self.AlterarCadastro)
 
 
 if __name__ == "__main__":

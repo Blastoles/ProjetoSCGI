@@ -15,7 +15,7 @@ class viewMensagem(QMessageBox):
         self.tela.TX_Atencao.setText("Usuário ou Senha invalido(s)\nTente novamente!!")
 
     def MsgFaltaDados(self,falta):
-        self.tela.TX_Atencao.setText("Está faltando informações no campo\n{}{}{}".format(falta[0],falta[1],falta[2]))
+        self.tela.TX_Atencao.setText("Está faltando informações no campo(s)!\n\n{}{}{}".format(falta[0],falta[1],falta[2]))
 
     def MsgUserCadastrado(self):
         self.tela.TX_Atencao.setText("Já existe um usuário cadastrado com esse usuário!!")
