@@ -1,16 +1,19 @@
 from PyQt5 import uic, QtWidgets
 from functools import partial
+
+from PyQt5.QtWidgets import QMessageBox
+
 from View.ViewMensagem import viewMensagem
 
 
-class SistemaMensagem():
+class SistemaMensagem(QMessageBox):
 
     def MsgErroLogin(self):
         self.msg.MsgErroLogin()
         self.msg.MsgShow()
 
-    def MsgFaltaDados(self):
-        self.msg.MsgFaltaDados()
+    def MsgFaltaDados(self,falta):
+        self.msg.MsgFaltaDados(falta)
         self.msg.MsgShow()
 
     def MsgErroBancoDados(self):

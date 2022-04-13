@@ -35,7 +35,6 @@ class SistemaUser():
         self.model = Modeluser()
         self.cduser = SistemaCadastroUser()
         self.user.tela.BT_Voltar.clicked.connect(self.Close)
-        self.user.tela.TB_Cadastro.setColumnWidth(0, 254)
         self.user.tela.BT_Pesquisar.clicked.connect(partial(self.PesquisarCadastro))
         self.user.tela.BT_Criar.clicked.connect(partial(self.Criar))
         #self.user.tela.BT_Alterar.clicked.connect(partial(self.AlterarCadastro))

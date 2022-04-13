@@ -1,6 +1,7 @@
 from PyQt5 import uic, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
 
-class viewMensagem():
+class viewMensagem(QMessageBox):
     def __init__(self):
         self.tela = uic.loadUi(".\View\Telas\mensagem.ui")
 
@@ -13,8 +14,8 @@ class viewMensagem():
     def MsgErroLogin(self):
         self.tela.TX_Atencao.setText("Usuário ou Senha invalido(s)\nTente novamente!!")
 
-    def MsgFaltaDados(self):
-        self.tela.TX_Atencao.setText("Falta informações\nFavor Insira todas as informações")
+    def MsgFaltaDados(self,falta):
+        self.tela.TX_Atencao.setText("Está faltando informações no campo\n{}{}{}".format(falta[0],falta[1],falta[2]))
 
     def MsgUserCadastrado(self):
         self.tela.TX_Atencao.setText("Já existe um usuário cadastrado com esse usuário!!")

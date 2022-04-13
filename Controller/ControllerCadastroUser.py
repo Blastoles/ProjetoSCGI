@@ -1,8 +1,9 @@
-from PyQt5 import uic, QtWidgets
+from PyQt5 import uic
 from View.ViewCadastroUser import viewCadastroUser
 from Model.ModelCadastroUser import ModelCadastrouser
 from DAO.DAOCadastroUser import DAOCadastraruser
 from Controller.ControllerMensagem import SistemaMensagem
+
 
 class SistemaCadastroUser():
     def Show(self):
@@ -32,11 +33,16 @@ class SistemaCadastroUser():
                 print(ddColetado[4],"\n Linhas",linhadb)
                 self.banco.InserirDados(ddColetado,linhadb)
             else:
-                self.cduser.Duplicidade()
-                #self.msg.MsgUserJaCadastrado()
+                self.msg.MsgUserJaCadastrado()
         else:
-            self.cduser.Aviso()
-
+            falta = ['','','']
+            if ddColetado[0] == '':
+                falta[0] = 'Nome\n'
+            if ddColetado[3] == '':
+                falta[1] = 'Usuário\n'
+            if ddColetado[4] == '':
+                falta[2] = 'Senha'
+            self.msg.MsgFaltaDados(falta)
 
     def __init__(self):
         self.cduser = viewCadastroUser()
