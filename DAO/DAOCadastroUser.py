@@ -42,5 +42,15 @@ class DAOCadastraruser():
         banco.close()
         return NumLista
 
+    def UpdateDados(self,Dados):
+        banco = sqlite3.connect('db_contator.db')
+        cursor = banco.cursor()
+        try:
+            cursor.execute("UPDATE USUARIO SET NOME = '{}', EMAIL = '{}', TELEFONE = '{}', ADMINISTRADOR = '{}', ATIVO = '{}', SENHA = '{}' WHERE USUARIO = '{}'".format(Dados[0],Dados[1],Dados[2],Dados[5],Dados[6],Dados[4],Dados[3]))
+            banco.commit()
+        except:
+            self.msg.MsgErroBancoDados()
+        banco.close()
+
     def __init__(self):
         self.msg = SistemaMensagem()

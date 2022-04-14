@@ -17,11 +17,20 @@ class viewMensagem(QMessageBox):
     def MsgFaltaDados(self,falta):
         self.tela.TX_Atencao.setText("Está faltando informações no campo(s)!\n\n{}{}{}".format(falta[0],falta[1],falta[2]))
 
+    def MsgRealizadoComSucesso(self):
+        self.tela.TX_Atencao.setText("Realizado com sucesso!!")
+
+    def MsgUserAtivo(self):
+        self.tela.TX_Atencao.setText("Usuário Desativado!!")
+
     def MsgUserCadastrado(self):
         self.tela.TX_Atencao.setText("Já existe um usuário cadastrado com esse usuário!!")
 
     def MsgErroBando(self):
         self.tela.TX_Atencao.setText("Ocorreu um erro com o Banco de Dados!!")
+
+    def MsgSelecionarLinha(self):
+        self.tela.TX_Atencao.setText("Selecione uma linha da tabela de Usuários!!")
 
 if __name__ == "__main__":
     import sys

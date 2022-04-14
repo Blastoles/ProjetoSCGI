@@ -48,5 +48,26 @@ class DAOuser():
         banco.close()
         return lista
 
+    def LocalizarUser(self,TextoLista):
+        banco = sqlite3.connect('db_contator.db')
+        cursor = banco.cursor()
+        try:
+            cursor.execute("SELECT * FROM USUARIO WHERE USUARIO = '{}'".format(TextoLista))
+            User = cursor.fetchall()
+        except:
+            self.msg.MsgErroBancoDados()
+        banco.close()
+        return User
+
+    def ExcluirUser(self,User):
+        banco = sqlite3.connect('db_contator.db')
+        cursor = banco.cursor()
+        try:
+            cursor.execute("DELETE FROM USUARIO WHERE USUARIO = '{}'".format(User))
+            banco.commit()
+        except:
+            self.msg.MsgErroBancoDados()
+        banco.close()
+
     def __init__(self):
         self.msg = SistemaMensagem()

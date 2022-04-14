@@ -8,7 +8,7 @@ class DAOlogin():
         cursor = banco.cursor()
         user_db = ''
         try:
-            cursor.execute("SELECT USUARIO FROM USUARIO WHERE USUARIO = '{}'".format(user.upper()))
+            cursor.execute("SELECT USUARIO, ATIVO FROM USUARIO WHERE USUARIO = '{}'".format(user.upper()))
             user_db = cursor.fetchall()
         except:
             self.msg.MsgErroBancoDados()

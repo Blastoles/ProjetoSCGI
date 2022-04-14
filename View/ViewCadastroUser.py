@@ -29,6 +29,16 @@ class viewCadastroUser():
         lista = [Nome,Email,Telefone,Usuario,Senha,Admin,Ativo]
         return lista
 
+    def ColocarDados(self,TextoLinha,box):
+        self.tela.CP_Usuario.setDisabled(True)
+        self.tela.CP_Nome.setText('{}'.format(TextoLinha[0][1]))
+        self.tela.CP_Email.setText('{}'.format(TextoLinha[0][3]))
+        self.tela.CP_Telefone.setText('{}'.format(TextoLinha[0][4]))
+        self.tela.CP_Usuario.setText('{}'.format(TextoLinha[0][2]))
+        self.tela.CP_Senha.setText('{:.20}'.format(TextoLinha[0][7]))
+        self.tela.CP_Administrador.setCheckState(box[0])
+        self.tela.CP_Ativo.setCheckState(box[1])
+
     def __init__(self):
         self.tela = uic.loadUi(".\View\Telas\CadastroUsuario.ui")
 

@@ -16,14 +16,17 @@ class SistemaLogin(QDialog):
     def Validar(self):
         user,senha = self.login.Dados()
         VeriUser = self.daolog.CheckUser(user)
-        if VeriUser != [] and VeriUser[0][0] == user.upper():
-            VeriSenha = self.daolog.CheckSenha(senha)
-            if VeriSenha != [] and VeriSenha[0][0] == senha:
-                self.menu.Show()
-                self.login.Close()
+        if VeriUser[0][0] != [] and VeriUser[0][0] == user.upper():
+            if VeriUser[0][1] == 1:
+                VeriSenha = self.daolog.CheckSenha(senha)
+                if VeriSenha != [] and VeriSenha[0][0] == senha:
+                    self.menu.Show()
+                    self.login.Close()
+                else:
+                    self.login.MensagemErro()
+                    self.msg.MsgErroLogin()
             else:
-                self.login.MensagemErro()
-                self.msg.MsgErroLogin()
+                self.msg.MsgUserAtivo()
         else:
             self.login.MensagemErro()
             self.msg.MsgErroLogin()

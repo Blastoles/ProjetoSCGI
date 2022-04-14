@@ -1,8 +1,4 @@
-from PyQt5 import uic
-
-import Controller.ControllerUser
 from View.ViewCadastroUser import viewCadastroUser
-from Model.ModelCadastroUser import ModelCadastrouser
 from DAO.DAOCadastroUser import DAOCadastraruser
 from Controller.ControllerMensagem import SistemaMensagem
 
@@ -36,9 +32,9 @@ class SistemaCadastroUser():
         if ddColetado[0] != '' and ddColetado[3] != '' and ddColetado[4] != '':
             userbanco = self.banco.CheckUser(ddColetado[3])
             if  userbanco == []:
-                ddColetado[4] = self.model.EsconderSenha(ddColetado[4])
                 linhadb = self.banco.ContLista() + 1
                 self.banco.InserirDados(ddColetado,linhadb)
+                self.msg.MsgRealizadoComSucesso()
                 self.user.Tabela()
             else:
                 self.msg.MsgUserJaCadastrado()
@@ -52,12 +48,36 @@ class SistemaCadastroUser():
                 falta[2] = 'Senha'
             self.msg.MsgFaltaDados(falta)
 
-    #def AlterarDados(self):
+    def MostrarDados(self,TextoLinha):
+        box = ['0','0']
+        if TextoLinha[0][5] == 1:
+            box[0] = int(-1)
+        else:
+            box[0] = TextoLinha[0][5]
+        if TextoLinha[0][6] == 1:
+            box[1] = int(-1)
+        else:
+            box[1] = TextoLinha[0][6]
+        self.cduser.ColocarDados(TextoLinha,box)
+
+
+    def AlterarDados(self):
+        ddColetado = self.cduser.ColetaDados()
+        if ddColetado[5] == True:
+            ddColetado[5] = 1
+        else:
+            ddColetado[5] = 0
+        if ddColetado[6] == True:
+            ddColetado[6] = 1
+        else:
+            ddColetado[6] = 0
+        self.banco.UpdateDados(ddColetado)
+        self.msg.MsgRealizadoComSucesso()
+        self.user.Tabela()
 
 
     def __init__(self):
         self.cduser = viewCadastroUser()
-        self.model = ModelCadastrouser()
         self.banco = DAOCadastraruser()
         self.msg = SistemaMensagem()
         self.opcao = ''

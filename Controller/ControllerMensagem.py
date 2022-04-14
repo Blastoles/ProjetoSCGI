@@ -16,6 +16,10 @@ class SistemaMensagem(QMessageBox):
         self.msg.MsgFaltaDados(falta)
         self.msg.MsgShow()
 
+    def MsgUserAtivo(self):
+        self.msg.MsgUserAtivo()
+        self.msg.MsgShow()
+
     def MsgErroBancoDados(self):
         self.msg.MsgErroBando()
         self.msg.MsgShow()
@@ -23,6 +27,15 @@ class SistemaMensagem(QMessageBox):
     def MsgUserJaCadastrado(self):
         self.msg.MsgUserCadastrado()
         self.msg.MsgShow()
+
+    def MsgSelecionarLinha(self):
+        self.msg.MsgSelecionarLinha()
+        self.msg.MsgShow()
+
+    def MsgRealizadoComSucesso(self):
+        self.msg.MsgRealizadoComSucesso()
+        self.msg.MsgShow()
+
 
     def __init__(self):
         self.msg = viewMensagem()

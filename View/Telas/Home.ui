@@ -10,6 +10,9 @@
     <height>616</height>
    </rect>
   </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
+  </property>
   <property name="windowTitle">
    <string>Controlador de Impressora</string>
   </property>

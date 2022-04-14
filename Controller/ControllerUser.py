@@ -1,12 +1,9 @@
 from PyQt5 import uic, QtWidgets
-from functools import partial
-
-import Controller.ControllerMenu
 from View.ViewUser import viewUser
 from DAO.DAOUser import DAOuser
 from Model.ModelUser import Modeluser
 from Controller.ControllerCadastroUser import SistemaCadastroUser
-
+from Controller.ControllerMensagem import SistemaMensagem
 
 class SistemaUser():
     def Show(self):
@@ -30,18 +27,35 @@ class SistemaUser():
         self.cduser.Show('Incluir',self)
 
     def AlterarCadastro(self):
-        self.cduser.Show('Alterar',self)
+        linhaSelect = self.user.LinhaSelect()
+        if linhaSelect != -1:
+            TextoLinha = self.user.TextoSelectLinha(linhaSelect)
+            DadosUser = self.banco.LocalizarUser(TextoLinha)
+            self.cduser.Show('Alterar', self)
+            self.cduser.MostrarDados(DadosUser)
+        else:
+            self.msg.MsgSelecionarLinha()
 
+    def ExcluirUser(self):
+        linhaSelect = self.user.LinhaSelect()
+        if linhaSelect != -1:
+            TextoLinha = self.user.TextoSelectLinha(linhaSelect)
+            self.banco.ExcluirUser(TextoLinha)
+            self.Tabela()
+        else:
+            self.msg.MsgSelecionarLinha()
 
     def __init__(self):
         self.user = viewUser()
         self.banco = DAOuser()
         self.model = Modeluser()
         self.cduser = SistemaCadastroUser()
+        self.msg = SistemaMensagem()
         self.user.tela.BT_Voltar.clicked.connect(self.Close)
         self.user.tela.BT_Pesquisar.clicked.connect(self.PesquisarCadastro)
         self.user.tela.BT_Criar.clicked.connect(self.Criar)
         self.user.tela.BT_Alterar.clicked.connect(self.AlterarCadastro)
+        self.user.tela.BT_Exclui.clicked.connect(self.ExcluirUser)
 
 
 if __name__ == "__main__":
