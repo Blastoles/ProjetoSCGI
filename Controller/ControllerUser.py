@@ -15,7 +15,7 @@ class SistemaUser():
         self.model.Tabela(self.user,lista)
 
     def Close(self):
-        self.user.tela.close()
+        self.user.Close()
 
 
     def PesquisarCadastro(self):

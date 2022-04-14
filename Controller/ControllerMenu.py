@@ -2,6 +2,7 @@ from PyQt5 import uic, QtWidgets
 from View.ViewMenu import viewMenu
 from Controller.ControllerUser import SistemaUser
 from Controller.ControllerSetor import SistemaSetor
+from Controller.ControllerImpressora import SistemaImpressora
 
 class SistemaMenu():
     def Show(self):
@@ -13,6 +14,9 @@ class SistemaMenu():
     def UserShow(self):
         self.user.Show()
 
+    def ImpressoraShow(self):
+        self.impre.Show()
+
     def SetorShow(self):
         self.setor.Show()
 
@@ -20,10 +24,11 @@ class SistemaMenu():
         self.menu = viewMenu()
         self.user = SistemaUser()
         self.setor = SistemaSetor()
+        self.impre = SistemaImpressora()
         self.menu.tela.BT_Usuario.clicked.connect(self.UserShow)
         self.menu.tela.BT_Setor.clicked.connect(self.SetorShow)
-"""        self.menu.tela.BT_Impressora.clicked.connect(partial())
-        
+        self.menu.tela.BT_Impressora.clicked.connect(self.ImpressoraShow)
+"""        
         self.menu.tela.BT_Contagem.clicked.connect(partial())
         self.menu.tela.BT_Manutencao.clicked.connect(partial())
         self.menu.tela.BT_Relatorio.clicked.connect(partial())"""
