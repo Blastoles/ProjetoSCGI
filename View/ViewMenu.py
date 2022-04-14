@@ -5,7 +5,6 @@ class viewMenu():
     def Show(self):
         self.tela.show()
 
-
     def __init__(self):
         self.tela = uic.loadUi(".\View\Telas\Home.ui")
 
