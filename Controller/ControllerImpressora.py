@@ -2,7 +2,7 @@ from PyQt5 import uic, QtWidgets
 from View.ViewImpressora import viewImpressora
 from DAO.DAOImpressora import DAOimpressora
 from Controller.ControllerMensagem import SistemaMensagem
-
+from Controller.ControllerCadastroImpressora import SistemaCadastroImpressora
 
 class SistemaImpressora():
     def Show(self):
@@ -18,6 +18,7 @@ class SistemaImpressora():
         print('PesquisarImpressora')
 
     def Criar(self):
+        self.cdimpressora.Show()
         print('Criar')
 
     def AlterarImpressora(self):
@@ -38,7 +39,7 @@ class SistemaImpressora():
         self.impressora = viewImpressora()
         self.msg = SistemaMensagem()
         self.banco = DAOimpressora()
-
+        self.cdimpressora = SistemaImpressora()
         #Definição dos botões
         self.impressora.tela.BT_Voltar.clicked.connect(self.Close)
         self.impressora.tela.BT_Pesquisar.clicked.connect(self.PesquisarImpressora)
