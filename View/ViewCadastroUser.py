@@ -19,14 +19,14 @@ class viewCadastroUser():
         self.tela.TX_Aviso.setText("")
 
     def ColetaDados(self):
-        Nome = self.tela.CP_Nome.text().upper()
-        Email = self.tela.CP_Email.text()
-        Telefone = self.tela.CP_Telefone.text()
-        Usuario = self.tela.CP_Usuario.text().upper()
-        Senha = self.tela.CP_Senha.text()
-        Admin = self.tela.CP_Administrador.isChecked()
-        Ativo = self.tela.CP_Ativo.isChecked()
-        lista = [Nome,Email,Telefone,Usuario,Senha,Admin,Ativo]
+        lista = []
+        lista.append(self.tela.CP_Nome.text().upper())
+        lista.append(self.tela.CP_Email.text())
+        lista.append(self.tela.CP_Telefone.text())
+        lista.append(self.tela.CP_Usuario.text().upper())
+        lista.append(self.tela.CP_Senha.text())
+        lista.append(self.tela.CP_Administrador.isChecked())
+        lista.append(self.tela.CP_Ativo.isChecked())
         return lista
 
     def ColocarDados(self,TextoLinha,box):

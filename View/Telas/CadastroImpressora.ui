@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>609</width>
-    <height>447</height>
+    <width>704</width>
+    <height>532</height>
    </rect>
   </property>
   <property name="acceptDrops">
@@ -22,7 +22,7 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
+  <widget class="QWidget" name="Central">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QFrame" name="frame_4">
@@ -75,7 +75,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QFrame" name="frame_3">
+     <widget class="QFrame" name="Main">
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -92,8 +92,8 @@
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>-282</y>
-            <width>552</width>
+            <y>-190</y>
+            <width>647</width>
             <height>517</height>
            </rect>
           </property>
@@ -108,72 +108,72 @@
              </property>
              <layout class="QFormLayout" name="formLayout">
               <item row="0" column="0">
-               <widget class="QLabel" name="TX_Nome">
+               <widget class="QLabel" name="TX_Num_Serie">
                 <property name="text">
                  <string>Número de Série</string>
                 </property>
                </widget>
               </item>
               <item row="0" column="1">
-               <widget class="QLineEdit" name="CP_Nome"/>
+               <widget class="QLineEdit" name="CP_Num_Serie"/>
               </item>
               <item row="1" column="0">
-               <widget class="QLabel" name="TX_Telefone">
+               <widget class="QLabel" name="TX_MAC">
                 <property name="text">
                  <string>MAC</string>
                 </property>
                </widget>
               </item>
               <item row="1" column="1">
-               <widget class="QLineEdit" name="CP_Telefone"/>
+               <widget class="QLineEdit" name="CP_MAC"/>
               </item>
               <item row="2" column="0">
-               <widget class="QLabel" name="TX_Usuario">
+               <widget class="QLabel" name="TX_ModeloImpre">
                 <property name="text">
                  <string>Modelo da Impressora</string>
                 </property>
                </widget>
               </item>
               <item row="2" column="1">
-               <widget class="QLineEdit" name="CP_Usuario">
+               <widget class="QLineEdit" name="CP_ModeloImpre">
                 <property name="echoMode">
                  <enum>QLineEdit::Normal</enum>
                 </property>
                </widget>
               </item>
               <item row="3" column="0">
-               <widget class="QLabel" name="TX_Senha">
+               <widget class="QLabel" name="TX_Fabricante">
                 <property name="text">
                  <string>Fabricante</string>
                 </property>
                </widget>
               </item>
               <item row="3" column="1">
-               <widget class="QLineEdit" name="CP_Senha">
+               <widget class="QLineEdit" name="CP_Fabricante">
                 <property name="echoMode">
-                 <enum>QLineEdit::Password</enum>
+                 <enum>QLineEdit::Normal</enum>
                 </property>
                </widget>
               </item>
               <item row="4" column="0">
-               <widget class="QLabel" name="label">
+               <widget class="QLabel" name="TX_Nome">
                 <property name="text">
                  <string>Nome Amigável</string>
                 </property>
                </widget>
               </item>
               <item row="4" column="1">
-               <widget class="QLineEdit" name="lineEdit"/>
+               <widget class="QLineEdit" name="CP_Nome"/>
               </item>
               <item row="5" column="0">
-               <widget class="QLabel" name="label_4">
+               <widget class="QLabel" name="TX_Data">
                 <property name="text">
                  <string>Data de Aquisição</string>
                 </property>
                </widget>
               </item>
               <item row="5" column="1">
-               <widget class="QDateEdit" name="dateEdit">
+               <widget class="QDateEdit" name="CP_Data">
                 <property name="dateTime">
                  <datetime>
                   <hour>0</hour>
@@ -207,14 +207,14 @@
                </widget>
               </item>
               <item row="7" column="0">
-               <widget class="QLabel" name="label_10">
+               <widget class="QLabel" name="TX_Terceiros">
                 <property name="text">
                  <string>Impressora Consignado</string>
                 </property>
                </widget>
               </item>
               <item row="7" column="1">
-               <widget class="QCheckBox" name="checkBox_6">
+               <widget class="QCheckBox" name="CP_Terceiros">
                 <property name="text">
                  <string>Impressora de terceiros</string>
                 </property>
@@ -224,7 +224,7 @@
             </widget>
            </item>
            <item row="1" column="0">
-            <widget class="QFrame" name="frame_5">
+            <widget class="QFrame" name="Outrasopcoes">
              <property name="frameShape">
               <enum>QFrame::NoFrame</enum>
              </property>
@@ -233,103 +233,110 @@
              </property>
              <layout class="QFormLayout" name="formLayout_2">
               <item row="0" column="0">
-               <widget class="QCheckBox" name="checkBox">
+               <widget class="QLabel" name="TX_Conexoes">
+                <property name="text">
+                 <string>Quais as conexões possui?</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QCheckBox" name="CP_USB">
                 <property name="text">
                  <string>Possui conexão USB?</string>
                 </property>
                </widget>
               </item>
-              <item row="1" column="0">
-               <widget class="QCheckBox" name="checkBox_2">
+              <item row="1" column="1">
+               <widget class="QCheckBox" name="CP_Rede">
                 <property name="text">
                  <string>Possui Conexão de Rede? ( Com Fio )</string>
                 </property>
                </widget>
               </item>
-              <item row="2" column="0">
-               <widget class="QCheckBox" name="checkBox_3">
+              <item row="2" column="1">
+               <widget class="QCheckBox" name="CP_Wifi">
                 <property name="text">
                  <string>Possui Conexão Wifi? ( Sem Fio )</string>
                 </property>
                </widget>
               </item>
-              <item row="4" column="0">
-               <widget class="QLabel" name="label_5">
+              <item row="3" column="1">
+               <widget class="QLineEdit" name="CP_IP"/>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="TX_IP">
                 <property name="text">
                  <string>Endereço IP</string>
                 </property>
                </widget>
               </item>
               <item row="4" column="1">
-               <widget class="QLineEdit" name="lineEdit_2"/>
+               <widget class="QCheckBox" name="CP_Preto">
+                <property name="text">
+                 <string>Imprimi somente Preto</string>
+                </property>
+               </widget>
               </item>
-              <item row="5" column="0">
-               <widget class="QLabel" name="label_2">
+              <item row="4" column="0">
+               <widget class="QLabel" name="TX_Preto">
                 <property name="text">
                  <string>Monocromático</string>
                 </property>
                </widget>
               </item>
               <item row="5" column="1">
-               <widget class="QCheckBox" name="checkBox_4">
-                <property name="text">
-                 <string>Imprimi somente Preto</string>
-                </property>
-               </widget>
+               <widget class="QLineEdit" name="CP_MPreto"/>
               </item>
-              <item row="6" column="0">
-               <widget class="QLabel" name="label_6">
+              <item row="5" column="0">
+               <widget class="QLabel" name="TX_MPreto">
                 <property name="text">
                  <string>Modelo Toner Preto</string>
                 </property>
                </widget>
               </item>
               <item row="6" column="1">
-               <widget class="QLineEdit" name="lineEdit_3"/>
+               <widget class="QCheckBox" name="CP_Color">
+                <property name="text">
+                 <string>Imprimi Colorido</string>
+                </property>
+               </widget>
               </item>
-              <item row="7" column="0">
-               <widget class="QLabel" name="label_3">
+              <item row="6" column="0">
+               <widget class="QLabel" name="TX_Color">
                 <property name="text">
                  <string>Cromático</string>
                 </property>
                </widget>
               </item>
               <item row="7" column="1">
-               <widget class="QCheckBox" name="checkBox_5">
-                <property name="text">
-                 <string>Imprimir Colorido</string>
-                </property>
-               </widget>
+               <widget class="QLineEdit" name="CP_MMagenta"/>
               </item>
-              <item row="8" column="0">
-               <widget class="QLabel" name="label_7">
+              <item row="7" column="0">
+               <widget class="QLabel" name="TX_MMagenta">
                 <property name="text">
                  <string>Modelo Toner Magenta</string>
                 </property>
                </widget>
               </item>
               <item row="8" column="1">
-               <widget class="QLineEdit" name="lineEdit_4"/>
+               <widget class="QLineEdit" name="CP_MAmarelo"/>
               </item>
-              <item row="9" column="0">
-               <widget class="QLabel" name="label_8">
+              <item row="8" column="0">
+               <widget class="QLabel" name="TX_MAmarelo">
                 <property name="text">
                  <string>Modelo Toner Amarelo</string>
                 </property>
                </widget>
               </item>
               <item row="9" column="1">
-               <widget class="QLineEdit" name="lineEdit_5"/>
+               <widget class="QLineEdit" name="CP_MAzul"/>
               </item>
-              <item row="10" column="0">
-               <widget class="QLabel" name="label_9">
+              <item row="9" column="0">
+               <widget class="QLabel" name="TX_MAzul">
                 <property name="text">
                  <string>Modelo Toner Azul</string>
                 </property>
                </widget>
-              </item>
-              <item row="10" column="1">
-               <widget class="QLineEdit" name="lineEdit_6"/>
               </item>
              </layout>
             </widget>
@@ -342,7 +349,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QFrame" name="frame_2">
+     <widget class="QFrame" name="Opcao">
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>

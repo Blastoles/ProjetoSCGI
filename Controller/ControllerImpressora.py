@@ -39,7 +39,7 @@ class SistemaImpressora():
         self.impressora = viewImpressora()
         self.msg = SistemaMensagem()
         self.banco = DAOimpressora()
-        self.cdimpressora = SistemaImpressora()
+        self.cdimpressora = SistemaCadastroImpressora()
         #Definição dos botões
         self.impressora.tela.BT_Voltar.clicked.connect(self.Close)
         self.impressora.tela.BT_Pesquisar.clicked.connect(self.PesquisarImpressora)
