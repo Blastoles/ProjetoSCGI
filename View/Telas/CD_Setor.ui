@@ -1,245 +1,241 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>Setor</class>
- <widget class="QDialog" name="Setor">
+ <widget class="QMainWindow" name="Setor">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>753</width>
-    <height>600</height>
+    <width>754</width>
+    <height>511</height>
    </rect>
-  </property>
-  <property name="acceptDrops">
-   <bool>true</bool>
   </property>
   <property name="windowTitle">
    <string>Setor</string>
   </property>
-  <property name="sizeGripEnabled">
-   <bool>true</bool>
-  </property>
-  <layout class="QHBoxLayout" name="horizontalLayout_3">
-   <item>
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
-      <widget class="QFrame" name="frame_2">
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="QFrame" name="frame">
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout">
-           <item>
-            <widget class="QLineEdit" name="BR_Pesquisa"/>
-           </item>
-           <item>
-            <widget class="QPushButton" name="BT_Pesquisar">
-             <property name="text">
-              <string>Pesquisar</string>
-             </property>
-             <property name="icon">
-              <iconset>
-               <normaloff>../Arte/iconfinder-documents07-1622836_121949.ico</normaloff>../Arte/iconfinder-documents07-1622836_121949.ico</iconset>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="BT_Criar">
-             <property name="text">
-              <string>Criar Novo Setor</string>
-             </property>
-             <property name="icon">
-              <iconset>
-               <normaloff>../Arte/new_page_document_1560.ico</normaloff>../Arte/new_page_document_1560.ico</iconset>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="BT_Alterar">
-             <property name="text">
-              <string>Alterar Setor</string>
-             </property>
-             <property name="icon">
-              <iconset>
-               <normaloff>../Arte/edit_pencil_write_1574.ico</normaloff>../Arte/edit_pencil_write_1574.ico</iconset>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="BT_Exclui">
-             <property name="text">
-              <string>Excluir Setor</string>
-             </property>
-             <property name="icon">
-              <iconset>
-               <normaloff>../Arte/delete_delete_exit_1577.ico</normaloff>../Arte/delete_delete_exit_1577.ico</iconset>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="BT_Voltar">
-             <property name="text">
-              <string>Voltar</string>
-             </property>
-             <property name="icon">
-              <iconset>
-               <normaloff>../Arte/3643764-back-backward-left-reply-turn_113415.ico</normaloff>../Arte/3643764-back-backward-left-reply-turn_113415.ico</iconset>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item>
-         <widget class="QFrame" name="frame_3">
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_3">
-           <item>
-            <widget class="QTabWidget" name="tabWidget">
-             <property name="focusPolicy">
-              <enum>Qt::TabFocus</enum>
-             </property>
-             <property name="tabPosition">
-              <enum>QTabWidget::North</enum>
-             </property>
-             <property name="currentIndex">
-              <number>0</number>
-             </property>
-             <widget class="QWidget" name="tab">
-              <attribute name="title">
-               <string>Setor</string>
-              </attribute>
-              <layout class="QHBoxLayout" name="horizontalLayout_2">
-               <item>
-                <widget class="QTableWidget" name="TB_Setor">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="tabletTracking">
-                  <bool>false</bool>
-                 </property>
-                 <property name="layoutDirection">
-                  <enum>Qt::LeftToRight</enum>
-                 </property>
-                 <property name="autoFillBackground">
-                  <bool>true</bool>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::Box</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <property name="verticalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOn</enum>
-                 </property>
-                 <property name="horizontalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAsNeeded</enum>
-                 </property>
-                 <property name="sizeAdjustPolicy">
-                  <enum>QAbstractScrollArea::AdjustToContents</enum>
-                 </property>
-                 <property name="editTriggers">
-                  <set>QAbstractItemView::NoEditTriggers</set>
-                 </property>
-                 <property name="dragEnabled">
-                  <bool>false</bool>
-                 </property>
-                 <property name="dragDropMode">
-                  <enum>QAbstractItemView::NoDragDrop</enum>
-                 </property>
-                 <property name="alternatingRowColors">
-                  <bool>true</bool>
-                 </property>
-                 <property name="selectionMode">
-                  <enum>QAbstractItemView::SingleSelection</enum>
-                 </property>
-                 <property name="selectionBehavior">
-                  <enum>QAbstractItemView::SelectRows</enum>
-                 </property>
-                 <property name="verticalScrollMode">
-                  <enum>QAbstractItemView::ScrollPerItem</enum>
-                 </property>
-                 <property name="showGrid">
-                  <bool>true</bool>
-                 </property>
-                 <property name="gridStyle">
-                  <enum>Qt::DashLine</enum>
-                 </property>
-                 <attribute name="horizontalHeaderVisible">
-                  <bool>true</bool>
-                 </attribute>
-                 <attribute name="horizontalHeaderCascadingSectionResizes">
-                  <bool>false</bool>
-                 </attribute>
-                 <attribute name="horizontalHeaderDefaultSectionSize">
-                  <number>130</number>
-                 </attribute>
-                 <attribute name="horizontalHeaderHighlightSections">
-                  <bool>true</bool>
-                 </attribute>
-                 <attribute name="horizontalHeaderMinimumSectionSize">
-                  <number>39</number>
-                 </attribute>
-                 <column>
-                  <property name="text">
-                   <string>Nome</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>Usuário</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>Email</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>Telefone</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>Usuário Ativo</string>
-                  </property>
-                 </column>
-                </widget>
-               </item>
-              </layout>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QFrame" name="frame_2">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QFrame" name="frame">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QLineEdit" name="BR_Pesquisa"/>
+            </item>
+            <item>
+             <widget class="QPushButton" name="BT_Pesquisar">
+              <property name="text">
+               <string>Pesquisar</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../Arte/iconfinder-documents07-1622836_121949.ico</normaloff>../Arte/iconfinder-documents07-1622836_121949.ico</iconset>
+              </property>
              </widget>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </item>
-    </layout>
-   </item>
-  </layout>
+            </item>
+            <item>
+             <widget class="QPushButton" name="BT_Criar">
+              <property name="text">
+               <string>Novo</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../Arte/new_page_document_1560.ico</normaloff>../Arte/new_page_document_1560.ico</iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="BT_Alterar">
+              <property name="text">
+               <string>Alterar</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../Arte/edit_pencil_write_1574.ico</normaloff>../Arte/edit_pencil_write_1574.ico</iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="BT_Exclui">
+              <property name="text">
+               <string>Excluir</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../Arte/delete_delete_exit_1577.ico</normaloff>../Arte/delete_delete_exit_1577.ico</iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="BT_Voltar">
+              <property name="text">
+               <string>Voltar</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../Arte/3643764-back-backward-left-reply-turn_113415.ico</normaloff>../Arte/3643764-back-backward-left-reply-turn_113415.ico</iconset>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="frame_3">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="QTabWidget" name="tabWidget">
+              <property name="focusPolicy">
+               <enum>Qt::TabFocus</enum>
+              </property>
+              <property name="tabPosition">
+               <enum>QTabWidget::North</enum>
+              </property>
+              <property name="currentIndex">
+               <number>0</number>
+              </property>
+              <widget class="QWidget" name="tab">
+               <attribute name="title">
+                <string>Setor</string>
+               </attribute>
+               <layout class="QHBoxLayout" name="horizontalLayout_2">
+                <item>
+                 <widget class="QTableWidget" name="TB_Setor">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="tabletTracking">
+                   <bool>false</bool>
+                  </property>
+                  <property name="layoutDirection">
+                   <enum>Qt::LeftToRight</enum>
+                  </property>
+                  <property name="autoFillBackground">
+                   <bool>true</bool>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::Box</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <property name="verticalScrollBarPolicy">
+                   <enum>Qt::ScrollBarAlwaysOn</enum>
+                  </property>
+                  <property name="horizontalScrollBarPolicy">
+                   <enum>Qt::ScrollBarAsNeeded</enum>
+                  </property>
+                  <property name="sizeAdjustPolicy">
+                   <enum>QAbstractScrollArea::AdjustToContents</enum>
+                  </property>
+                  <property name="editTriggers">
+                   <set>QAbstractItemView::NoEditTriggers</set>
+                  </property>
+                  <property name="dragEnabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="dragDropMode">
+                   <enum>QAbstractItemView::NoDragDrop</enum>
+                  </property>
+                  <property name="alternatingRowColors">
+                   <bool>true</bool>
+                  </property>
+                  <property name="selectionMode">
+                   <enum>QAbstractItemView::SingleSelection</enum>
+                  </property>
+                  <property name="selectionBehavior">
+                   <enum>QAbstractItemView::SelectRows</enum>
+                  </property>
+                  <property name="verticalScrollMode">
+                   <enum>QAbstractItemView::ScrollPerItem</enum>
+                  </property>
+                  <property name="showGrid">
+                   <bool>true</bool>
+                  </property>
+                  <property name="gridStyle">
+                   <enum>Qt::DashLine</enum>
+                  </property>
+                  <attribute name="horizontalHeaderVisible">
+                   <bool>true</bool>
+                  </attribute>
+                  <attribute name="horizontalHeaderCascadingSectionResizes">
+                   <bool>false</bool>
+                  </attribute>
+                  <attribute name="horizontalHeaderDefaultSectionSize">
+                   <number>130</number>
+                  </attribute>
+                  <attribute name="horizontalHeaderHighlightSections">
+                   <bool>true</bool>
+                  </attribute>
+                  <attribute name="horizontalHeaderMinimumSectionSize">
+                   <number>39</number>
+                  </attribute>
+                  <column>
+                   <property name="text">
+                    <string>Nome</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Usuário</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Email</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Telefone</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Usuário Ativo</string>
+                   </property>
+                  </column>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
  </widget>
  <resources/>
  <connections/>

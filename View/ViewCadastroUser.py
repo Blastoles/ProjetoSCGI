@@ -16,7 +16,6 @@ class viewCadastroUser():
         self.tela.CP_Senha.setText("")
         self.tela.CP_Administrador.setCheckState(0)
         self.tela.CP_Ativo.setCheckState(-1)
-        self.tela.TX_Aviso.setText("")
 
     def ColetaDados(self):
         lista = []
