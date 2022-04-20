@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>755</width>
+    <width>766</width>
     <height>552</height>
    </rect>
   </property>
@@ -133,8 +133,13 @@
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <property name="font">
+                   <font>
+                    <family>Segoe UI</family>
+                   </font>
+                  </property>
                   <property name="tabletTracking">
-                   <bool>false</bool>
+                   <bool>true</bool>
                   </property>
                   <property name="layoutDirection">
                    <enum>Qt::LeftToRight</enum>
@@ -147,6 +152,12 @@
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
+                  </property>
+                  <property name="lineWidth">
+                   <number>1</number>
+                  </property>
+                  <property name="midLineWidth">
+                   <number>0</number>
                   </property>
                   <property name="verticalScrollBarPolicy">
                    <enum>Qt::ScrollBarAlwaysOn</enum>
@@ -184,6 +195,9 @@
                   <property name="gridStyle">
                    <enum>Qt::DashLine</enum>
                   </property>
+                  <property name="sortingEnabled">
+                   <bool>false</bool>
+                  </property>
                   <attribute name="horizontalHeaderVisible">
                    <bool>true</bool>
                   </attribute>
@@ -201,27 +215,47 @@
                   </attribute>
                   <column>
                    <property name="text">
-                    <string>Nome</string>
+                    <string>Número de Série</string>
                    </property>
                   </column>
                   <column>
                    <property name="text">
-                    <string>Usuário</string>
+                    <string>Modelo da Impressora</string>
                    </property>
                   </column>
                   <column>
                    <property name="text">
-                    <string>Email</string>
+                    <string>Nome Amigável</string>
                    </property>
                   </column>
                   <column>
                    <property name="text">
-                    <string>Telefone</string>
+                    <string>Setor</string>
                    </property>
                   </column>
                   <column>
                    <property name="text">
-                    <string>Usuário Ativo</string>
+                    <string>IP</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Toner Preto</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Toner Margenta</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Toner Amarelo</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Toner Azul</string>
                    </property>
                   </column>
                  </widget>
