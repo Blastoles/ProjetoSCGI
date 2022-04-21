@@ -132,6 +132,9 @@
                   <property name="tabletTracking">
                    <bool>false</bool>
                   </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::WheelFocus</enum>
+                  </property>
                   <property name="layoutDirection">
                    <enum>Qt::LeftToRight</enum>
                   </property>
@@ -152,6 +155,9 @@
                   </property>
                   <property name="sizeAdjustPolicy">
                    <enum>QAbstractScrollArea::AdjustToContents</enum>
+                  </property>
+                  <property name="autoScrollMargin">
+                   <number>17</number>
                   </property>
                   <property name="editTriggers">
                    <set>QAbstractItemView::NoEditTriggers</set>
@@ -187,7 +193,7 @@
                    <bool>false</bool>
                   </attribute>
                   <attribute name="horizontalHeaderDefaultSectionSize">
-                   <number>130</number>
+                   <number>215</number>
                   </attribute>
                   <attribute name="horizontalHeaderHighlightSections">
                    <bool>true</bool>
@@ -202,22 +208,12 @@
                   </column>
                   <column>
                    <property name="text">
-                    <string>Usuário</string>
+                    <string>Prioridade</string>
                    </property>
                   </column>
                   <column>
                    <property name="text">
-                    <string>Email</string>
-                   </property>
-                  </column>
-                  <column>
-                   <property name="text">
-                    <string>Telefone</string>
-                   </property>
-                  </column>
-                  <column>
-                   <property name="text">
-                    <string>Usuário Ativo</string>
+                    <string>Responsável</string>
                    </property>
                   </column>
                  </widget>
