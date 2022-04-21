@@ -363,6 +363,17 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>CP_Nome</tabstop>
+  <tabstop>CP_Email</tabstop>
+  <tabstop>CP_Telefone</tabstop>
+  <tabstop>CP_Usuario</tabstop>
+  <tabstop>CP_Senha</tabstop>
+  <tabstop>CP_Administrador</tabstop>
+  <tabstop>CP_Ativo</tabstop>
+  <tabstop>BT_Salvar</tabstop>
+  <tabstop>BT_Cancelar</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

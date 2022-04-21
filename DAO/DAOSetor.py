@@ -8,12 +8,9 @@ class DAOsetor():
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT "
-                               "NOME_SETOR,"
-                               "PRIORIDADE,"
-                               "RESPONSAVEL_LOCAL,"
-                               "IMPRESSORA_NUM_DE_SERIE,"
+                           "NOME_SETOR,SIGLA,PRIORIDADE,RESPONSAVEL_LOCAL "
                            "FROM "
-                               "SETOR")
+                           "SETOR")
             lista = cursor.fetchall()
         except:
             self.msg.MsgErroBancoDados()

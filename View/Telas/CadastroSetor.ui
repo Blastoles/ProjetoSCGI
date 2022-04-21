@@ -322,6 +322,14 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>CP_Nome</tabstop>
+  <tabstop>CP_Sigla</tabstop>
+  <tabstop>CP_Responsavel</tabstop>
+  <tabstop>CP_Prioridade</tabstop>
+  <tabstop>BT_Salvar</tabstop>
+  <tabstop>BT_Cancelar</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
