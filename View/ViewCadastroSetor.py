@@ -7,6 +7,7 @@ class viewCadastroSetor():
     def LimpeTela(self):
         self.tela.CP_Nome.setText('')
         self.tela.CP_Responsavel.setText('')
+        self.tela.CP_Sigla.setText('')
 
     def ColetarDados(self):
         lista = []
@@ -21,4 +22,3 @@ class viewCadastroSetor():
 
     def __init__(self):
         self.tela = uic.loadUi(".\View\Telas\CadastroSetor.ui")
-

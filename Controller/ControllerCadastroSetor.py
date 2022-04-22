@@ -4,8 +4,9 @@ from Model.ModelCadastroSetor import modelCadastroSetor
 
 class SistemaCSetor():
 
-    def Show(self,opcao):
+    def Show(self,opcao,setor):
         self.viewCSetor.LimpeTela()
+        self.setor = setor
         self.opcao = opcao
         self.viewCSetor.Show()
 
@@ -17,6 +18,10 @@ class SistemaCSetor():
         linhadb = self.DAOSetor.ContLista()
         dados[3] = self.ModelSetor.PrioridadeInt(dados[3])
         self.DAOSetor.InserirDados(dados,linhadb)
+        self.setor.Tabela()
+
+    def MostrarDados(self):
+        print()
 
     def AlterarSetor(self):
         print()
@@ -32,5 +37,6 @@ class SistemaCSetor():
         self.DAOSetor = DAOCadastrarSetor()
         self.ModelSetor = modelCadastroSetor()
         self.opcao = ''
+        self.setor = ''
         self.viewCSetor.tela.BT_Cancelar.clicked.connect(self.Close)
         self.viewCSetor.tela.BT_Salvar.clicked.connect(self.Opcao)
