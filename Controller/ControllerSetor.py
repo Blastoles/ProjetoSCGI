@@ -23,7 +23,7 @@ class SistemaSetor():
         linhaSelect = self.viewSetor.LinhaSelect()
         if linhaSelect != -1:
             TextoLinha = self.viewSetor.TextoSelectLinha(linhaSelect)
-            DadosUser = self.banco.LocalizarUser(TextoLinha)
+            DadosUser = self.banco.LocalizarSetor(TextoLinha)
             self.CSetor.Show('Alterar', self)
             self.CSetor.MostrarDados(DadosUser)
         else:

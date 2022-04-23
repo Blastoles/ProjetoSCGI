@@ -8,6 +8,7 @@ class viewCadastroSetor():
         self.tela.CP_Nome.setText('')
         self.tela.CP_Responsavel.setText('')
         self.tela.CP_Sigla.setText('')
+        self.tela.CP_Prioridade.setCurrentIndex(0)
 
     def ColetarDados(self):
         lista = []
@@ -16,6 +17,12 @@ class viewCadastroSetor():
         lista.append(self.tela.CP_Responsavel.text().upper())
         lista.append(self.tela.CP_Prioridade.currentText())
         return lista
+
+    def ColocarDados(self,dados):
+        self.tela.CP_Nome.setText(dados[0][1])
+        self.tela.CP_Sigla.setText(dados[0][2])
+        self.tela.CP_Responsavel.setText(dados[0][3])
+        self.tela.CP_Prioridade.setCurrentIndex(dados[0][4])
 
     def Close(self):
         self.tela.close()

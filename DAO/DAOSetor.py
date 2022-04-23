@@ -47,7 +47,7 @@ class DAOsetor():
         banco = sqlite3.connect('db_contator.db')
         cursor = banco.cursor()
         try:
-            cursor.execute("SELECT * FROM SETOR WHERE ID_SETOR = '{}'".format(TextoLista))
+            cursor.execute("SELECT * FROM SETOR WHERE SIGLA = '{}'".format(TextoLista))
             User = cursor.fetchall()
         except:
             self.msg.MsgErroBancoDados()

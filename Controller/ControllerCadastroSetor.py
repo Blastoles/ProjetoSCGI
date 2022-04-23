@@ -1,6 +1,7 @@
 from View.ViewCadastroSetor import viewCadastroSetor
 from DAO.DAOCadastroSetor import DAOCadastrarSetor
 from Model.ModelCadastroSetor import modelCadastroSetor
+from Controller.ControllerMensagem import SistemaMensagem
 
 class SistemaCSetor():
 
@@ -15,13 +16,18 @@ class SistemaCSetor():
 
     def InsertSetor(self):
         dados = self.viewCSetor.ColetarDados()
-        linhadb = self.DAOSetor.ContLista()
-        dados[3] = self.ModelSetor.PrioridadeInt(dados[3])
-        self.DAOSetor.InserirDados(dados,linhadb)
-        self.setor.Tabela()
+        check = self.DAOSetor.CheckUser(dados[1])
+        print(check,dados)
+        if check == []:
+            linhadb = self.DAOSetor.ContLista()
+            dados[3] = self.ModelSetor.PrioridadeInt(dados[3])
+            self.DAOSetor.InserirDados(dados,linhadb)
+            self.setor.Tabela()
+        else:
+            self.msg.MsgUserJaCadastrado()
 
-    def MostrarDados(self):
-        print()
+    def MostrarDados(self,TextoLinha):
+        self.viewCSetor.ColocarDados(TextoLinha)
 
     def AlterarSetor(self):
         print()
@@ -36,6 +42,7 @@ class SistemaCSetor():
         self.viewCSetor = viewCadastroSetor()
         self.DAOSetor = DAOCadastrarSetor()
         self.ModelSetor = modelCadastroSetor()
+        self.msg = SistemaMensagem()
         self.opcao = ''
         self.setor = ''
         self.viewCSetor.tela.BT_Cancelar.clicked.connect(self.Close)

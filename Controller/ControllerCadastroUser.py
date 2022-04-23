@@ -48,7 +48,7 @@ class SistemaCadastroUser():
             self.msg.MsgFaltaDados(falta)
 
     def MostrarDados(self,TextoLinha):
-        box = ['0','0']
+        box = ['0', '0']
         if TextoLinha[0][5] == 1:
             box[0] = int(-1)
         else:
@@ -57,7 +57,7 @@ class SistemaCadastroUser():
             box[1] = int(-1)
         else:
             box[1] = TextoLinha[0][6]
-        self.cduser.ColocarDados(TextoLinha,box)
+        self.cduser.ColocarDados(TextoLinha, box)
 
 
     def AlterarDados(self):
