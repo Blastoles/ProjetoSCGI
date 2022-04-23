@@ -54,11 +54,11 @@ class DAOsetor():
         banco.close()
         return User
 
-    def ExcluirSetor(self,idSetor):
+    def ExcluirSetor(self,Setor):
         banco = sqlite3.connect('db_contator.db')
         cursor = banco.cursor()
         try:
-            cursor.execute("DELETE FROM SETOR WHERE ID_SETOR = '{}'".format(idSetor))
+            cursor.execute("DELETE FROM SETOR WHERE SIGLA = '{}'".format(Setor))
             banco.commit()
         except:
             self.msg.MsgErroBancoDados()

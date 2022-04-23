@@ -29,6 +29,7 @@ class SistemaCSetor():
     def MostrarDados(self,TextoLinha):
         self.viewCSetor.ColocarDados(TextoLinha)
 
+
     def AlterarSetor(self):
         print()
 

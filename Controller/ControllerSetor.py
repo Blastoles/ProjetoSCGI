@@ -33,8 +33,14 @@ class SistemaSetor():
         lista = self.banco.TodaLista()
         self.model.Tabela(self.viewSetor,lista)
 
-    def ExcluirUser(self):
-        print()
+    def ExcluirSetor(self):
+        linhaSelect = self.viewSetor.LinhaSelect()
+        if linhaSelect != -1:
+            TextoLinha = self.viewSetor.TextoSelectLinha(linhaSelect)
+            self.banco.ExcluirSetor(TextoLinha)
+            self.Tabela()
+        else:
+            self.msg.MsgSelecionarLinha()
 
     def __init__(self):
         self.viewSetor = viewSetor()
@@ -46,4 +52,4 @@ class SistemaSetor():
         self.viewSetor.tela.BT_Pesquisar.clicked.connect(self.PesquisarCadastro)
         self.viewSetor.tela.BT_Criar.clicked.connect(self.Criar)
         self.viewSetor.tela.BT_Alterar.clicked.connect(self.AlterarCadastro)
-        self.viewSetor.tela.BT_Exclui.clicked.connect(self.ExcluirUser)
+        self.viewSetor.tela.BT_Exclui.clicked.connect(self.ExcluirSetor)
