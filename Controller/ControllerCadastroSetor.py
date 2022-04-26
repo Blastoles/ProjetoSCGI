@@ -16,22 +16,41 @@ class SistemaCSetor():
 
     def InsertSetor(self):
         dados = self.viewCSetor.ColetarDados()
-        check = self.DAOSetor.CheckUser(dados[1])
-        print(check,dados)
-        if check == []:
-            linhadb = self.DAOSetor.ContLista()
-            dados[3] = self.ModelSetor.PrioridadeInt(dados[3])
-            self.DAOSetor.InserirDados(dados,linhadb)
-            self.setor.Tabela()
+        if dados[1] != '' and dados[0] != '':
+            check = self.DAOSetor.CheckUser(dados[1])
+            if check == []:
+                linhadb = self.DAOSetor.ContLista()
+                dados[3] = self.ModelSetor.PrioridadeInt(dados[3])
+                self.DAOSetor.InserirDados(dados,linhadb)
+                self.setor.Tabela()
+            else:
+                self.msg.MsgSetorJaCadastrado()
         else:
-            self.msg.MsgUserJaCadastrado()
+            falta = ['','','']
+            if dados[0] == '':
+                falta[0] = 'Nome\n'
+            if dados[1] == '':
+                falta[1] = 'Sigla\n'
+            self.msg.MsgFaltaDados(falta)
 
     def MostrarDados(self,TextoLinha):
         self.viewCSetor.ColocarDados(TextoLinha)
 
 
     def AlterarSetor(self):
-        print()
+        dados = self.viewCSetor.ColetarDados()
+        if dados[3] == 'Normal':
+            dados[3] = 0
+        elif dados[3] == 'Baixa':
+            dados[3] = 1
+        elif dados[3] == 'Alta':
+            dados[3] = 2
+        elif dados[3] == 'Urgente':
+            dados[3] = 3
+        else:
+            dados[3] = -1
+        self.DAOSetor.UpdateDados(dados)
+        self.setor.Tabela()
 
     def Opcao(self):
         if self.opcao == 'Criar':

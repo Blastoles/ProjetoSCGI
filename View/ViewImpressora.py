@@ -1,3 +1,5 @@
+from os import getcwd
+
 from PyQt5 import uic, QtWidgets
 
 class viewImpressora():
@@ -24,4 +26,8 @@ class viewImpressora():
         return TextoLinha
 
     def __init__(self):
-        self.tela = uic.loadUi(".\View\Telas\CD_Impressora.ui")
+        Local = getcwd()
+        Local = Local.split('Controller')
+        Local = Local[0].replace('C:','C:\\')
+        self.tela = uic.loadUi("{}View\Telas\CD_Impressora.ui".format(Local))
+        #self.tela = uic.loadUi(".\View\Telas\CD_Impressora.ui")

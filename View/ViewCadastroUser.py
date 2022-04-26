@@ -1,3 +1,5 @@
+from os import getcwd
+
 from PyQt5 import uic, QtWidgets
 
 
@@ -39,7 +41,11 @@ class viewCadastroUser():
         self.tela.CP_Ativo.setCheckState(box[1])
 
     def __init__(self):
-        self.tela = uic.loadUi(".\View\Telas\CadastroUsuario.ui")
+        Local = getcwd()
+        Local = Local.split('Controller')
+        Local = Local[0].replace('C:','C:\\')
+        self.tela = uic.loadUi("{}View\Telas\CadastroUsuario.ui".format(Local))
+        #self.tela = uic.loadUi(".\View\Telas\CadastroUsuario.ui")
 
 
 if __name__ == "__main__":

@@ -1,14 +1,19 @@
 from PyQt5 import uic, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
+from os import getcwd
 
-class viewMensagem(QMessageBox):
+class viewMensagem():
     def __init__(self):
-        self.tela = uic.loadUi(".\View\Telas\mensagem.ui")
+        Local = getcwd()
+        Local = Local.split('Controller')
+        Local = Local[0].replace('C:','C:\\')
+        self.tela = uic.loadUi("{}View\Telas\mensagem.ui".format(Local))
+        #self.tela = uic.loadUi(".\View\Telas\mensagem.ui")
 
     def MsgShow(self):
         self.tela.show()
 
-    def MenClose(self):
+    def MsgClose(self):
         self.tela.close()
 
     def MsgErroLogin(self):
@@ -31,6 +36,9 @@ class viewMensagem(QMessageBox):
 
     def MsgSelecionarLinha(self):
         self.tela.TX_Atencao.setText("Selecione uma linha da tabela de Usuários!!")
+
+    def MsgSetorJaCadastrado(self):
+        self.tela.TX_Atencao.setText("Já existe um setor com essa 'SIGLA'!!")
 
 if __name__ == "__main__":
     import sys

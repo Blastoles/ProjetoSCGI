@@ -1,3 +1,5 @@
+from os import getcwd
+
 from PyQt5 import uic, QtWidgets
 
 class viewSetor():
@@ -19,4 +21,8 @@ class viewSetor():
         return TextoLinha
 
     def __init__(self):
-        self.tela = uic.loadUi(".\View\Telas\CD_Setor.ui")
+        Local = getcwd()
+        Local = Local.split('Controller')
+        Local = Local[0].replace('C:','C:\\')
+        self.tela = uic.loadUi("{}View\Telas\CD_Setor.ui".format(Local))
+        #self.tela = uic.loadUi(".\View\Telas\CD_Setor.ui")

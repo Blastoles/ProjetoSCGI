@@ -1,45 +1,49 @@
 from PyQt5 import uic, QtWidgets
-from functools import partial
-
-from PyQt5.QtWidgets import QMessageBox
-
 from View.ViewMensagem import viewMensagem
 
-
-class SistemaMensagem(QMessageBox):
+class SistemaMensagem():
 
     def MsgErroLogin(self):
         self.msg.MsgErroLogin()
-        self.msg.MsgShow()
+        self.MsgShow()
 
     def MsgFaltaDados(self,falta):
         self.msg.MsgFaltaDados(falta)
-        self.msg.MsgShow()
+        self.MsgShow()
 
     def MsgUserAtivo(self):
         self.msg.MsgUserAtivo()
-        self.msg.MsgShow()
+        self.MsgShow()
 
     def MsgErroBancoDados(self):
         self.msg.MsgErroBando()
-        self.msg.MsgShow()
+        self.MsgShow()
 
     def MsgUserJaCadastrado(self):
         self.msg.MsgUserCadastrado()
-        self.msg.MsgShow()
+        self.MsgShow()
 
     def MsgSelecionarLinha(self):
         self.msg.MsgSelecionarLinha()
-        self.msg.MsgShow()
+        self.MsgShow()
 
     def MsgRealizadoComSucesso(self):
         self.msg.MsgRealizadoComSucesso()
-        self.msg.MsgShow()
+        self.MsgShow()
 
+    def MsgSetorJaCadastrado(self):
+        self.msg.MsgSetorJaCadastrado()
+        self.MsgShow()
+
+    def MsgClose(self):
+        self.msg.MsgClose()
+
+    def MsgShow(self):
+        self.msg.MsgShow()
 
     def __init__(self):
         self.msg = viewMensagem()
-        self.msg.tela.BT_OK.clicked.connect(partial(self.msg.MenClose))
+        self.msg.tela.BT_OK.clicked.connect(self.MsgClose)
 
 if __name__ == "__main__":
     import sys

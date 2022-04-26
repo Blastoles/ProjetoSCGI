@@ -1,3 +1,4 @@
+from os import getcwd
 from PyQt5 import uic, QtWidgets
 
 
@@ -26,7 +27,11 @@ class viewUser():
 
 
     def __init__(self):
-        self.tela = uic.loadUi(".\View\Telas\CD_Usuario.ui")
+        Local = getcwd()
+        Local = Local.split('Controller')
+        Local = Local[0].replace('C:','C:\\')
+        self.tela = uic.loadUi("{}View\Telas\CD_Usuario.ui".format(Local))
+        #self.tela = uic.loadUi(".\View\Telas\CD_Usuario.ui")
 
 
 if __name__ == "__main__":

@@ -1,3 +1,5 @@
+from os import getcwd
+
 from PyQt5 import uic, QtWidgets
 
 class viewCadastroSetor():
@@ -19,6 +21,7 @@ class viewCadastroSetor():
         return lista
 
     def ColocarDados(self,dados):
+        self.tela.CP_Sigla.setDisabled(True)
         self.tela.CP_Nome.setText(dados[0][1])
         self.tela.CP_Sigla.setText(dados[0][2])
         self.tela.CP_Responsavel.setText(dados[0][3])
@@ -28,4 +31,8 @@ class viewCadastroSetor():
         self.tela.close()
 
     def __init__(self):
-        self.tela = uic.loadUi(".\View\Telas\CadastroSetor.ui")
+        Local = getcwd()
+        Local = Local.split('Controller')
+        Local = Local[0].replace('C:','C:\\')
+        self.tela = uic.loadUi("{}View\Telas\CadastroSetor.ui".format(Local))
+        #self.tela = uic.loadUi(".\View\Telas\CadastroSetor.ui")

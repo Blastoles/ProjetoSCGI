@@ -1,11 +1,13 @@
 import sqlite3
+from os import getcwd
+
 from Controller.ControllerMensagem import SistemaMensagem
 
 
 class DAOCadastraruser():
 
     def InserirDados(self,dados,linhadb):
-        banco = sqlite3.connect('db_contator.db')
+        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
         try:
             cursor.execute("INSERT INTO USUARIO "
@@ -21,7 +23,7 @@ class DAOCadastraruser():
         banco.close()
 
     def CheckUser(self,user):
-        banco = sqlite3.connect('db_contator.db')
+        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT USUARIO FROM USUARIO WHERE USUARIO = '{}'".format(user))
@@ -32,7 +34,7 @@ class DAOCadastraruser():
         return checkuser
 
     def ContLista(self):
-        banco = sqlite3.connect('db_contator.db')
+        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT ID_USUARIO USUARIO FROM USUARIO")
@@ -44,10 +46,13 @@ class DAOCadastraruser():
         return NumLista
 
     def UpdateDados(self,Dados):
-        banco = sqlite3.connect('db_contator.db')
+        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
         try:
-            cursor.execute("UPDATE USUARIO SET NOME = '{}', EMAIL = '{}', TELEFONE = '{}', ADMINISTRADOR = '{}', ATIVO = '{}', SENHA = '{}' WHERE USUARIO = '{}'".format(Dados[0],Dados[1],Dados[2],Dados[5],Dados[6],Dados[4],Dados[3]))
+            cursor.execute("UPDATE USUARIO SET "
+                           "NOME = '{}', EMAIL = '{}', TELEFONE = '{}', ADMINISTRADOR = '{}', ATIVO = '{}', SENHA = '{}' "
+                           "WHERE "
+                           "USUARIO = '{}'".format(Dados[0],Dados[1],Dados[2],Dados[5],Dados[6],Dados[4],Dados[3]))
             banco.commit()
             self.msg.MsgRealizadoComSucesso()
         except:
@@ -55,4 +60,7 @@ class DAOCadastraruser():
         banco.close()
 
     def __init__(self):
+        Local = getcwd()
+        Local = Local.split('Controller')
+        self.Local = Local[0].replace('C:','C:\\')
         self.msg = SistemaMensagem()

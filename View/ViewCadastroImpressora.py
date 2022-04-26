@@ -1,3 +1,5 @@
+from os import getcwd
+
 from PyQt5 import uic,QtWidgets
 
 class viewCadastroImpressora():
@@ -71,7 +73,11 @@ class viewCadastroImpressora():
             self.tela.TX_MAzul.hide()
 
     def __init__(self):
-        self.tela = uic.loadUi(".\View\Telas\CadastroImpressora.ui")
+        Local = getcwd()
+        Local = Local.split('Controller')
+        Local = Local[0].replace('C:','C:\\')
+        self.tela = uic.loadUi("{}View\Telas\CadastroImpressora.ui".format(Local))
+        #self.tela = uic.loadUi(".\View\Telas\CadastroImpressora.ui")
         self.tela.CP_Rede.clicked.connect(self.PossuiRede)
         self.tela.CP_Wifi.clicked.connect(self.PossuiRede)
         self.tela.CP_Preto.clicked.connect(self.MonoCromatico)

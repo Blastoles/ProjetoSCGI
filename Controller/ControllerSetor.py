@@ -3,6 +3,7 @@ from Controller.ControllerCadastroSetor import SistemaCSetor
 from DAO.DAOSetor import DAOsetor
 from Model.ModelSetor import ModelSetor
 from Controller.ControllerMensagem import SistemaMensagem
+from Controller.ControllerConfirmacao import SistemaConfirmacao
 
 class SistemaSetor():
 
@@ -36,9 +37,11 @@ class SistemaSetor():
     def ExcluirSetor(self):
         linhaSelect = self.viewSetor.LinhaSelect()
         if linhaSelect != -1:
-            TextoLinha = self.viewSetor.TextoSelectLinha(linhaSelect)
-            self.banco.ExcluirSetor(TextoLinha)
-            self.Tabela()
+            opcao = self.conf.Show()
+            if opcao == 1:
+                TextoLinha = self.viewSetor.TextoSelectLinha(linhaSelect)
+                self.banco.ExcluirSetor(TextoLinha)
+                self.Tabela()
         else:
             self.msg.MsgSelecionarLinha()
 
@@ -48,6 +51,7 @@ class SistemaSetor():
         self.model = ModelSetor()
         self.banco = DAOsetor()
         self.msg = SistemaMensagem()
+        self.conf = SistemaConfirmacao()
         self.viewSetor.tela.BT_Voltar.clicked.connect(self.Close)
         self.viewSetor.tela.BT_Pesquisar.clicked.connect(self.PesquisarCadastro)
         self.viewSetor.tela.BT_Criar.clicked.connect(self.Criar)

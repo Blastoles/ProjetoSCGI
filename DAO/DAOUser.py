@@ -1,10 +1,12 @@
 import sqlite3
+from os import getcwd
+
 from Controller.ControllerMensagem import SistemaMensagem
 
 class DAOuser():
 
     def TodaLista(self):
-        banco = sqlite3.connect('db_contator.db')
+        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT "
@@ -22,7 +24,7 @@ class DAOuser():
         return lista
 
     def Pesquisa(self,texto):
-        banco = sqlite3.connect('db_contator.db')
+        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT "
@@ -49,7 +51,7 @@ class DAOuser():
         return lista
 
     def LocalizarUser(self,TextoLista):
-        banco = sqlite3.connect('db_contator.db')
+        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT * FROM USUARIO WHERE USUARIO = '{}'".format(TextoLista))
@@ -60,7 +62,7 @@ class DAOuser():
         return User
 
     def ExcluirUser(self,User):
-        banco = sqlite3.connect('db_contator.db')
+        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
         try:
             cursor.execute("DELETE FROM USUARIO WHERE USUARIO = '{}'".format(User))
@@ -70,4 +72,7 @@ class DAOuser():
         banco.close()
 
     def __init__(self):
+        Local = getcwd()
+        Local = Local.split('Controller')
+        self.Local = Local[0].replace('C:','C:\\')
         self.msg = SistemaMensagem()
