@@ -18,11 +18,17 @@ class SistemaImpressora():
         print('PesquisarImpressora')
 
     def Criar(self):
-        self.cdimpressora.Show()
-        print('Criar')
+        self.cdimpressora.Show('Incluir',self)
 
     def AlterarImpressora(self):
-        print('AlterarImpressora')
+        linhaSelect = self.impressora.LinhaSelect()
+        if linhaSelect != -1:
+            TextoLinha = self.impressora.TextoSelectLinha(linhaSelect)
+            DadosUser = self.banco.LocalizarUser(TextoLinha)
+            self.cdimpressora.Show('Alterar', self)
+            self.cdimpressora.MostrarDados(DadosUser)
+        else:
+            self.msg.MsgSelecionarLinha()
 
     def ExcluirImpressora(self):
         print('ExcluirImpressora')

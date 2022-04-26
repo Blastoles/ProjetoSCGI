@@ -24,21 +24,11 @@ class DAOsetor():
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT "
-                               "NOME_SETOR,"
-                               "PRIORIDADE,"
-                               "RESPONSAVEL_LOCAL,"
-                               "IMPRESSORA_NUM_DE_SERIE,"
+                           "NOME_SETOR,SIGLA,PRIORIDADE,RESPONSAVEL_LOCAL "
                            "FROM "
-                               "SETOR "
+                           "SETOR "
                            "WHERE "
-                               "NOME LIKE '%{}%' "
-                           "OR "
-                               "PRIORIDADE LIKE '%{}%' "
-                           "OR "
-                               "RESPONSAVEL_LOCAL LIKE '%{}%' "
-                           "OR "
-                               "IMPRESSORA_NUM_DE_SERIE LIKE '%{}%'"
-                           "".format(texto,texto,texto,texto))
+                           "NOME_SETOR LIKE '%{}%' OR PRIORIDADE LIKE '%{}%' OR RESPONSAVEL_LOCAL LIKE '%{}%' OR SIGLA LIKE '%{}%'".format(texto,texto,texto,texto))
             lista = cursor.fetchall()
         except:
             self.msg.MsgErroBancoDados()

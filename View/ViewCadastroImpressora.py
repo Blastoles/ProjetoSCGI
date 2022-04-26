@@ -1,5 +1,4 @@
 from os import getcwd
-
 from PyQt5 import uic,QtWidgets
 
 class viewCadastroImpressora():
@@ -9,6 +8,27 @@ class viewCadastroImpressora():
 
     def Close(self):
         self.tela.close()
+
+    def LimparDados(self):
+        self.tela.CP_Num_Serie.setText('')
+        self.tela.CP_MAC.setText('')
+        self.tela.CP_ModeloImpre.setText('')
+        self.tela.CP_Fabricante.setText('')
+        self.tela.CP_Nome.setText('')
+        self.tela.Data.setText('')
+        self.tela.CP_Setor.setCheckState(0)
+        self.tela.CP_Ativo.setCheckState(-1)
+        self.tela.CP_Terceiros.setCheckState(0)
+        self.tela.CP_USB.setCheckState(0)
+        self.tela.CP_Rede.setCheckState(0)
+        self.tela.CP_Wifi.setCheckState(0)
+        self.tela.CP_IP.setText('')
+        self.tela.CP_Preto.setCheckState(0)
+        self.tela.CP_MPreto.setText('')
+        self.tela.CP_Color.setCheckState(0)
+        self.tela.CP_MMagenta.setText('')
+        self.tela.CP_MAmarelo.setText('')
+        self.tela.CP_MAzul.setText('')
 
     def ColetaDados(self):
         lista = []
@@ -30,7 +50,10 @@ class viewCadastroImpressora():
         lista.append(self.tela.CP_MMagenta.text())
         lista.append(self.tela.CP_MAmarelo.text())
         lista.append(self.tela.CP_MAzul.text())
-        print(lista)
+        return lista
+
+    def ColocarDados(self,TextoLinha,box):
+        self.tela.CP_Usuario.setDisabled(True)
 
     def PossuiRede(self):
         marcadoRede = self.tela.CP_Rede.isChecked()

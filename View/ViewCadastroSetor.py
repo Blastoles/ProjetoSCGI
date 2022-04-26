@@ -1,6 +1,5 @@
 from os import getcwd
-
-from PyQt5 import uic, QtWidgets
+from PyQt5 import uic
 
 class viewCadastroSetor():
     def Show(self):
@@ -11,6 +10,7 @@ class viewCadastroSetor():
         self.tela.CP_Responsavel.setText('')
         self.tela.CP_Sigla.setText('')
         self.tela.CP_Prioridade.setCurrentIndex(0)
+        self.tela.CP_Sigla.setDisabled(False)
 
     def ColetarDados(self):
         lista = []
@@ -35,4 +35,3 @@ class viewCadastroSetor():
         Local = Local.split('Controller')
         Local = Local[0].replace('C:','C:\\')
         self.tela = uic.loadUi("{}View\Telas\CadastroSetor.ui".format(Local))
-        #self.tela = uic.loadUi(".\View\Telas\CadastroSetor.ui")

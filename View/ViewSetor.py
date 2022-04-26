@@ -16,6 +16,11 @@ class viewSetor():
         linha = self.tela.TB_Setor.currentRow()
         return linha
 
+    def Dados(self):
+        texto = str(self.tela.BR_Pesquisa.text())
+        self.tela.BR_Pesquisa.setText("")
+        return texto
+
     def TextoSelectLinha(self,linhaSelect):
         TextoLinha = self.tela.TB_Setor.item(linhaSelect,1).text()
         return TextoLinha

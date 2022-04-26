@@ -15,7 +15,9 @@ class SistemaSetor():
         self.viewSetor.Close()
 
     def PesquisarCadastro(self):
-        print()
+        texto = self.viewSetor.Dados()
+        lista = self.banco.Pesquisa(texto)
+        self.model.Tabela(self.viewSetor,lista)
 
     def Criar(self):
         self.CSetor.Show('Criar',self)
@@ -37,13 +39,14 @@ class SistemaSetor():
     def ExcluirSetor(self):
         linhaSelect = self.viewSetor.LinhaSelect()
         if linhaSelect != -1:
-            opcao = self.conf.Show()
-            if opcao == 1:
-                TextoLinha = self.viewSetor.TextoSelectLinha(linhaSelect)
-                self.banco.ExcluirSetor(TextoLinha)
-                self.Tabela()
+            self.conf.Show(self,linhaSelect)
         else:
             self.msg.MsgSelecionarLinha()
+
+    def ExcluirConfirmado(self,linhaSelect):
+        TextoLinha = self.viewSetor.TextoSelectLinha(linhaSelect)
+        self.banco.ExcluirSetor(TextoLinha)
+        self.Tabela()
 
     def __init__(self):
         self.viewSetor = viewSetor()

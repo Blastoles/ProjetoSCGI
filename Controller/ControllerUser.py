@@ -1,4 +1,5 @@
 from PyQt5 import uic, QtWidgets
+from Controller.ControllerConfirmacao import SistemaConfirmacao
 from View.ViewUser import viewUser
 from DAO.DAOUser import DAOuser
 from Model.ModelUser import Modeluser
@@ -39,11 +40,14 @@ class SistemaUser():
     def ExcluirUser(self):
         linhaSelect = self.user.LinhaSelect()
         if linhaSelect != -1:
-            TextoLinha = self.user.TextoSelectLinha(linhaSelect)
-            self.banco.ExcluirUser(TextoLinha)
-            self.Tabela()
+            self.conf.Show(self, linhaSelect)
         else:
             self.msg.MsgSelecionarLinha()
+
+    def ExcluirConfirmado(self,LinhaSelect):
+        TextoLinha = self.user.TextoSelectLinha(LinhaSelect)
+        self.banco.ExcluirUser(TextoLinha)
+        self.Tabela()
 
     def __init__(self):
         self.user = viewUser()
@@ -51,6 +55,7 @@ class SistemaUser():
         self.model = Modeluser()
         self.cduser = SistemaCadastroUser()
         self.msg = SistemaMensagem()
+        self.conf = SistemaConfirmacao()
         self.user.tela.BT_Voltar.clicked.connect(self.Close)
         self.user.tela.BT_Pesquisar.clicked.connect(self.PesquisarCadastro)
         self.user.tela.BT_Criar.clicked.connect(self.Criar)

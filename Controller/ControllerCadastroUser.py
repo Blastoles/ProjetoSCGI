@@ -34,6 +34,7 @@ class SistemaCadastroUser():
             if  userbanco == []:
                 linhadb = self.banco.ContLista() + 1
                 self.banco.InserirDados(ddColetado,linhadb)
+                self.cduser.Close()
                 self.user.Tabela()
             else:
                 self.msg.MsgUserJaCadastrado()
@@ -71,6 +72,7 @@ class SistemaCadastroUser():
         else:
             ddColetado[6] = 0
         self.banco.UpdateDados(ddColetado)
+        self.cduser.Close()
         self.user.Tabela()
 
 

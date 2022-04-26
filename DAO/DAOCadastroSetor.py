@@ -33,7 +33,7 @@ class DAOCadastrarSetor():
         return checkuser
 
     def ContLista(self):
-        banco = sqlite3.connect('db_contator.db')
+        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT ID_SETOR FROM SETOR")

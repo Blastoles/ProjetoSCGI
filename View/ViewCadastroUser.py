@@ -1,5 +1,4 @@
 from os import getcwd
-
 from PyQt5 import uic, QtWidgets
 
 
@@ -18,6 +17,7 @@ class viewCadastroUser():
         self.tela.CP_Senha.setText("")
         self.tela.CP_Administrador.setCheckState(0)
         self.tela.CP_Ativo.setCheckState(-1)
+        self.tela.CP_Usuario.setDisabled(False)
 
     def ColetaDados(self):
         lista = []
@@ -45,16 +45,3 @@ class viewCadastroUser():
         Local = Local.split('Controller')
         Local = Local[0].replace('C:','C:\\')
         self.tela = uic.loadUi("{}View\Telas\CadastroUsuario.ui".format(Local))
-        #self.tela = uic.loadUi(".\View\Telas\CadastroUsuario.ui")
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-
-    # Atribuindo o objeto
-    CadastroUser = viewCadastroUser()
-
-    # Show das telas
-    CadastroUser.tela.show()
-    sys.exit(app.exec())
