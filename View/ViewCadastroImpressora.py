@@ -1,9 +1,11 @@
 from os import getcwd
-from PyQt5 import uic,QtWidgets
+from PyQt5 import uic
 
 class viewCadastroImpressora():
 
-    def Show(self):
+    def Show(self,setor):
+        for i in setor:
+            self.tela.CP_Setor.addItems(i)
         self.tela.show()
 
     def Close(self):
@@ -15,8 +17,8 @@ class viewCadastroImpressora():
         self.tela.CP_ModeloImpre.setText('')
         self.tela.CP_Fabricante.setText('')
         self.tela.CP_Nome.setText('')
-        self.tela.Data.setText('')
-        self.tela.CP_Setor.setCheckState(0)
+        self.tela.CP_Data.setText('')
+        self.tela.CP_Setor.setCurrentIndex(0)
         self.tela.CP_Ativo.setCheckState(-1)
         self.tela.CP_Terceiros.setCheckState(0)
         self.tela.CP_USB.setCheckState(0)
@@ -43,13 +45,24 @@ class viewCadastroImpressora():
         lista.append(self.tela.CP_USB.isChecked())
         lista.append(self.tela.CP_Rede.isChecked())
         lista.append(self.tela.CP_Wifi.isChecked())
-        lista.append(self.tela.CP_IP.text())
+        if ((lista[9] == True) or (lista[10] == True)):
+            lista.append(self.tela.CP_IP.text())
+        else:
+            lista.append('')
         lista.append(self.tela.CP_Preto.isChecked())
-        lista.append(self.tela.CP_MPreto.text())
+        if lista[12] == True:
+            lista.append(self.tela.CP_MPreto.text())
+        else:
+            lista.append('')
         lista.append(self.tela.CP_Color.isChecked())
-        lista.append(self.tela.CP_MMagenta.text())
-        lista.append(self.tela.CP_MAmarelo.text())
-        lista.append(self.tela.CP_MAzul.text())
+        if lista[14] == True:
+            lista.append(self.tela.CP_MMagenta.text())
+            lista.append(self.tela.CP_MAmarelo.text())
+            lista.append(self.tela.CP_MAzul.text())
+        else:
+            lista.append('')
+            lista.append('')
+            lista.append('')
         return lista
 
     def ColocarDados(self,TextoLinha,box):

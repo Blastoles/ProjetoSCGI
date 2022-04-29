@@ -26,6 +26,3 @@ class modelCadastroSetor():
         else:
             retorno = -1
         return retorno
-
-    def __init__(self):
-        print()

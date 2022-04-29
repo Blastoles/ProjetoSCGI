@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>708</width>
-    <height>551</height>
+    <height>549</height>
    </rect>
   </property>
   <property name="contextMenuPolicy">
@@ -98,7 +98,7 @@
              <x>0</x>
              <y>0</y>
              <width>649</width>
-             <height>532</height>
+             <height>526</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout">
@@ -323,6 +323,11 @@
                    <family>Arial</family>
                   </font>
                  </property>
+                 <item>
+                  <property name="text">
+                   <string>Nenhum</string>
+                  </property>
+                 </item>
                 </widget>
                </item>
               </layout>
@@ -580,6 +585,30 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>CP_Num_Serie</tabstop>
+  <tabstop>CP_MAC</tabstop>
+  <tabstop>CP_ModeloImpre</tabstop>
+  <tabstop>CP_Fabricante</tabstop>
+  <tabstop>CP_Nome</tabstop>
+  <tabstop>CP_Data</tabstop>
+  <tabstop>CP_Setor</tabstop>
+  <tabstop>CP_Ativo</tabstop>
+  <tabstop>CP_Terceiros</tabstop>
+  <tabstop>CP_USB</tabstop>
+  <tabstop>CP_Rede</tabstop>
+  <tabstop>CP_Wifi</tabstop>
+  <tabstop>CP_IP</tabstop>
+  <tabstop>CP_Preto</tabstop>
+  <tabstop>CP_MPreto</tabstop>
+  <tabstop>CP_Color</tabstop>
+  <tabstop>CP_MMagenta</tabstop>
+  <tabstop>CP_MAmarelo</tabstop>
+  <tabstop>CP_MAzul</tabstop>
+  <tabstop>BT_Salvar</tabstop>
+  <tabstop>BT_Cancelar</tabstop>
+  <tabstop>scrollArea</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
