@@ -1,6 +1,7 @@
 from View.ViewCadastroImpressora import viewCadastroImpressora
 from DAO.DAOCadastroImpressora import DAOCadastrarimpressora
 from Model.ModelCadastroImpressora import ModelCadastroImpressora
+from Controller.ControllerMensagem import SistemaMensagem
 
 class SistemaCadastroImpressora():
 
@@ -16,7 +17,17 @@ class SistemaCadastroImpressora():
 
     def InsertDados(self):
         lista = self.viewcdImp.ColetaDados()
-        print(lista)
+        lista = self.model.TratarInsert(lista)
+        if ((lista[0] != '') and (lista[2] != '')):
+            linhadb = self.banco.ContLista()
+            self.banco.InserirDados(lista,linhadb)
+        else:
+            falta = ['','','']
+            if lista[0] == '':
+                falta[0] = 'Número de Série\n'
+            if lista[2] == '':
+                falta[1] = 'Modelo da Impressora\n'
+            self.msg.MsgFaltaDados(falta)
 
     def AlterarDados(self):
         print()
@@ -36,5 +47,6 @@ class SistemaCadastroImpressora():
         self.imp = ''
         self.banco = DAOCadastrarimpressora()
         self.model = ModelCadastroImpressora()
+        self.msg = SistemaMensagem()
         self.viewcdImp.tela.BT_Cancelar.clicked.connect(self.Close)
         self.viewcdImp.tela.BT_Salvar.clicked.connect(self.Opcao)

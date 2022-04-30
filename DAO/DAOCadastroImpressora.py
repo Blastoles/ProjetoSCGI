@@ -8,13 +8,15 @@ class DAOCadastrarimpressora():
     def InserirDados(self,dados,linhadb):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
-        print(dados[0],linhadb)
+        print(dados,linhadb)
         try:
-            cursor.execute("INSERT INTO SETOR"
-                           "(ID_SETOR,NOME_SETOR,SIGLA,RESPONSAVEL_LOCAL,PRIORIDADE)"
+            cursor.execute("INSERT INTO IMPRESSORA"
+                           "(ID_IMPRESSORA,NUM_DE_SERIE,MAC,MODELO,FABRICANTE,NOME_AMIGAVEL,ANO_AQUISICAO,SETOR,ATIVO,"
+                           "ALUGADA,USB,REDE,WIFI,END.IP,MONOCROMATIVO,MODELO_TPRETO,CROMATICO,MODELO_TMARGENTA,MODELO_TAMARELO,MODELO_TAZUL)"
                            "VALUES"
-                           "({},'{}','{}','{}',{})".format((linhadb+1),dados[0],dados[1],dados[2],dados[3]))
-            #ID,Nome_Setor,Sigla,Responsavel_Local,Prioridade
+                           "({},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{})"
+                           "".format((linhadb+1),dados[0],dados[1],dados[2],dados[3],dados[4],dados[5],dados[6],dados[7],dados[8],dados[9],dados[10],dados[11],dados[12],dados[13],dados[14],dados[15],dados[16],dados[17]))
+            #ID_IMPRESSORA,NUM_DE_SERIE,MAC,MODELO,FABRICANTE,NOME_AMIGAVEL,ANO_AQUISICAO,SETOR,ATIVO,ALUGADA,USB,REDE,WIFI,END.IP,MONOCROMATIVO,MODELO_TPRETO,CROMATICO,MODELO_TMARGENTA,MODELO_TAMARELO,MODELO_TAZUL
             banco.commit()
             self.msg.MsgRealizadoComSucesso()
         except:
@@ -47,7 +49,7 @@ class DAOCadastrarimpressora():
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
         try:
-            cursor.execute("SELECT ID_SETOR FROM SETOR")
+            cursor.execute("SELECT ID_IMPRESSORA FROM IMPRESSORA")
             ContLista = cursor.fetchall()
             NumLista = len(ContLista)
         except:
