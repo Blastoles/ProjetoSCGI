@@ -5,7 +5,7 @@ class viewCadastroImpressora():
 
     def Show(self,setor):
         for i in setor:
-            self.tela.CP_Setor.addItems(i)
+            self.tela.CP_Setor.addItem(i[0]+' -- '+i[1])
         self.tela.show()
 
     def Close(self):
@@ -36,30 +36,33 @@ class viewCadastroImpressora():
         lista = []
         lista.append(self.tela.CP_Num_Serie.text().upper())
         lista.append(self.tela.CP_MAC.text())
-        lista.append(self.tela.CP_ModeloImpre.text())
-        lista.append(self.tela.CP_Fabricante.text())
-        lista.append(self.tela.CP_Nome.text())
+        lista.append(self.tela.CP_ModeloImpre.text().upper())
+        lista.append(self.tela.CP_Fabricante.text().upper())
+        lista.append(self.tela.CP_Nome.text().upper())
         lista.append(self.tela.CP_Data.text())
-        lista.append(self.tela.CP_Setor.currentText())
+        sep = self.tela.CP_Setor.currentText()
+        sep = sep.split(' -- ')
+        lista.append(sep[0])
+        lista.append(sep[1])
         lista.append(self.tela.CP_Ativo.isChecked())
         lista.append(self.tela.CP_Terceiros.isChecked())
         lista.append(self.tela.CP_USB.isChecked())
         lista.append(self.tela.CP_Rede.isChecked())
         lista.append(self.tela.CP_Wifi.isChecked())
-        if ((lista[9] == True) or (lista[10] == True)):
+        if ((lista[11] == True) or (lista[12] == True)):
             lista.append(self.tela.CP_IP.text())
         else:
             lista.append('')
         lista.append(self.tela.CP_Preto.isChecked())
-        if lista[12] == True:
-            lista.append(self.tela.CP_MPreto.text())
+        if lista[14] == True:
+            lista.append(self.tela.CP_MPreto.text().upper())
         else:
             lista.append('')
         lista.append(self.tela.CP_Color.isChecked())
-        if lista[14] == True:
-            lista.append(self.tela.CP_MMagenta.text())
-            lista.append(self.tela.CP_MAmarelo.text())
-            lista.append(self.tela.CP_MAzul.text())
+        if lista[16] == True:
+            lista.append(self.tela.CP_MMagenta.text().upper())
+            lista.append(self.tela.CP_MAmarelo.text().upper())
+            lista.append(self.tela.CP_MAzul.text().upper())
         else:
             lista.append('')
             lista.append('')
