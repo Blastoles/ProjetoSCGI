@@ -40,6 +40,7 @@ class viewCadastroImpressora():
         lista.append(self.tela.CP_Fabricante.text())
         lista.append(self.tela.CP_Nome.text())
         lista.append(self.tela.CP_Data.text())
+        lista.append(self.tela.CP_Setor.currentText())
         lista.append(self.tela.CP_Ativo.isChecked())
         lista.append(self.tela.CP_Terceiros.isChecked())
         lista.append(self.tela.CP_USB.isChecked())

@@ -10,12 +10,11 @@ class DAOCadastrarimpressora():
         cursor = banco.cursor()
         print(dados,linhadb)
         try:
-            cursor.execute("INSERT INTO IMPRESSORA"
-                           "(ID_IMPRESSORA,NUM_DE_SERIE,MAC,MODELO,FABRICANTE,NOME_AMIGAVEL,ANO_AQUISICAO,SETOR,ATIVO,"
-                           "ALUGADA,USB,REDE,WIFI,END.IP,MONOCROMATIVO,MODELO_TPRETO,CROMATICO,MODELO_TMARGENTA,MODELO_TAMARELO,MODELO_TAZUL)"
-                           "VALUES"
-                           "({},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{})"
-                           "".format((linhadb+1),dados[0],dados[1],dados[2],dados[3],dados[4],dados[5],dados[6],dados[7],dados[8],dados[9],dados[10],dados[11],dados[12],dados[13],dados[14],dados[15],dados[16],dados[17]))
+            cursor.execute("INSERT INTO IMPRESSORA("
+                           "ID_IMPRESSORA,NUM_DE_SERIE,MAC,MODELO,FABRICANTE,NOME_AMIGAVEL,ANO_AQUISICAO,SETOR,ATIVO,ALUGADA,USB,REDE,WIFI,END_IP,MONOCROMATICO,MODELO_TPRETO,CROMATICO,MODELO_TMARGENTA,MODELO_TAMARELO,MODELO_TAZUL)"
+                           "VALUES("
+                           "{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}"
+                           ")".format((linhadb+1),dados[0],dados[1],dados[2],dados[3],dados[4],dados[5],dados[6],dados[7],dados[8],dados[9],dados[10],dados[11],dados[12],dados[13],dados[14],dados[15],dados[16],dados[17],dados[18]))
             #ID_IMPRESSORA,NUM_DE_SERIE,MAC,MODELO,FABRICANTE,NOME_AMIGAVEL,ANO_AQUISICAO,SETOR,ATIVO,ALUGADA,USB,REDE,WIFI,END.IP,MONOCROMATIVO,MODELO_TPRETO,CROMATICO,MODELO_TMARGENTA,MODELO_TAMARELO,MODELO_TAZUL
             banco.commit()
             self.msg.MsgRealizadoComSucesso()
