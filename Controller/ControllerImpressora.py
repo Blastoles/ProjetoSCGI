@@ -1,5 +1,6 @@
 from PyQt5 import uic, QtWidgets
 
+from Controller.ControllerConfirmacao import SistemaConfirmacao
 from Model.ModelImpressora import ModelImpressora
 from View.ViewImpressora import viewImpressora
 from DAO.DAOImpressora import DAOimpressora
@@ -19,7 +20,9 @@ class SistemaImpressora():
         self.model.Tabela(self.impressora,lista)
 
     def PesquisarImpressora(self):
-        print('PesquisarImpressora')
+        texto = self.impressora.Dados()
+        lista = self.banco.Pesquisa(texto)
+        self.model.Tabela(self.impressora, lista)
 
     def Criar(self):
         self.cdimpressora.Show('Incluir',self)
@@ -35,14 +38,16 @@ class SistemaImpressora():
             self.msg.MsgSelecionarLinha()
 
     def ExcluirImpressora(self):
-        print('ExcluirImpressora')
         linhaSelect = self.impressora.LinhaSelect()
         if linhaSelect != -1:
-            TextoLinha = self.impressora.TextoSelectLinha(linhaSelect)
-            self.banco.ExcluirUser(TextoLinha)
-            self.Tabela()
+            self.conf.Show(self, linhaSelect)
         else:
             self.msg.MsgSelecionarLinha()
+
+    def ExcluirConfirmado(self,linhaSelect):
+        TextoLinha = self.impressora.TextoSelectLinha(linhaSelect)
+        self.banco.ExcluirImpr(TextoLinha)
+        self.Tabela()
 
 
     def __init__(self):
@@ -51,6 +56,7 @@ class SistemaImpressora():
         self.banco = DAOimpressora()
         self.cdimpressora = SistemaCadastroImpressora()
         self.model = ModelImpressora()
+        self.conf = SistemaConfirmacao()
         #Definição dos botões
         self.impressora.tela.BT_Voltar.clicked.connect(self.Close)
         self.impressora.tela.BT_Pesquisar.clicked.connect(self.PesquisarImpressora)

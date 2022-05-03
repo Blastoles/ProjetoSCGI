@@ -6,6 +6,18 @@ class ModelCadastroImpressora():
             lista.append(i)
         return lista
 
+    def TratarConvert(self,dados):
+        n = 0
+        Dados = []
+        for i in dados:
+            if i == 1:
+                Dados.append(-1)
+                n += 1
+            else:
+                Dados.append(i)
+                n += 1
+        return Dados
+
     def TratarInsert(self,dados):
         n = 0
         for i in dados:

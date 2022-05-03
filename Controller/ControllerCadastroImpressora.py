@@ -41,19 +41,8 @@ class SistemaCadastroImpressora():
         self.imp.Tabela()
 
     def MostrarDados(self,TextoLinha):
-        print(TextoLinha)
-        """
-        box = ['0', '0']
-        if TextoLinha[0][5] == 1:
-            box[0] = int(-1)
-        else:
-            box[0] = TextoLinha[0][5]
-        if TextoLinha[0][6] == 1:
-            box[1] = int(-1)
-        else:
-            box[1] = TextoLinha[0][6]
-        self.cduser.ColocarDados(TextoLinha, box)
-        """
+        TxLinha = self.model.TratarConvert(TextoLinha[0])
+        self.viewcdImp.ColocarDados(TxLinha)
 
     def Opcao(self):
         if self.opcao == "Incluir":

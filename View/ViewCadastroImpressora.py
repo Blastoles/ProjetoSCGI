@@ -70,8 +70,34 @@ class viewCadastroImpressora():
             lista.append('')
         return lista
 
-    def ColocarDados(self,TextoLinha,box):
+    def ColocarDados(self,TextoLinha):
         self.tela.CP_Num_Serie.setDisabled(True)
+        self.tela.CP_Num_Serie.setText(str(TextoLinha[1]))
+        self.tela.CP_MAC.setText(str(TextoLinha[2]))
+        self.tela.CP_ModeloImpre.setText(str(TextoLinha[3]))
+        self.tela.CP_Fabricante.setText(str(TextoLinha[4]))
+        self.tela.CP_Nome.setText(str(TextoLinha[5]))
+        self.tela.CP_Data.setText(str(TextoLinha[6]))
+        n = self.tela.CP_Setor.count()
+        for i in range(n):
+            if self.tela.CP_Setor.itemText(i) == (TextoLinha[7] + ' -- ' + TextoLinha[8]):
+                self.tela.CP_Setor.setCurrentIndex(i)
+                break
+        self.tela.CP_Ativo.setCheckState(TextoLinha[9])
+        self.tela.CP_Terceiros.setCheckState(TextoLinha[10])
+        self.tela.CP_USB.setCheckState(TextoLinha[11])
+        self.tela.CP_Rede.setCheckState(TextoLinha[12])
+        self.tela.CP_Wifi.setCheckState(TextoLinha[13])
+        self.PossuiRede()
+        self.tela.CP_IP.setText(str(TextoLinha[14]))
+        self.tela.CP_Preto.setCheckState(TextoLinha[15])
+        self.MonoCromatico()
+        self.tela.CP_MPreto.setText(str(TextoLinha[16]))
+        self.tela.CP_Color.setCheckState(TextoLinha[17])
+        self.Cromatico()
+        self.tela.CP_MMagenta.setText(str(TextoLinha[18]))
+        self.tela.CP_MAmarelo.setText(str(TextoLinha[19]))
+        self.tela.CP_MAzul.setText(str(TextoLinha[20]))
 
     def PossuiRede(self):
         marcadoRede = self.tela.CP_Rede.isChecked()
@@ -97,19 +123,15 @@ class viewCadastroImpressora():
         if marcadoColor == True:
             self.tela.CP_MMagenta.show()
             self.tela.TX_MMagenta.show()
-
             self.tela.CP_MAmarelo.show()
             self.tela.TX_MAmarelo.show()
-
             self.tela.CP_MAzul.show()
             self.tela.TX_MAzul.show()
         else:
             self.tela.CP_MMagenta.hide()
             self.tela.TX_MMagenta.hide()
-
             self.tela.CP_MAmarelo.hide()
             self.tela.TX_MAmarelo.hide()
-
             self.tela.CP_MAzul.hide()
             self.tela.TX_MAzul.hide()
 
