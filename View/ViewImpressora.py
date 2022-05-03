@@ -22,7 +22,7 @@ class viewImpressora():
         self.tela.TB_Impressora.setItem(i, j, QtWidgets.QTableWidgetItem(texto))
 
     def TextoSelectLinha(self,linhaSelect):
-        TextoLinha = self.tela.TB_Impressora.item(linhaSelect,1).text()
+        TextoLinha = self.tela.TB_Impressora.item(linhaSelect,0).text()
         return TextoLinha
 
     def __init__(self):

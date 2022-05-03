@@ -29,16 +29,16 @@ class DAOCadastrarimpressora():
         banco.close()
         return setor
 
-    def CheckUser(self,user):
+    def CheckImp(self,imp):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
         try:
-            cursor.execute("SELECT SIGLA FROM SETOR WHERE SIGLA = '{}'".format(user))
-            checkuser = cursor.fetchall()
+            cursor.execute("SELECT NUM_DE_SERIE FROM IMPRESSORA WHERE NUM_DE_SERIE = '{}'".format(imp))
+            checkImp = cursor.fetchall()
         except:
             self.msg.MsgErroBancoDados()
         banco.close()
-        return checkuser
+        return checkImp
 
     def ContLista(self):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
@@ -56,11 +56,30 @@ class DAOCadastrarimpressora():
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
         try:
-            cursor.execute("UPDATE "
-                           "SETOR SET "
-                           "NOME_SETOR = '{}', RESPONSAVEL_LOCAL = '{}', PRIORIDADE = '{}' "
+            cursor.execute("UPDATE IMPRESSORA SET "
+                           "MAC = '{}', "
+                           "MODELO = '{}', "
+                           "FABRICANTE = '{}', "
+                           "NOME_AMIGAVEL = '{}', "
+                           "ANO_AQUISICAO = '{}', "
+                           "SETOR_NOME = '{}', "
+                           "SETOR_SIGLA = '{}', "
+                           "ATIVO = {}, "
+                           "ALUGADA = {}, "
+                           "USB = {}, "
+                           "REDE = {}, "
+                           "WIFI = {}, "
+                           "END_IP = '{}', "
+                           "MONOCROMATIVO = {}, "
+                           "MODELO_TPRETO = '{}', "
+                           "CROMATICO = {}, "
+                           "MODELO_TMARGENTA = '{}', "
+                           "MODELO_TAMARELO = '{}', "
+                           "MODELO_TAZUL = '{}', "
                            "WHERE "
-                           "SIGLA = '{}'".format(Dados[0],Dados[2],Dados[3],Dados[1]))
+                           "NUM_DE_SERIE = '{}'"
+                           "".format(Dados[1],Dados[2],Dados[3],Dados[4],Dados[5],Dados[6],Dados[7],Dados[8],Dados[9],Dados[10],Dados[11],Dados[12],Dados[13],Dados[14],Dados[15],Dados[16],Dados[17],Dados[18],Dados[19],Dados[0],))
+            #ID_IMPRESSORA, NUM_DE_SERIE, MAC, MODELO, FABRICANTE, NOME_AMIGAVEL, ANO_AQUISICAO, SETOR_NOME, SETOR_SIGLA, ATIVO, ALUGADA, USB, REDE, WIFI, END_IP, MONOCROMATIVO, MODELO_TPRETO, CROMATICO, MODELO_TMARGENTA, MODELO_TAMARELO, MODELO_TAZUL
             banco.commit()
             self.msg.MsgRealizadoComSucesso()
         except:

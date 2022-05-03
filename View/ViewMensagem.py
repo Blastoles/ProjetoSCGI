@@ -1,5 +1,4 @@
 from PyQt5 import uic, QtWidgets
-from PyQt5.QtWidgets import QMessageBox
 from os import getcwd
 
 class viewMensagem():
@@ -8,7 +7,6 @@ class viewMensagem():
         Local = Local.split('Controller')
         Local = Local[0].replace('C:','C:\\')
         self.tela = uic.loadUi("{}View\Telas\mensagem.ui".format(Local))
-        #self.tela = uic.loadUi(".\View\Telas\mensagem.ui")
 
     def MsgShow(self):
         self.tela.show()
@@ -39,6 +37,9 @@ class viewMensagem():
 
     def MsgSetorJaCadastrado(self):
         self.tela.TX_Atencao.setText("Já existe um setor com essa 'SIGLA'!!")
+
+    def MsgImprJaCadastrado(self):
+        self.tela.TX_Atencao.setText("Já existe uma Impressora com esse 'Número de Série'!!")
 
 if __name__ == "__main__":
     import sys

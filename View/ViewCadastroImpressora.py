@@ -12,6 +12,7 @@ class viewCadastroImpressora():
         self.tela.close()
 
     def LimparDados(self):
+        self.tela.CP_Num_Serie.setDisabled(False)
         self.tela.CP_Num_Serie.setText('')
         self.tela.CP_MAC.setText('')
         self.tela.CP_ModeloImpre.setText('')
@@ -70,7 +71,7 @@ class viewCadastroImpressora():
         return lista
 
     def ColocarDados(self,TextoLinha,box):
-        self.tela.CP_Usuario.setDisabled(True)
+        self.tela.CP_Num_Serie.setDisabled(True)
 
     def PossuiRede(self):
         marcadoRede = self.tela.CP_Rede.isChecked()
@@ -117,7 +118,6 @@ class viewCadastroImpressora():
         Local = Local.split('Controller')
         Local = Local[0].replace('C:','C:\\')
         self.tela = uic.loadUi("{}View\Telas\CadastroImpressora.ui".format(Local))
-        #self.tela = uic.loadUi(".\View\Telas\CadastroImpressora.ui")
         self.tela.CP_Rede.clicked.connect(self.PossuiRede)
         self.tela.CP_Wifi.clicked.connect(self.PossuiRede)
         self.tela.CP_Preto.clicked.connect(self.MonoCromatico)

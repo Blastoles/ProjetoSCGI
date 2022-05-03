@@ -35,11 +35,11 @@ class DAOimpressora():
         banco.close()
         return lista
 
-    def LocalizarSetor(self, TextoLista):
+    def LocalizarImp(self, TextoLista):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
         try:
-            cursor.execute("SELECT * FROM SETOR WHERE SIGLA = '{}'".format(TextoLista))
+            cursor.execute("SELECT * FROM IMPRESSORA WHERE NUM_DE_SERIE = '{}'".format(TextoLista))
             User = cursor.fetchall()
         except:
             self.msg.MsgErroBancoDados()

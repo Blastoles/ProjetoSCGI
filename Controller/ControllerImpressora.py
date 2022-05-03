@@ -28,7 +28,7 @@ class SistemaImpressora():
         linhaSelect = self.impressora.LinhaSelect()
         if linhaSelect != -1:
             TextoLinha = self.impressora.TextoSelectLinha(linhaSelect)
-            DadosUser = self.banco.LocalizarUser(TextoLinha)
+            DadosUser = self.banco.LocalizarImp(TextoLinha)
             self.cdimpressora.Show('Alterar', self)
             self.cdimpressora.MostrarDados(DadosUser)
         else:

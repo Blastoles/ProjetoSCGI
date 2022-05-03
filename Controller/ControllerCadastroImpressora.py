@@ -17,10 +17,15 @@ class SistemaCadastroImpressora():
 
     def InsertDados(self):
         lista = self.viewcdImp.ColetaDados()
-        lista = self.model.TratarInsert(lista)
         if ((lista[0] != '') and (lista[2] != '')):
-            linhadb = self.banco.ContLista()
-            self.banco.InserirDados(lista,linhadb)
+            check = self.banco.CheckImp(lista[0])
+            if check == []:
+                lista = self.model.TratarInsert(lista)
+                linhadb = self.banco.ContLista()
+                self.banco.InserirDados(lista,linhadb)
+                self.imp.Tabela()
+            else:
+                self.msg.MsgImprJaCadastrado()
         else:
             falta = ['','','']
             if lista[0] == '':
@@ -30,10 +35,25 @@ class SistemaCadastroImpressora():
             self.msg.MsgFaltaDados(falta)
 
     def AlterarDados(self):
-        print()
+        dados = self.viewcdImp.ColetaDados()
+        dados = self.model.TratarInsert(dados)
+        self.banco.UpdateDados(dados)
+        self.imp.Tabela()
 
-
-
+    def MostrarDados(self,TextoLinha):
+        print(TextoLinha)
+        """
+        box = ['0', '0']
+        if TextoLinha[0][5] == 1:
+            box[0] = int(-1)
+        else:
+            box[0] = TextoLinha[0][5]
+        if TextoLinha[0][6] == 1:
+            box[1] = int(-1)
+        else:
+            box[1] = TextoLinha[0][6]
+        self.cduser.ColocarDados(TextoLinha, box)
+        """
 
     def Opcao(self):
         if self.opcao == "Incluir":

@@ -35,6 +35,10 @@ class SistemaMensagem():
         self.msg.MsgSetorJaCadastrado()
         self.MsgShow()
 
+    def MsgImprJaCadastrado(self):
+        self.msg.MsgImprJaCadastrado()
+        self.MsgShow()
+
     def MsgClose(self):
         self.msg.MsgClose()
 
