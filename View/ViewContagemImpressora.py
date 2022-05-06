@@ -2,7 +2,7 @@ from os import getcwd
 
 from PyQt5 import uic, QtWidgets
 
-class viewSetor():
+class viewContagem():
     def Show(self):
         self.tela.show()
 
@@ -29,4 +29,4 @@ class viewSetor():
         Local = getcwd()
         Local = Local.split('Controller')
         Local = Local[0].replace('C:','C:\\')
-        self.tela = uic.loadUi("{}View\Telas\CD_Setor.ui".format(Local))
+        self.tela = uic.loadUi("{}View\Telas\CD_Contagem.ui".format(Local))
