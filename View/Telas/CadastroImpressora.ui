@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>708</width>
-    <height>549</height>
+    <height>560</height>
    </rect>
   </property>
   <property name="contextMenuPolicy">
@@ -96,7 +96,7 @@
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>0</y>
+             <y>-1</y>
              <width>649</width>
              <height>526</height>
             </rect>
@@ -598,6 +598,7 @@
   <tabstop>CP_Fabricante</tabstop>
   <tabstop>CP_Nome</tabstop>
   <tabstop>CP_Data</tabstop>
+  <tabstop>CP_Setor</tabstop>
   <tabstop>CP_Ativo</tabstop>
   <tabstop>CP_Terceiros</tabstop>
   <tabstop>CP_USB</tabstop>

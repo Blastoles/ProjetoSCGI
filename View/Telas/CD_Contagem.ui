@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Setor</class>
- <widget class="QMainWindow" name="Setor">
+ <class>Contagem</class>
+ <widget class="QMainWindow" name="Contagem">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>754</width>
-    <height>511</height>
+    <width>741</width>
+    <height>542</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Setor</string>
+   <string>Contagem</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
@@ -104,127 +104,157 @@
            <property name="frameShadow">
             <enum>QFrame::Raised</enum>
            </property>
-           <layout class="QVBoxLayout" name="verticalLayout_3">
-            <item>
-             <widget class="QTabWidget" name="tabWidget">
+           <layout class="QGridLayout" name="gridLayout_3">
+            <item row="0" column="1">
+             <widget class="QComboBox" name="comboBox">
+              <item>
+               <property name="text">
+                <string>Selecione a Impressora</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="font">
+               <font>
+                <family>Arial</family>
+                <pointsize>8</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Impressora</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" colspan="2">
+             <widget class="QTableWidget" name="TB_Setor">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="tabletTracking">
+               <bool>false</bool>
+              </property>
               <property name="focusPolicy">
-               <enum>Qt::TabFocus</enum>
+               <enum>Qt::WheelFocus</enum>
               </property>
-              <property name="tabPosition">
-               <enum>QTabWidget::North</enum>
+              <property name="layoutDirection">
+               <enum>Qt::LeftToRight</enum>
               </property>
-              <property name="currentIndex">
-               <number>0</number>
+              <property name="autoFillBackground">
+               <bool>true</bool>
               </property>
-              <widget class="QWidget" name="tab">
-               <attribute name="title">
+              <property name="frameShape">
+               <enum>QFrame::Box</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <property name="verticalScrollBarPolicy">
+               <enum>Qt::ScrollBarAlwaysOn</enum>
+              </property>
+              <property name="horizontalScrollBarPolicy">
+               <enum>Qt::ScrollBarAsNeeded</enum>
+              </property>
+              <property name="sizeAdjustPolicy">
+               <enum>QAbstractScrollArea::AdjustToContents</enum>
+              </property>
+              <property name="autoScrollMargin">
+               <number>17</number>
+              </property>
+              <property name="editTriggers">
+               <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
+              <property name="dragEnabled">
+               <bool>false</bool>
+              </property>
+              <property name="dragDropMode">
+               <enum>QAbstractItemView::NoDragDrop</enum>
+              </property>
+              <property name="alternatingRowColors">
+               <bool>true</bool>
+              </property>
+              <property name="selectionMode">
+               <enum>QAbstractItemView::SingleSelection</enum>
+              </property>
+              <property name="selectionBehavior">
+               <enum>QAbstractItemView::SelectRows</enum>
+              </property>
+              <property name="verticalScrollMode">
+               <enum>QAbstractItemView::ScrollPerItem</enum>
+              </property>
+              <property name="showGrid">
+               <bool>true</bool>
+              </property>
+              <property name="gridStyle">
+               <enum>Qt::DashLine</enum>
+              </property>
+              <attribute name="horizontalHeaderVisible">
+               <bool>true</bool>
+              </attribute>
+              <attribute name="horizontalHeaderCascadingSectionResizes">
+               <bool>false</bool>
+              </attribute>
+              <attribute name="horizontalHeaderDefaultSectionSize">
+               <number>162</number>
+              </attribute>
+              <attribute name="horizontalHeaderHighlightSections">
+               <bool>true</bool>
+              </attribute>
+              <attribute name="horizontalHeaderMinimumSectionSize">
+               <number>39</number>
+              </attribute>
+              <column>
+               <property name="text">
+                <string>Impressora</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Data</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
                 <string>Contagem</string>
-               </attribute>
-               <layout class="QHBoxLayout" name="horizontalLayout_2">
-                <item>
-                 <widget class="QTableWidget" name="TB_Setor">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="tabletTracking">
-                   <bool>false</bool>
-                  </property>
-                  <property name="focusPolicy">
-                   <enum>Qt::WheelFocus</enum>
-                  </property>
-                  <property name="layoutDirection">
-                   <enum>Qt::LeftToRight</enum>
-                  </property>
-                  <property name="autoFillBackground">
-                   <bool>true</bool>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Box</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
-                  <property name="verticalScrollBarPolicy">
-                   <enum>Qt::ScrollBarAlwaysOn</enum>
-                  </property>
-                  <property name="horizontalScrollBarPolicy">
-                   <enum>Qt::ScrollBarAsNeeded</enum>
-                  </property>
-                  <property name="sizeAdjustPolicy">
-                   <enum>QAbstractScrollArea::AdjustToContents</enum>
-                  </property>
-                  <property name="autoScrollMargin">
-                   <number>17</number>
-                  </property>
-                  <property name="editTriggers">
-                   <set>QAbstractItemView::NoEditTriggers</set>
-                  </property>
-                  <property name="dragEnabled">
-                   <bool>false</bool>
-                  </property>
-                  <property name="dragDropMode">
-                   <enum>QAbstractItemView::NoDragDrop</enum>
-                  </property>
-                  <property name="alternatingRowColors">
-                   <bool>true</bool>
-                  </property>
-                  <property name="selectionMode">
-                   <enum>QAbstractItemView::SingleSelection</enum>
-                  </property>
-                  <property name="selectionBehavior">
-                   <enum>QAbstractItemView::SelectRows</enum>
-                  </property>
-                  <property name="verticalScrollMode">
-                   <enum>QAbstractItemView::ScrollPerItem</enum>
-                  </property>
-                  <property name="showGrid">
-                   <bool>true</bool>
-                  </property>
-                  <property name="gridStyle">
-                   <enum>Qt::DashLine</enum>
-                  </property>
-                  <attribute name="horizontalHeaderVisible">
-                   <bool>true</bool>
-                  </attribute>
-                  <attribute name="horizontalHeaderCascadingSectionResizes">
-                   <bool>false</bool>
-                  </attribute>
-                  <attribute name="horizontalHeaderDefaultSectionSize">
-                   <number>162</number>
-                  </attribute>
-                  <attribute name="horizontalHeaderHighlightSections">
-                   <bool>true</bool>
-                  </attribute>
-                  <attribute name="horizontalHeaderMinimumSectionSize">
-                   <number>39</number>
-                  </attribute>
-                  <column>
-                   <property name="text">
-                    <string>Nome</string>
-                   </property>
-                  </column>
-                  <column>
-                   <property name="text">
-                    <string>Sigla</string>
-                   </property>
-                  </column>
-                  <column>
-                   <property name="text">
-                    <string>Prioridade</string>
-                   </property>
-                  </column>
-                  <column>
-                   <property name="text">
-                    <string>Responsável</string>
-                   </property>
-                  </column>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Total de Impressão</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Custo Toner Preto</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Custo Toner Margenta</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Custo Toner Amarelo</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Custo Toner Azul</string>
+               </property>
+              </column>
              </widget>
             </item>
            </layout>
@@ -238,6 +268,16 @@
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>BR_Pesquisa</tabstop>
+  <tabstop>BT_Pesquisar</tabstop>
+  <tabstop>BT_Criar</tabstop>
+  <tabstop>BT_Alterar</tabstop>
+  <tabstop>BT_Exclui</tabstop>
+  <tabstop>BT_Voltar</tabstop>
+  <tabstop>comboBox</tabstop>
+  <tabstop>TB_Setor</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
