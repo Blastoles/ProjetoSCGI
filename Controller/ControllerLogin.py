@@ -1,5 +1,4 @@
 from PyQt5 import uic, QtWidgets
-from PyQt5.QtWidgets import QDialog
 from View.ViewLogin import viewLogin
 from DAO.DAOLogin import DAOlogin
 from Controller.ControllerMensagem import SistemaMensagem

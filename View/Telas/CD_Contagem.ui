@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>Setor</class>
+ <widget class="QMainWindow" name="Setor">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>766</width>
-    <height>552</height>
+    <width>754</width>
+    <height>511</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Impressora</string>
+   <string>Setor</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
@@ -37,13 +37,6 @@
            <layout class="QHBoxLayout" name="horizontalLayout">
             <item>
              <widget class="QLineEdit" name="BR_Pesquisa"/>
-            </item>
-            <item>
-             <widget class="QRadioButton" name="radioButton">
-              <property name="text">
-               <string>Alugada</string>
-              </property>
-             </widget>
             </item>
             <item>
              <widget class="QPushButton" name="BT_Pesquisar">
@@ -124,29 +117,23 @@
                <number>0</number>
               </property>
               <widget class="QWidget" name="tab">
-               <attribute name="icon">
-                <iconset>
-                 <normaloff>../Arte/print_printer_printing_1549.ico</normaloff>../Arte/print_printer_printing_1549.ico</iconset>
-               </attribute>
                <attribute name="title">
-                <string>Impressora</string>
+                <string>Contagem</string>
                </attribute>
                <layout class="QHBoxLayout" name="horizontalLayout_2">
                 <item>
-                 <widget class="QTableWidget" name="TB_Impressora">
+                 <widget class="QTableWidget" name="TB_Setor">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
-                  <property name="font">
-                   <font>
-                    <family>Segoe UI</family>
-                   </font>
-                  </property>
                   <property name="tabletTracking">
-                   <bool>true</bool>
+                   <bool>false</bool>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::WheelFocus</enum>
                   </property>
                   <property name="layoutDirection">
                    <enum>Qt::LeftToRight</enum>
@@ -160,12 +147,6 @@
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <property name="lineWidth">
-                   <number>1</number>
-                  </property>
-                  <property name="midLineWidth">
-                   <number>0</number>
-                  </property>
                   <property name="verticalScrollBarPolicy">
                    <enum>Qt::ScrollBarAlwaysOn</enum>
                   </property>
@@ -174,6 +155,9 @@
                   </property>
                   <property name="sizeAdjustPolicy">
                    <enum>QAbstractScrollArea::AdjustToContents</enum>
+                  </property>
+                  <property name="autoScrollMargin">
+                   <number>17</number>
                   </property>
                   <property name="editTriggers">
                    <set>QAbstractItemView::NoEditTriggers</set>
@@ -202,9 +186,6 @@
                   <property name="gridStyle">
                    <enum>Qt::DashLine</enum>
                   </property>
-                  <property name="sortingEnabled">
-                   <bool>false</bool>
-                  </property>
                   <attribute name="horizontalHeaderVisible">
                    <bool>true</bool>
                   </attribute>
@@ -212,7 +193,7 @@
                    <bool>false</bool>
                   </attribute>
                   <attribute name="horizontalHeaderDefaultSectionSize">
-                   <number>130</number>
+                   <number>162</number>
                   </attribute>
                   <attribute name="horizontalHeaderHighlightSections">
                    <bool>true</bool>
@@ -222,47 +203,22 @@
                   </attribute>
                   <column>
                    <property name="text">
-                    <string>Número de Série</string>
+                    <string>Nome</string>
                    </property>
                   </column>
                   <column>
                    <property name="text">
-                    <string>Modelo da Impressora</string>
+                    <string>Sigla</string>
                    </property>
                   </column>
                   <column>
                    <property name="text">
-                    <string>Nome Amigável</string>
+                    <string>Prioridade</string>
                    </property>
                   </column>
                   <column>
                    <property name="text">
-                    <string>Setor</string>
-                   </property>
-                  </column>
-                  <column>
-                   <property name="text">
-                    <string>IP</string>
-                   </property>
-                  </column>
-                  <column>
-                   <property name="text">
-                    <string>Toner Preto</string>
-                   </property>
-                  </column>
-                  <column>
-                   <property name="text">
-                    <string>Toner Margenta</string>
-                   </property>
-                  </column>
-                  <column>
-                   <property name="text">
-                    <string>Toner Amarelo</string>
-                   </property>
-                  </column>
-                  <column>
-                   <property name="text">
-                    <string>Toner Azul</string>
+                    <string>Responsável</string>
                    </property>
                   </column>
                  </widget>
