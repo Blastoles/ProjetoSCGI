@@ -1,18 +1,32 @@
+from Controller.ControllerCadastroContagem import SistemaCContagem
+from Model.ModelContagemImpressora import ModelContagemImpressora
 from View.ViewContagemImpressora import viewContagem
-
+from DAO.DAOContagemImpressora import DAOContagemimpressora
 
 class SistemaContagem():
     def Show(self):
+        self.Lista()
         self.contagem.Show()
 
     def Close(self):
         self.contagem.Close()
 
+    def Criar(self):
+        self.Ccontagem.Show()
+
+    def Lista(self):
+        lista = self.banco.Lista()
+        lista = self.model.TratarLista(lista)
+        self.contagem.SetImpressora(lista)
+
     def __init__(self):
         self.contagem = viewContagem()
+        self.Ccontagem = SistemaCContagem()
+        self.banco = DAOContagemimpressora()
+        self.model = ModelContagemImpressora()
         self.contagem.tela.BT_Voltar.clicked.connect(self.Close)
+        self.contagem.tela.BT_Criar.clicked.connect(self.Criar)
         #self.contagem.tela.BT_Pesquisar.clicked.connect(self.PesquisarCadastro)
-        #self.contagem.tela.BT_Criar.clicked.connect(self.Criar)
         #self.contagem.tela.BT_Alterar.clicked.connect(self.AlterarCadastro)
         #self.contagem.tela.BT_Exclui.clicked.connect(self.ExcluirSetor)
 """
@@ -21,8 +35,6 @@ class SistemaContagem():
         lista = self.banco.Pesquisa(texto)
         self.model.Tabela(self.viewSetor,lista)
 
-    def Criar(self):
-        self.CSetor.Show('Criar',self)
 
     def AlterarCadastro(self):
         linhaSelect = self.viewSetor.LinhaSelect()

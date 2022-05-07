@@ -202,8 +202,29 @@
             <family>Arial</family>
            </font>
           </property>
+          <property name="inputMethodHints">
+           <set>Qt::ImhNone</set>
+          </property>
           <property name="inputMask">
            <string>R$ 99999,99</string>
+          </property>
+          <property name="frame">
+           <bool>true</bool>
+          </property>
+          <property name="cursorPosition">
+           <number>3</number>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+          <property name="dragEnabled">
+           <bool>true</bool>
+          </property>
+          <property name="readOnly">
+           <bool>false</bool>
+          </property>
+          <property name="cursorMoveStyle">
+           <enum>Qt::LogicalMoveStyle</enum>
           </property>
          </widget>
         </item>
@@ -221,8 +242,23 @@
             <family>Arial</family>
            </font>
           </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
           <property name="inputMask">
-           <string>R$ 99999,99</string>
+           <string>R$ </string>
+          </property>
+          <property name="maxLength">
+           <number>3</number>
+          </property>
+          <property name="dragEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="readOnly">
+           <bool>false</bool>
+          </property>
+          <property name="clearButtonEnabled">
+           <bool>false</bool>
           </property>
          </widget>
         </item>
@@ -234,7 +270,7 @@
            </font>
           </property>
           <property name="inputMask">
-           <string>R$ 99999,99</string>
+           <string>R$ </string>
           </property>
          </widget>
         </item>
@@ -246,7 +282,7 @@
            </font>
           </property>
           <property name="inputMask">
-           <string>R$ 99999,99</string>
+           <string>R$ </string>
           </property>
          </widget>
         </item>

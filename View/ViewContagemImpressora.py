@@ -9,6 +9,10 @@ class viewContagem():
     def Close(self):
         self.tela.close()
 
+    def SetImpressora(self,lista):
+        self.tela.CP_Impressora.addItems(lista)
+
+
     def Lista(self,i,j,texto):
         self.tela.TB_Setor.setItem(i, j, QtWidgets.QTableWidgetItem(texto))
 

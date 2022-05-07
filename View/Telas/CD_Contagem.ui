@@ -105,17 +105,8 @@
             <enum>QFrame::Raised</enum>
            </property>
            <layout class="QGridLayout" name="gridLayout_3">
-            <item row="0" column="1">
-             <widget class="QComboBox" name="comboBox">
-              <item>
-               <property name="text">
-                <string>Selecione a Impressora</string>
-               </property>
-              </item>
-             </widget>
-            </item>
             <item row="0" column="0">
-             <widget class="QLabel" name="label">
+             <widget class="QLabel" name="TX_Impressora">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -135,7 +126,37 @@
               </property>
              </widget>
             </item>
-            <item row="2" column="0" colspan="2">
+            <item row="0" column="1">
+             <widget class="QComboBox" name="CP_Impressora">
+              <property name="styleSheet">
+               <string notr="true">font: 8pt &quot;Arial&quot;;</string>
+              </property>
+              <item>
+               <property name="text">
+                <string>Selecione a Impressora</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Número de Serie -- Modelo -- Setor -- Sigla do Setor</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QPushButton" name="BT_Selecionar">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Selecionar</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" colspan="3">
              <widget class="QTableWidget" name="TB_Setor">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -275,7 +296,8 @@
   <tabstop>BT_Alterar</tabstop>
   <tabstop>BT_Exclui</tabstop>
   <tabstop>BT_Voltar</tabstop>
-  <tabstop>comboBox</tabstop>
+  <tabstop>CP_Impressora</tabstop>
+  <tabstop>BT_Selecionar</tabstop>
   <tabstop>TB_Setor</tabstop>
  </tabstops>
  <resources/>
