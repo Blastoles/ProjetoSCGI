@@ -19,6 +19,9 @@ class SistemaContagem():
         lista = self.model.TratarLista(lista)
         self.contagem.SetImpressora(lista)
 
+    def Pesquisa(self):
+        self.banco.
+
     def __init__(self):
         self.contagem = viewContagem()
         self.Ccontagem = SistemaCContagem()
@@ -26,6 +29,7 @@ class SistemaContagem():
         self.model = ModelContagemImpressora()
         self.contagem.tela.BT_Voltar.clicked.connect(self.Close)
         self.contagem.tela.BT_Criar.clicked.connect(self.Criar)
+        self.contagem.tela.BT_Selecionar.clicked.connect(self.Pesquisa)
         #self.contagem.tela.BT_Pesquisar.clicked.connect(self.PesquisarCadastro)
         #self.contagem.tela.BT_Alterar.clicked.connect(self.AlterarCadastro)
         #self.contagem.tela.BT_Exclui.clicked.connect(self.ExcluirSetor)
