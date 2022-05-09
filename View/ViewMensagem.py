@@ -32,6 +32,9 @@ class viewMensagem():
     def MsgErroBando(self):
         self.tela.TX_Atencao.setText("Ocorreu um erro com o Banco de Dados!!")
 
+    def MsgSelecionarImpr(self):
+        self.tela.TX_Atencao.setText("Selecione uma impressora valida!!")
+
     def MsgSelecionarLinha(self):
         self.tela.TX_Atencao.setText("Selecione uma linha da tabela de Usuários!!")
 

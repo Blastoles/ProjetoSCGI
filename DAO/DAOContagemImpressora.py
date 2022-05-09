@@ -20,7 +20,12 @@ class DAOContagemimpressora():
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
         try:
-            cursor.execute("SELECT NUM_DE_SERIE, MODELO, SETOR_NOME, SETOR_SIGLA, DATA, CONTAGEM, MODELO_TPRETO, CUSTO_PRETO, MODELO_TMARGENTA, CUSTO_MARGENTA, MODELO_TAMARELO, CUSTO_AMARELO, MODELO_TAZUL, CUSTO_AZUL FROM CONTADOR C LEFT JOIN IMPRESSORA I ON C.IMPRESSORA_NUM_DE_SERIE = I.NUM_DE_SERIE WHERE NUM_DE_SERIE = '{}'".format(Impre))
+            cursor.execute("SELECT NUM_DE_SERIE, MODELO, SETOR_NOME, SETOR_SIGLA, DATA, CONTAGEM, MODELO_TPRETO, CUSTO_PRETO, MODELO_TMARGENTA, CUSTO_MARGENTA, MODELO_TAMARELO, CUSTO_AMARELO, MODELO_TAZUL, CUSTO_AZUL "
+                           "FROM CONTADOR C "
+                           "LEFT JOIN IMPRESSORA I "
+                           "ON C.IMPRESSORA_NUM_DE_SERIE = I.NUM_DE_SERIE "
+                           "WHERE NUM_DE_SERIE = '{}'"
+                           "ORDER BY DATA DESC,CONTAGEM DESC".format(Impre))
             pesq = cursor.fetchall()
         except:
             self.msg.MsgErroBancoDados()

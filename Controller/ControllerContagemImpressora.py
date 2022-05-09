@@ -1,10 +1,12 @@
 from Controller.ControllerCadastroContagem import SistemaCContagem
+from Controller.ControllerMensagem import SistemaMensagem
 from Model.ModelContagemImpressora import ModelContagemImpressora
 from View.ViewContagemImpressora import viewContagem
 from DAO.DAOContagemImpressora import DAOContagemimpressora
 
 class SistemaContagem():
     def Show(self):
+        self.contagem.LimparTela()
         self.Lista()
         self.contagem.Show()
 
@@ -20,13 +22,21 @@ class SistemaContagem():
         self.contagem.SetImpressora(lista)
 
     def Pesquisa(self):
-        self.banco.
+        ImprSelect = self.contagem.ImprSelect()
+        if ImprSelect != 'Selecione a Impressora' and ImprSelect != 'Número de Serie -- Modelo -- Setor -- Sigla do Setor':
+            ImprSelect = ImprSelect.split(' -- ')
+            Impre = self.banco.Pesquisa(ImprSelect[0])
+            self.model.Tabela(self.contagem,Impre)
+        else:
+            self.msg.MsgSelecionarImpr()
+
 
     def __init__(self):
         self.contagem = viewContagem()
         self.Ccontagem = SistemaCContagem()
         self.banco = DAOContagemimpressora()
         self.model = ModelContagemImpressora()
+        self.msg = SistemaMensagem()
         self.contagem.tela.BT_Voltar.clicked.connect(self.Close)
         self.contagem.tela.BT_Criar.clicked.connect(self.Criar)
         self.contagem.tela.BT_Selecionar.clicked.connect(self.Pesquisa)

@@ -1,4 +1,6 @@
 from Controller.ControllerMensagem import SistemaMensagem
+from DAO.DAOCadastroContagem import DAOCadastrarContagem
+from Model.ModelCadastrarContagem import ModelCadastrarContagem
 from View.ViewCadastroContagem import viewCadastroContagem
 
 
@@ -6,16 +8,22 @@ class SistemaCContagem():
 
     def Show(self):
         self.viewCContagem.LimpeTela()
+        self.MostreLista()
         self.viewCContagem.Show()
 
     def Close(self):
         self.viewCContagem.Close()
 
-
+    def MostreLista(self):
+        lista = self.banco.Lista()
+        lista = self.model.TratarLista(lista)
+        self.viewCContagem.ColocarImpressora(lista)
 
     def __init__(self):
         self.viewCContagem = viewCadastroContagem()
         self.msg = SistemaMensagem()
+        self.banco = DAOCadastrarContagem()
+        self.model = ModelCadastrarContagem()
         #self.opcao = ''
         #self.setor = ''
         self.viewCContagem.tela.BT_Cancelar.clicked.connect(self.Close)

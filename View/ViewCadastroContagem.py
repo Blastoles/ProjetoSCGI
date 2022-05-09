@@ -6,6 +6,8 @@ class viewCadastroContagem():
         self.tela.show()
 
     def LimpeTela(self):
+        self.tela.CP_Impressora.clear()
+        self.tela.CP_Impressora.addItem("Selecione a Impressora")
         self.tela.CP_Impressora.setCurrentIndex(0)
         self.tela.CP_Contagem.setText('')
         self.tela.CP_Data.setText('')
@@ -22,6 +24,9 @@ class viewCadastroContagem():
         lista.append(self.tela.CP_Responsavel.text().upper())
         lista.append(self.tela.CP_Prioridade.currentText())
         return lista
+
+    def ColocarImpressora(self,lista):
+        self.tela.CP_Impressora.addItems(lista)
 
     def ColocarDados(self,dados):
         self.tela.CP_Sigla.setDisabled(True)

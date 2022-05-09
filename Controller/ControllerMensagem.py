@@ -23,6 +23,10 @@ class SistemaMensagem():
         self.msg.MsgUserCadastrado()
         self.MsgShow()
 
+    def MsgSelecionarImpr(self):
+        self.msg.MsgSelecionarImpr()
+        self.MsgShow()
+
     def MsgSelecionarLinha(self):
         self.msg.MsgSelecionarLinha()
         self.MsgShow()

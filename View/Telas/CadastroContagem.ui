@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>569</width>
-    <height>527</height>
+    <width>571</width>
+    <height>554</height>
    </rect>
   </property>
   <property name="acceptDrops">
@@ -161,7 +161,7 @@
           </property>
           <item>
            <property name="text">
-            <string>Nenhuma</string>
+            <string>Selecione a Impressora</string>
            </property>
           </item>
          </widget>
@@ -206,13 +206,13 @@
            <set>Qt::ImhNone</set>
           </property>
           <property name="inputMask">
-           <string>R$ 99999,99</string>
+           <string/>
           </property>
           <property name="frame">
            <bool>true</bool>
           </property>
           <property name="cursorPosition">
-           <number>3</number>
+           <number>0</number>
           </property>
           <property name="alignment">
            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -222,6 +222,9 @@
           </property>
           <property name="readOnly">
            <bool>false</bool>
+          </property>
+          <property name="placeholderText">
+           <string>R$</string>
           </property>
           <property name="cursorMoveStyle">
            <enum>Qt::LogicalMoveStyle</enum>
@@ -235,33 +238,6 @@
           </property>
          </widget>
         </item>
-        <item row="4" column="1">
-         <widget class="QLineEdit" name="CP_CPreto">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-           </font>
-          </property>
-          <property name="autoFillBackground">
-           <bool>false</bool>
-          </property>
-          <property name="inputMask">
-           <string>R$ </string>
-          </property>
-          <property name="maxLength">
-           <number>3</number>
-          </property>
-          <property name="dragEnabled">
-           <bool>false</bool>
-          </property>
-          <property name="readOnly">
-           <bool>false</bool>
-          </property>
-          <property name="clearButtonEnabled">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
         <item row="6" column="1">
          <widget class="QLineEdit" name="CP_CAmarelo">
           <property name="font">
@@ -270,7 +246,10 @@
            </font>
           </property>
           <property name="inputMask">
-           <string>R$ </string>
+           <string/>
+          </property>
+          <property name="placeholderText">
+           <string>R$</string>
           </property>
          </widget>
         </item>
@@ -282,7 +261,10 @@
            </font>
           </property>
           <property name="inputMask">
-           <string>R$ </string>
+           <string/>
+          </property>
+          <property name="placeholderText">
+           <string>R$</string>
           </property>
          </widget>
         </item>
@@ -351,9 +333,45 @@
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
+             <property name="placeholderText">
+              <string>Data -- Contagem</string>
+             </property>
             </widget>
            </item>
           </layout>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLineEdit" name="CP_CPreto">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+           </font>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="inputMask">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="maxLength">
+           <number>32767</number>
+          </property>
+          <property name="dragEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="readOnly">
+           <bool>false</bool>
+          </property>
+          <property name="placeholderText">
+           <string>R$</string>
+          </property>
+          <property name="clearButtonEnabled">
+           <bool>false</bool>
+          </property>
          </widget>
         </item>
        </layout>
