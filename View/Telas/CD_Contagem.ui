@@ -238,7 +238,22 @@
               </attribute>
               <column>
                <property name="text">
-                <string>Impressora</string>
+                <string>Número de Série</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Modelo</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Nome do Setor</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Sigla do Setor</string>
                </property>
               </column>
               <column>
@@ -258,7 +273,17 @@
               </column>
               <column>
                <property name="text">
+                <string>Modelo Toner Preto</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
                 <string>Custo Toner Preto</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Modelo Toner Margenta</string>
                </property>
               </column>
               <column>
@@ -268,7 +293,17 @@
               </column>
               <column>
                <property name="text">
+                <string>Modelo Toner Amarelo</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
                 <string>Custo Toner Amarelo</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Modelo Toner Azul</string>
                </property>
               </column>
               <column>
