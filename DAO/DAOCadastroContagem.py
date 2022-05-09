@@ -29,6 +29,18 @@ class DAOCadastrarContagem():
         banco.close()
         return selec
 
+    def UltimaContagem(self,num):
+        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        cursor = banco.cursor()
+        try:
+            cursor.execute("SELECT DATA,CONTAGEM FROM CONTADOR WHERE IMPRESSORA_NUM_DE_SERIE = '{}' ORDER BY CONTAGEM DESC LIMIT '1'".format(num))
+            Ultima = cursor.fetchall()
+        except:
+            self.msg.MsgErroBancoDados()
+        banco.close()
+        return Ultima
+
+
     def __init__(self):
         Local = getcwd()
         Local = Local.split('Controller')

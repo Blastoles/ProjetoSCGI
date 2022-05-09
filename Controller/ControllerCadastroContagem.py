@@ -6,7 +6,9 @@ from View.ViewCadastroContagem import viewCadastroContagem
 
 class SistemaCContagem():
 
-    def Show(self):
+    def Show(self,opcao):
+        self.opcao = opcao
+        self.viewCContagem.LimpeLista()
         self.viewCContagem.LimpeTela()
         self.viewCContagem.LimpaInfo()
         self.MostreLista()
@@ -22,65 +24,37 @@ class SistemaCContagem():
 
     def Selecionado(self):
         selec = self.viewCContagem.ImprSelect()
+        self.viewCContagem.LimpeTela()
         if selec != 'Selecione a Impressora':
             selec = selec.split(' -- ')
             dados = self.banco.BuscarDados(selec[0])
-            self.viewCContagem.ColocarInfo(dados)
+            ultima = self.banco.UltimaContagem(selec[0])
+            teste = (str(ultima[0][0])+ ' -- ' + str(ultima[0][1]))
+            self.viewCContagem.ColocarInfo(dados,teste)
         else:
             self.viewCContagem.LimpaInfo()
             self.msg.MsgSelecionarImpr()
+
+    def Opcao(self):
+        if self.opcao == 'Criar':
+            self.InsertSetor()
+        elif self.opcao == 'Alterar':
+            self.AlterarSetor()
+
+    def InsertSetor(self):
+        check = self.viewCContagem.PegarImpressora()
+        if check != '':
+            print(check)
+
+    def AlterarSetor(self):
+        print('Alterar')
 
     def __init__(self):
         self.viewCContagem = viewCadastroContagem()
         self.msg = SistemaMensagem()
         self.banco = DAOCadastrarContagem()
         self.model = ModelCadastrarContagem()
-        #self.opcao = ''
-        #self.setor = ''
+        self.opcao = ''
         self.viewCContagem.tela.BT_Cancelar.clicked.connect(self.Close)
         self.viewCContagem.tela.BT_Selecionar.clicked.connect(self.Selecionado)
-        #self.viewCContagem.tela.BT_Salvar.clicked.connect(self.Opcao)
-"""        
-    def InsertSetor(self):
-        dados = self.viewCSetor.ColetarDados()
-        if dados[1] != '' and dados[0] != '':
-            check = self.DAOSetor.CheckUser(dados[1])
-            if check == []:
-                linhadb = self.DAOSetor.ContLista()
-                dados[3] = self.ModelSetor.PrioridadeInt(dados[3])
-                self.DAOSetor.InserirDados(dados,linhadb)
-                self.setor.Tabela()
-            else:
-                self.msg.MsgSetorJaCadastrado()
-        else:
-            falta = ['','','']
-            if dados[0] == '':
-                falta[0] = 'Nome\n'
-            if dados[1] == '':
-                falta[1] = 'Sigla\n'
-            self.msg.MsgFaltaDados(falta)
-
-    def MostrarDados(self,TextoLinha):
-        self.viewCSetor.ColocarDados(TextoLinha)
-
-
-    def AlterarSetor(self):
-        dados = self.viewCSetor.ColetarDados()
-        if dados[3] == 'Normal':
-            dados[3] = 0
-        elif dados[3] == 'Baixa':
-            dados[3] = 1
-        elif dados[3] == 'Alta':
-            dados[3] = 2
-        elif dados[3] == 'Urgente':
-            dados[3] = 3
-        else:
-            dados[3] = -1
-        self.DAOSetor.UpdateDados(dados)
-        self.setor.Tabela()
-
-    def Opcao(self):
-        if self.opcao == 'Criar':
-            self.InsertSetor()
-        elif self.opcao == 'Alterar':
-            self.AlterarSetor()"""
+        self.viewCContagem.tela.BT_Salvar.clicked.connect(self.Opcao)

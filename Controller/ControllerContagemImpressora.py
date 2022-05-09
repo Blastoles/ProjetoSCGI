@@ -14,7 +14,10 @@ class SistemaContagem():
         self.contagem.Close()
 
     def Criar(self):
-        self.Ccontagem.Show()
+        self.Ccontagem.Show('Criar')
+
+    def Alterar(self):
+        self.Ccontagem.Show('Alterar')
 
     def Lista(self):
         lista = self.banco.Lista()
