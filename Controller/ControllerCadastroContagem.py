@@ -8,6 +8,7 @@ class SistemaCContagem():
 
     def Show(self):
         self.viewCContagem.LimpeTela()
+        self.viewCContagem.LimpaInfo()
         self.MostreLista()
         self.viewCContagem.Show()
 
@@ -19,6 +20,16 @@ class SistemaCContagem():
         lista = self.model.TratarLista(lista)
         self.viewCContagem.ColocarImpressora(lista)
 
+    def Selecionado(self):
+        selec = self.viewCContagem.ImprSelect()
+        if selec != 'Selecione a Impressora':
+            selec = selec.split(' -- ')
+            dados = self.banco.BuscarDados(selec[0])
+            self.viewCContagem.ColocarInfo(dados)
+        else:
+            self.viewCContagem.LimpaInfo()
+            self.msg.MsgSelecionarImpr()
+
     def __init__(self):
         self.viewCContagem = viewCadastroContagem()
         self.msg = SistemaMensagem()
@@ -27,6 +38,7 @@ class SistemaCContagem():
         #self.opcao = ''
         #self.setor = ''
         self.viewCContagem.tela.BT_Cancelar.clicked.connect(self.Close)
+        self.viewCContagem.tela.BT_Selecionar.clicked.connect(self.Selecionado)
         #self.viewCContagem.tela.BT_Salvar.clicked.connect(self.Opcao)
 """        
     def InsertSetor(self):

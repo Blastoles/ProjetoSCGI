@@ -17,6 +17,27 @@ class viewCadastroContagem():
         self.tela.CP_CAzul.setText('')
         self.tela.CP_UltimaContagem.setText('')
 
+
+    def LimpaInfo(self):
+        self.tela.Info_Num.setText('')
+        self.tela.Info_Modelo.setText('')
+        self.tela.Info_Amigavel.setText('')
+        self.tela.Info_Setor.setText('')
+        self.tela.Info_MPreto.setText('')
+        self.tela.Info_MMargenta.setText('')
+        self.tela.Info_MAmarelo.setText('')
+        self.tela.Info_MAzul.setText('')
+
+    def ColocarInfo(self,dado):
+        self.tela.Info_Num.setText(dado[0][0])
+        self.tela.Info_Modelo.setText(dado[0][1])
+        self.tela.Info_Amigavel.setText(dado[0][2])
+        self.tela.Info_Setor.setText(dado[0][3])
+        self.tela.Info_MPreto.setText(dado[0][4])
+        self.tela.Info_MMargenta.setText(dado[0][5])
+        self.tela.Info_MAmarelo.setText(dado[0][6])
+        self.tela.Info_MAzul.setText(dado[0][7])
+
     def ColetarDados(self):
         lista = []
         lista.append(self.tela.CP_Nome.text().upper())
@@ -24,6 +45,10 @@ class viewCadastroContagem():
         lista.append(self.tela.CP_Responsavel.text().upper())
         lista.append(self.tela.CP_Prioridade.currentText())
         return lista
+
+    def ImprSelect(self):
+        impr = self.tela.CP_Impressora.currentText()
+        return impr
 
     def ColocarImpressora(self,lista):
         self.tela.CP_Impressora.addItems(lista)
