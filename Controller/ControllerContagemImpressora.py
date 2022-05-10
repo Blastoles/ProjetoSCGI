@@ -21,8 +21,8 @@ class SistemaContagem():
         if linhaSelect != -1:
             TextoLinha = self.contagem.TextoSelectLinha(linhaSelect)
             Dados = self.banco.Localizar(TextoLinha)
-            print(Dados)
             self.Ccontagem.Show('Alterar')
+            self.Ccontagem.ColoqueDados(Dados)
         else:
             self.msg.MsgSelecionarLinha()
 

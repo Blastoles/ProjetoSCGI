@@ -63,8 +63,28 @@ class SistemaCContagem():
         else:
             self.msg.MsgSelecionarImpr()
 
+    def ColoqueDados(self,dados):
+        dado = self.banco.BuscarDados(dados[0][1])
+        ultima = self.banco.UltimaContagem(dado[0][0])
+        if ultima != []:
+            Ucont = (str(ultima[0][0]) + ' -- ' + str(ultima[0][1]))
+        else:
+            Ucont = ''
+        self.viewCContagem.ColocarInfo(dado, Ucont)
+        self.viewCContagem.ColocarDados(dados)
+
     def AlterarContagem(self):
-        print('Alterar')
+        dado = self.viewCContagem.ColetaDados()
+        if dado[0] != '' and dado[1] != '//':
+            self.banco.UpdateContagem(dado)
+            self.viewCContagem.Close()
+        else:
+            falta = ['', '', '']
+            if dado[0] == '':
+                falta[0] = 'Contagem\n'
+            if dado[1] == '//':
+                falta[1] = 'Data\n'
+            self.msg.MsgFaltaDados(falta)
 
     def __init__(self):
         self.viewCContagem = viewCadastroContagem()

@@ -37,7 +37,7 @@ class DAOContagemimpressora():
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT "
-                           "IMPRESSORA_NUM_DE_SERIE,CONTAGEM,DATA,CUSTO_PRETO,CUSTO_MARGENTA,CUSTO_AMARELO,CUSTO_AZUL "
+                           "ID_CONTADOR,IMPRESSORA_NUM_DE_SERIE,CONTAGEM,DATA,CUSTO_PRETO,CUSTO_MARGENTA,CUSTO_AMARELO,CUSTO_AZUL "
                            "FROM CONTADOR C LEFT JOIN IMPRESSORA I "
                            "ON C.IMPRESSORA_NUM_DE_SERIE = I.NUM_DE_SERIE "
                            "WHERE IMPRESSORA_NUM_DE_SERIE = '{}' AND DATA = '{}' AND CONTAGEM = '{}' LIMIT 1".format(dado[0],dado[1],dado[2]))

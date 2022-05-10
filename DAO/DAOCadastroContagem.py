@@ -54,6 +54,24 @@ class DAOCadastrarContagem():
             self.msg.MsgErroBancoDados()
         banco.close()
 
+    def UpdateContagem(self,dados):
+        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        cursor = banco.cursor()
+        try:
+            cursor.execute("UPDATE CONTADOR SET "
+                           "CONTAGEM = '{}', "
+                           "DATA = '{}', "
+                           "CUSTO_PRETO = '{}', "
+                           "CUSTO_MARGENTA = '{}', "
+                           "CUSTO_AMARELO = '{}', "
+                           "CUSTO_AZUL = '{}' "
+                           "WHERE ID_CONTADOR = '{}'".format(dados[0],dados[1],dados[2],dados[3],dados[4],dados[5],dados[6]))
+            banco.commit()
+            self.msg.MsgRealizadoComSucesso()
+        except:
+            self.msg.MsgErroBancoDados()
+        banco.close()
+
     def ContLista(self):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()

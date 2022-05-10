@@ -84,98 +84,112 @@
       <enum>QFrame::Raised</enum>
      </property>
      <layout class="QGridLayout" name="gridLayout_4">
-      <item row="2" column="0">
-       <widget class="QLabel" name="TX_Modelo">
-        <property name="text">
-         <string>Modelo</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
+      <item row="4" column="1">
        <widget class="QLabel" name="Info_Amigavel">
         <property name="text">
          <string>Sem Dados</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="0">
+      <item row="4" column="0">
        <widget class="QLabel" name="TX_Amigavel">
         <property name="text">
          <string>Nome Amigável</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
-       <widget class="QLabel" name="Info_Modelo">
-        <property name="text">
-         <string>Sem Dados</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="0">
+      <item row="6" column="0">
        <widget class="QLabel" name="TX_Setor">
         <property name="text">
          <string>Setor</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="2">
-       <widget class="QLabel" name="TX_MPreto">
-        <property name="text">
-         <string>Modelo Toner Preto</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="1">
+      <item row="6" column="1">
        <widget class="QLabel" name="Info_Setor">
         <property name="text">
          <string>Sem Dados</string>
         </property>
        </widget>
       </item>
-      <item row="5" column="2">
+      <item row="1" column="2">
+       <widget class="QLabel" name="TX_MPreto">
+        <property name="text">
+         <string>Modelo Toner Preto</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLabel" name="Info_Modelo">
+        <property name="text">
+         <string>Sem Dados</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="2">
        <widget class="QLabel" name="TX_MAzul">
         <property name="text">
          <string>Modelo Toner Azul</string>
         </property>
        </widget>
       </item>
-      <item row="5" column="3">
-       <widget class="QLabel" name="Info_MAzul">
-        <property name="text">
-         <string>Sem Dados</string>
-        </property>
-       </widget>
-      </item>
       <item row="3" column="3">
-       <widget class="QLabel" name="Info_MAmarelo">
-        <property name="text">
-         <string>Sem Dados</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="2">
-       <widget class="QLabel" name="TX_MMargenta">
-        <property name="text">
-         <string>Modelo Toner Margenta</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="3">
-       <widget class="QLabel" name="Info_MPreto">
-        <property name="text">
-         <string>Sem Dados</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="3">
        <widget class="QLabel" name="Info_MMargenta">
         <property name="text">
          <string>Sem Dados</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
+      <item row="3" column="2">
+       <widget class="QLabel" name="TX_MMargenta">
+        <property name="text">
+         <string>Modelo Toner Margenta</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QLabel" name="Info_MPreto">
+        <property name="text">
+         <string>Sem Dados</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="3">
+       <widget class="QLabel" name="Info_MAmarelo">
+        <property name="text">
+         <string>Sem Dados</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="3">
+       <widget class="QLabel" name="Info_MAzul">
+        <property name="text">
+         <string>Sem Dados</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="TX_Num">
+        <property name="text">
+         <string>Número de Série</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QLabel" name="TX_MAmarelo">
+        <property name="text">
+         <string>Modelo Toner Amarelo</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="TX_Modelo">
+        <property name="text">
+         <string>Modelo</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
        <widget class="QLabel" name="Info_Num">
         <property name="styleSheet">
          <string notr="true">color: rgb(255, 0, 0);</string>
@@ -186,16 +200,16 @@
        </widget>
       </item>
       <item row="0" column="0">
-       <widget class="QLabel" name="TX_Num">
+       <widget class="QLabel" name="TX_ID">
         <property name="text">
-         <string>Número de Série</string>
+         <string>ID Contagem</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="2">
-       <widget class="QLabel" name="TX_MAmarelo">
+      <item row="0" column="1">
+       <widget class="QLabel" name="CP_ID">
         <property name="text">
-         <string>Modelo Toner Amarelo</string>
+         <string>Sem Dados</string>
         </property>
        </widget>
       </item>

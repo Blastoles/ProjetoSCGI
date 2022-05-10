@@ -11,6 +11,8 @@ class viewCadastroContagem():
         self.tela.CP_Impressora.setCurrentIndex(0)
 
     def LimpeTela(self):
+        self.tela.CP_Impressora.setDisabled(False)
+        self.tela.BT_Selecionar.setDisabled(False)
         self.tela.CP_Contagem.setText('')
         self.tela.CP_Data.setText('')
         self.tela.CP_CPreto.setText('')
@@ -20,6 +22,7 @@ class viewCadastroContagem():
         self.tela.CP_UltimaContagem.setText('')
 
     def LimpaInfo(self):
+        self.tela.CP_ID.setText('')
         self.tela.Info_Num.setText('')
         self.tela.Info_Modelo.setText('')
         self.tela.Info_Amigavel.setText('')
@@ -41,6 +44,17 @@ class viewCadastroContagem():
         self.tela.Info_MAzul.setText(dado[0][7])
         self.tela.CP_UltimaContagem.setText(ultima)
 
+    def ColocarDados(self,dados):
+        self.tela.CP_Impressora.setDisabled(True)
+        self.tela.BT_Selecionar.setDisabled(True)
+        self.tela.CP_ID.setText(str(dados[0][0]))
+        self.tela.CP_Contagem.setText(str(dados[0][2]))
+        self.tela.CP_Data.setText(str(dados[0][3]))
+        self.tela.CP_CPreto.setText(str(dados[0][4]))
+        self.tela.CP_CMargenta.setText(str(dados[0][5]))
+        self.tela.CP_CAmarelo.setText(str(dados[0][6]))
+        self.tela.CP_CAzul.setText(str(dados[0][7]))
+
     def ImprSelect(self):
         impr = self.tela.CP_Impressora.currentText()
         return impr
@@ -60,6 +74,7 @@ class viewCadastroContagem():
         dados.append(self.tela.CP_CMargenta.text())
         dados.append(self.tela.CP_CAmarelo.text())
         dados.append(self.tela.CP_CAzul.text())
+        dados.append(self.tela.CP_ID.text())
         return dados
 
     def Close(self):
