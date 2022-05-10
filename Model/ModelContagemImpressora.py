@@ -13,11 +13,11 @@ class ModelContagemImpressora():
 
     def Tabela(self, imp, lista):
         self = imp
-        self.tela.TB_Setor.clearContents()
+        self.tela.TB_Contagem.clearContents()
         n = 0
         ContImpre = 0
         nLista = len(lista)
-        self.tela.TB_Setor.setRowCount(nLista)
+        self.tela.TB_Contagem.setRowCount(nLista)
         for i in range(0, nLista):
             for j in range(0, 14):
                 if j < 6:

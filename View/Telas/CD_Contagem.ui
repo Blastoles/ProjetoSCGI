@@ -157,7 +157,7 @@
              </widget>
             </item>
             <item row="2" column="0" colspan="3">
-             <widget class="QTableWidget" name="TB_Setor">
+             <widget class="QTableWidget" name="TB_Contagem">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                 <horstretch>0</horstretch>
@@ -333,7 +333,7 @@
   <tabstop>BT_Voltar</tabstop>
   <tabstop>CP_Impressora</tabstop>
   <tabstop>BT_Selecionar</tabstop>
-  <tabstop>TB_Setor</tabstop>
+  <tabstop>TB_Contagem</tabstop>
  </tabstops>
  <resources/>
  <connections/>

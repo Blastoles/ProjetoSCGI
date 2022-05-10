@@ -17,7 +17,15 @@ class SistemaContagem():
         self.Ccontagem.Show('Criar')
 
     def Alterar(self):
-        self.Ccontagem.Show('Alterar')
+        linhaSelect = self.contagem.LinhaSelect()
+        if linhaSelect != -1:
+            TextoLinha = self.contagem.TextoSelectLinha(linhaSelect)
+            Dados = self.banco.Localizar(TextoLinha)
+            print(Dados)
+            self.Ccontagem.Show('Alterar')
+        else:
+            self.msg.MsgSelecionarLinha()
+
 
     def Lista(self):
         lista = self.banco.Lista()
@@ -43,8 +51,8 @@ class SistemaContagem():
         self.contagem.tela.BT_Voltar.clicked.connect(self.Close)
         self.contagem.tela.BT_Criar.clicked.connect(self.Criar)
         self.contagem.tela.BT_Selecionar.clicked.connect(self.Pesquisa)
+        self.contagem.tela.BT_Alterar.clicked.connect(self.Alterar)
         #self.contagem.tela.BT_Pesquisar.clicked.connect(self.PesquisarCadastro)
-        #self.contagem.tela.BT_Alterar.clicked.connect(self.AlterarCadastro)
         #self.contagem.tela.BT_Exclui.clicked.connect(self.ExcluirSetor)
 """
     def PesquisarCadastro(self):

@@ -32,6 +32,21 @@ class DAOContagemimpressora():
         banco.close()
         return pesq
 
+    def Localizar(self,dado):
+        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        cursor = banco.cursor()
+        try:
+            cursor.execute("SELECT "
+                           "IMPRESSORA_NUM_DE_SERIE,CONTAGEM,DATA,CUSTO_PRETO,CUSTO_MARGENTA,CUSTO_AMARELO,CUSTO_AZUL "
+                           "FROM CONTADOR C LEFT JOIN IMPRESSORA I "
+                           "ON C.IMPRESSORA_NUM_DE_SERIE = I.NUM_DE_SERIE "
+                           "WHERE IMPRESSORA_NUM_DE_SERIE = '{}' AND DATA = '{}' AND CONTAGEM = '{}' LIMIT 1".format(dado[0],dado[1],dado[2]))
+            Dados = cursor.fetchall()
+        except:
+            self.msg.MsgErroBancoDados()
+        banco.close()
+        return Dados
+
     def __init__(self):
         Local = getcwd()
         Local = Local.split('Controller')

@@ -13,7 +13,7 @@ class viewContagem():
         self.tela.CP_Impressora.addItems(lista)
 
     def LimparTela(self):
-        self.tela.TB_Setor.clearContents()
+        self.tela.TB_Contagem.clearContents()
         self.tela.BR_Pesquisa.setText('')
         self.tela.CP_Impressora.clear()
         self.tela.CP_Impressora.addItem("Selecione a Impressora")
@@ -21,14 +21,14 @@ class viewContagem():
         self.tela.CP_Impressora.setCurrentIndex(0)
 
     def Lista(self,i,j,texto):
-        self.tela.TB_Setor.setItem(i, j, QtWidgets.QTableWidgetItem(texto))
+        self.tela.TB_Contagem.setItem(i, j, QtWidgets.QTableWidgetItem(texto))
 
     def ImprSelect(self):
         impr = self.tela.CP_Impressora.currentText()
         return impr
 
     def LinhaSelect(self):
-        linha = self.tela.TB_Setor.currentRow()
+        linha = self.tela.TB_Contagem.currentRow()
         return linha
 
     def Dados(self):
@@ -37,7 +37,10 @@ class viewContagem():
         return texto
 
     def TextoSelectLinha(self,linhaSelect):
-        TextoLinha = self.tela.TB_Setor.item(linhaSelect,1).text()
+        TextoLinha = []
+        TextoLinha.append(self.tela.TB_Contagem.item(linhaSelect, 0).text())
+        TextoLinha.append(self.tela.TB_Contagem.item(linhaSelect, 4).text())
+        TextoLinha.append(self.tela.TB_Contagem.item(linhaSelect, 5).text())
         return TextoLinha
 
     def __init__(self):
