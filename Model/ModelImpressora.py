@@ -8,5 +8,5 @@ class ModelImpressora():
         nLista = len(lista)
         self.tela.TB_Impressora.setRowCount(nLista)
         for i in range(0, nLista):
-            for j in range(0, 8):
+            for j in range(0, 9):
                     self.Lista(i,j,str(lista[i][j]))

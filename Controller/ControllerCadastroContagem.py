@@ -29,24 +29,41 @@ class SistemaCContagem():
             selec = selec.split(' -- ')
             dados = self.banco.BuscarDados(selec[0])
             ultima = self.banco.UltimaContagem(selec[0])
-            teste = (str(ultima[0][0])+ ' -- ' + str(ultima[0][1]))
-            self.viewCContagem.ColocarInfo(dados,teste)
+            if ultima != []:
+                Ucont = (str(ultima[0][0])+ ' -- ' + str(ultima[0][1]))
+            else:
+                Ucont = ''
+            self.viewCContagem.ColocarInfo(dados,Ucont)
         else:
             self.viewCContagem.LimpaInfo()
             self.msg.MsgSelecionarImpr()
 
     def Opcao(self):
         if self.opcao == 'Criar':
-            self.InsertSetor()
+            self.InsertContagem()
         elif self.opcao == 'Alterar':
-            self.AlterarSetor()
+            self.AlterarContagem()
 
-    def InsertSetor(self):
+    def InsertContagem(self):
         check = self.viewCContagem.PegarImpressora()
         if check != '':
-            print(check)
+            dado = self.viewCContagem.ColetaDados()
+            if dado[0] != '' and dado[1] != '//':
+                linhadb = self.banco.ContLista()
+                dado.append(check)
+                self.banco.InsertContagem(dado,linhadb)
+                self.viewCContagem.Close()
+            else:
+                falta = ['','','']
+                if dado[0] == '':
+                    falta[0] = 'Contagem\n'
+                if dado[1] == '//':
+                    falta[1] = 'Data\n'
+                self.msg.MsgFaltaDados(falta)
+        else:
+            self.msg.MsgSelecionarImpr()
 
-    def AlterarSetor(self):
+    def AlterarContagem(self):
         print('Alterar')
 
     def __init__(self):

@@ -8,7 +8,6 @@ class DAOCadastrarSetor():
     def InserirDados(self,dados,linhadb):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
-        print(dados[0],linhadb)
         try:
             cursor.execute("INSERT INTO SETOR"
                            "(ID_SETOR,NOME_SETOR,SIGLA,RESPONSAVEL_LOCAL,PRIORIDADE)"
@@ -36,9 +35,9 @@ class DAOCadastrarSetor():
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
         try:
-            cursor.execute("SELECT ID_SETOR FROM SETOR")
+            cursor.execute("SELECT ID_SETOR FROM SETOR ORDER BY ID_SETOR DESC LIMIT 1")
             ContLista = cursor.fetchall()
-            NumLista = len(ContLista)
+            NumLista = ContLista[0][0]
         except:
             self.msg.MsgErroBancoDados()
         banco.close()

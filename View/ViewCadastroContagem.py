@@ -52,6 +52,16 @@ class viewCadastroContagem():
         check = self.tela.Info_Num.text()
         return check
 
+    def ColetaDados(self):
+        dados = []
+        dados.append(self.tela.CP_Contagem.text())
+        dados.append(self.tela.CP_Data.text())
+        dados.append(self.tela.CP_CPreto.text())
+        dados.append(self.tela.CP_CMargenta.text())
+        dados.append(self.tela.CP_CAmarelo.text())
+        dados.append(self.tela.CP_CAzul.text())
+        return dados
+
     def Close(self):
         self.tela.close()
 

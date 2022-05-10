@@ -44,9 +44,9 @@ class DAOCadastrarimpressora():
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
         try:
-            cursor.execute("SELECT ID_IMPRESSORA FROM IMPRESSORA")
+            cursor.execute("SELECT ID_IMPRESSORA FROM IMPRESSORA ORDER BY ID_IMPRESSORA DESC LIMIT 1")
             ContLista = cursor.fetchall()
-            NumLista = len(ContLista)
+            NumLista = ContLista[0][0]
         except:
             self.msg.MsgErroBancoDados()
         banco.close()

@@ -37,9 +37,9 @@ class DAOCadastraruser():
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
         try:
-            cursor.execute("SELECT ID_USUARIO USUARIO FROM USUARIO")
+            cursor.execute("SELECT ID_USUARIO USUARIO FROM USUARIO ORDER BY ID_USUARIO DESC LIMIT 1")
             ContLista = cursor.fetchall()
-            NumLista = len(ContLista)
+            NumLista = ContLista[0][0]
         except:
             self.msg.MsgErroBancoDados()
         banco.close()

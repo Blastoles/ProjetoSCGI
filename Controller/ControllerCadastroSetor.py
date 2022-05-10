@@ -22,6 +22,7 @@ class SistemaCSetor():
                 linhadb = self.DAOSetor.ContLista()
                 dados[3] = self.ModelSetor.PrioridadeInt(dados[3])
                 self.DAOSetor.InserirDados(dados,linhadb)
+                self.viewCSetor.Close()
                 self.setor.Tabela()
             else:
                 self.msg.MsgSetorJaCadastrado()
@@ -50,6 +51,7 @@ class SistemaCSetor():
         else:
             dados[3] = -1
         self.DAOSetor.UpdateDados(dados)
+        self.viewCSetor.Close()
         self.setor.Tabela()
 
     def Opcao(self):

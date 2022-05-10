@@ -32,7 +32,7 @@ class SistemaCadastroUser():
         if ddColetado[0] != '' and ddColetado[3] != '' and ddColetado[4] != '':
             userbanco = self.banco.CheckUser(ddColetado[3])
             if  userbanco == []:
-                linhadb = self.banco.ContLista() + 1
+                linhadb = self.banco.ContLista()
                 self.banco.InserirDados(ddColetado,linhadb)
                 self.cduser.Close()
                 self.user.Tabela()

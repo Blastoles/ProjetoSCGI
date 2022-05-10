@@ -40,6 +40,31 @@ class DAOCadastrarContagem():
         banco.close()
         return Ultima
 
+    def InsertContagem(self,dado,linhadb):
+        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        cursor = banco.cursor()
+        try:
+            cursor.execute("INSERT INTO "
+                           "CONTADOR "
+                           "VALUES "
+                           "({},'{}','{}','{}','{}','{}','{}','{}')".format(linhadb+1,dado[0],dado[1],dado[2],dado[3],dado[4],dado[5],dado[6]))
+            banco.commit()
+            self.msg.MsgRealizadoComSucesso()
+        except:
+            self.msg.MsgErroBancoDados()
+        banco.close()
+
+    def ContLista(self):
+        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        cursor = banco.cursor()
+        try:
+            cursor.execute("SELECT ID_CONTADOR FROM CONTADOR ORDER BY ID_CONTADOR DESC LIMIT 1")
+            ContLista = cursor.fetchall()
+            NumLista = ContLista[0][0]
+        except:
+            self.msg.MsgErroBancoDados()
+        banco.close()
+        return NumLista
 
     def __init__(self):
         Local = getcwd()

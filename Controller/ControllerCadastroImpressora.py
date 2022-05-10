@@ -23,6 +23,7 @@ class SistemaCadastroImpressora():
                 lista = self.model.TratarInsert(lista)
                 linhadb = self.banco.ContLista()
                 self.banco.InserirDados(lista,linhadb)
+                self.viewcdImp.Close()
                 self.imp.Tabela()
             else:
                 self.msg.MsgImprJaCadastrado()
@@ -38,6 +39,7 @@ class SistemaCadastroImpressora():
         dados = self.viewcdImp.ColetaDados()
         dados = self.model.TratarInsert(dados)
         self.banco.UpdateDados(dados)
+        self.viewcdImp.Close()
         self.imp.Tabela()
 
     def MostrarDados(self,TextoLinha):
