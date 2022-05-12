@@ -14,7 +14,6 @@ class viewContagem():
 
     def LimparTela(self):
         self.tela.TB_Contagem.clearContents()
-        self.tela.BR_Pesquisa.setText('')
         self.tela.CP_Impressora.clear()
         self.tela.CP_Impressora.addItem("Selecione a Impressora")
         self.tela.CP_Impressora.addItem("Número de Serie -- Modelo -- Setor -- Sigla do Setor")
