@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Contagem</class>
+ <widget class="QMainWindow" name="Contagem">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>741</width>
+    <height>542</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Contagem</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QFrame" name="frame_2">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QFrame" name="frame">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QPushButton" name="BT_Criar">
+              <property name="text">
+               <string>Novo</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../Arte/new_page_document_1560.ico</normaloff>../Arte/new_page_document_1560.ico</iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="BT_Alterar">
+              <property name="text">
+               <string>Alterar</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../Arte/edit_pencil_write_1574.ico</normaloff>../Arte/edit_pencil_write_1574.ico</iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="BT_Exclui">
+              <property name="text">
+               <string>Excluir</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../Arte/delete_delete_exit_1577.ico</normaloff>../Arte/delete_delete_exit_1577.ico</iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="BT_Voltar">
+              <property name="text">
+               <string>Voltar</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../Arte/3643764-back-backward-left-reply-turn_113415.ico</normaloff>../Arte/3643764-back-backward-left-reply-turn_113415.ico</iconset>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="frame_3">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="2">
+             <widget class="QGraphicsView" name="graphicsView"/>
+            </item>
+            <item row="0" column="1">
+             <widget class="QRadioButton" name="radioButton">
+              <property name="text">
+               <string>RadioButton</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>BT_Criar</tabstop>
+  <tabstop>BT_Alterar</tabstop>
+  <tabstop>BT_Exclui</tabstop>
+  <tabstop>BT_Voltar</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
