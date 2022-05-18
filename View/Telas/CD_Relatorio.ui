@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>741</width>
-    <height>596</height>
+    <width>922</width>
+    <height>620</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,59 +15,6 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="0" column="0" colspan="2">
-     <widget class="QFrame" name="frame">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QPushButton" name="BT_Criar">
-         <property name="text">
-          <string>Gerar Relatorio</string>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>../Arte/check_ok_accept_apply_1582.ico</normaloff>../Arte/check_ok_accept_apply_1582.ico</iconset>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="BT_Voltar">
-         <property name="text">
-          <string>Voltar</string>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>../Arte/3643764-back-backward-left-reply-turn_113415.ico</normaloff>../Arte/3643764-back-backward-left-reply-turn_113415.ico</iconset>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
     <item row="1" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
@@ -138,6 +85,9 @@
              <property name="text">
               <string>Sigla Setor</string>
              </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
             </widget>
            </item>
            <item row="1" column="1">
@@ -200,6 +150,17 @@
             <widget class="QCheckBox" name="checkBox_19">
              <property name="text">
               <string>Modelo Toner(s)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="2">
+            <widget class="QPushButton" name="BT_Criar">
+             <property name="text">
+              <string>Gerar Relatorio</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../Arte/check_ok_accept_apply_1582.ico</normaloff>../Arte/check_ok_accept_apply_1582.ico</iconset>
              </property>
             </widget>
            </item>
@@ -354,6 +315,13 @@
           </property>
           <layout class="QGridLayout" name="gridLayout_4">
            <item row="1" column="0">
+            <widget class="QCheckBox" name="checkBox_20">
+             <property name="text">
+              <string>Todas Impressoras</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
             <widget class="QTableWidget" name="tableWidget">
              <property name="acceptDrops">
               <bool>true</bool>
@@ -373,8 +341,14 @@
              <property name="verticalScrollMode">
               <enum>QAbstractItemView::ScrollPerItem</enum>
              </property>
+             <property name="showGrid">
+              <bool>true</bool>
+             </property>
              <property name="gridStyle">
               <enum>Qt::SolidLine</enum>
+             </property>
+             <property name="cornerButtonEnabled">
+              <bool>true</bool>
              </property>
              <attribute name="horizontalHeaderVisible">
               <bool>true</bool>
@@ -401,7 +375,7 @@
              </row>
              <column>
               <property name="text">
-               <string>Teste</string>
+               <string>Seleção</string>
               </property>
               <property name="font">
                <font>
@@ -424,13 +398,19 @@
                </font>
               </property>
              </column>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="QCheckBox" name="checkBox_20">
-             <property name="text">
-              <string>Todas Impressoras</string>
-             </property>
+             <item row="0" column="0">
+              <property name="text">
+               <string/>
+              </property>
+              <property name="checkState">
+               <enum>Checked</enum>
+              </property>
+             </item>
+             <item row="0" column="1">
+              <property name="text">
+               <string/>
+              </property>
+             </item>
             </widget>
            </item>
           </layout>
@@ -450,11 +430,52 @@
       </widget>
      </widget>
     </item>
+    <item row="0" column="0">
+     <widget class="QFrame" name="frame">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="BT_Voltar">
+         <property name="text">
+          <string>Voltar</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Arte/3643764-back-backward-left-reply-turn_113415.ico</normaloff>../Arte/3643764-back-backward-left-reply-turn_113415.ico</iconset>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
    </layout>
   </widget>
  </widget>
  <tabstops>
-  <tabstop>BT_Criar</tabstop>
   <tabstop>BT_Voltar</tabstop>
  </tabstops>
  <resources/>
