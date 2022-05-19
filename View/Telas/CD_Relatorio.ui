@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>932</width>
-    <height>601</height>
+    <width>874</width>
+    <height>599</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -427,21 +427,6 @@
                 <attribute name="verticalHeaderStretchLastSection">
                  <bool>false</bool>
                 </attribute>
-                <column>
-                 <property name="text">
-                  <string>Seleção</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Arial</family>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="textAlignment">
-                  <set>AlignCenter</set>
-                 </property>
-                </column>
                 <column>
                  <property name="text">
                   <string>Número de Série</string>
