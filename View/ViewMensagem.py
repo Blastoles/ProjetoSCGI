@@ -36,7 +36,7 @@ class viewMensagem():
         self.tela.TX_Atencao.setText("Selecione uma impressora valida!!")
 
     def MsgSelecionarLinha(self):
-        self.tela.TX_Atencao.setText("Selecione uma linha da tabela de Usuários!!")
+        self.tela.TX_Atencao.setText("Selecione uma linha da tabela!!")
 
     def MsgSetorJaCadastrado(self):
         self.tela.TX_Atencao.setText("Já existe um setor com essa 'SIGLA'!!")
