@@ -9,6 +9,9 @@ class viewRelatorio():
     def Close(self):
         self.tela.close()
 
+    def Lista(self,i,j,texto):
+        self.tela.TB_Impressora.setItem(i, j, QtWidgets.QTableWidgetItem(texto))
+
     def __init__(self):
         Local = getcwd()
         Local = Local.split('Controller')

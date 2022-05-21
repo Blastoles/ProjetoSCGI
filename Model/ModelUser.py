@@ -12,8 +12,8 @@ class Modeluser():
             for j in range(0, 5):
                 if j == 4:
                     if lista[i][j] == 1:
-                        self.tela.TB_Cadastro.setItem(i, j, QtWidgets.QTableWidgetItem(str("Ativo")))
+                        self.Lista(i, j, str("Ativo"))
                     else:
-                        self.tela.TB_Cadastro.setItem(i, j, QtWidgets.QTableWidgetItem(str("Desativado")))
+                        self.Lista(i, j, str("Desativado"))
                 else:
                     self.Lista(i,j,str(lista[i][j]))

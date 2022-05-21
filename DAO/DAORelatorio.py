@@ -9,7 +9,7 @@ class DAORelatorio():
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
         try:
-            cursor.execute("SELECT ")
+            cursor.execute("SELECT NUM_DE_SERIE, MODELO, SETOR_NOME, SETOR_SIGLA FROM IMPRESSORA")
             lista = cursor.fetchall()
         except:
             self.msg.MsgErroBancoDados()

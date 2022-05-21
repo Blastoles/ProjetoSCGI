@@ -262,7 +262,7 @@
              </property>
              <layout class="QGridLayout" name="gridLayout_3">
               <item row="0" column="0">
-               <widget class="QRadioButton" name="BT_Todos">
+               <widget class="QRadioButton" name="BT_TodosCond">
                 <property name="text">
                  <string>Todos</string>
                 </property>
@@ -291,17 +291,24 @@
               <string>Status</string>
              </property>
              <layout class="QGridLayout" name="gridLayout_6">
-              <item row="0" column="0">
+              <item row="2" column="0">
+               <widget class="QRadioButton" name="BT_Desativada">
+                <property name="text">
+                 <string>Desativada</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
                <widget class="QRadioButton" name="BT_Funcionando">
                 <property name="text">
                  <string>Funcionando</string>
                 </property>
                </widget>
               </item>
-              <item row="1" column="0">
-               <widget class="QRadioButton" name="BT_Desativada">
+              <item row="0" column="0">
+               <widget class="QRadioButton" name="BT_TodosStatus">
                 <property name="text">
-                 <string>Desativada</string>
+                 <string>Todos</string>
                 </property>
                </widget>
               </item>
@@ -353,24 +360,12 @@
               <string>Impressora(s)</string>
              </property>
              <layout class="QGridLayout" name="gridLayout_11">
-              <item row="0" column="0">
-               <widget class="QCheckBox" name="BT_TodasImpressoras">
-                <property name="text">
-                 <string>Todas</string>
-                </property>
-                <property name="tristate">
-                 <bool>false</bool>
-                </property>
-               </widget>
-              </item>
               <item row="1" column="0">
                <widget class="QTableWidget" name="TB_Impressora">
-                <property name="font">
-                 <font>
-                  <family>Arial</family>
-                 </font>
+                <property name="focusPolicy">
+                 <enum>Qt::WheelFocus</enum>
                 </property>
-                <property name="acceptDrops">
+                <property name="autoFillBackground">
                  <bool>true</bool>
                 </property>
                 <property name="frameShape">
@@ -379,99 +374,63 @@
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
-                <property name="lineWidth">
-                 <number>1</number>
-                </property>
-                <property name="midLineWidth">
-                 <number>0</number>
+                <property name="sizeAdjustPolicy">
+                 <enum>QAbstractScrollArea::AdjustToContents</enum>
                 </property>
                 <property name="editTriggers">
                  <set>QAbstractItemView::NoEditTriggers</set>
                 </property>
-                <property name="dragEnabled">
-                 <bool>false</bool>
+                <property name="alternatingRowColors">
+                 <bool>true</bool>
+                </property>
+                <property name="selectionMode">
+                 <enum>QAbstractItemView::MultiSelection</enum>
                 </property>
                 <property name="selectionBehavior">
                  <enum>QAbstractItemView::SelectRows</enum>
                 </property>
-                <property name="verticalScrollMode">
-                 <enum>QAbstractItemView::ScrollPerItem</enum>
-                </property>
-                <property name="showGrid">
-                 <bool>true</bool>
-                </property>
                 <property name="gridStyle">
-                 <enum>Qt::SolidLine</enum>
+                 <enum>Qt::DashLine</enum>
                 </property>
-                <property name="cornerButtonEnabled">
-                 <bool>true</bool>
+                <property name="rowCount">
+                 <number>0</number>
                 </property>
-                <attribute name="horizontalHeaderVisible">
-                 <bool>false</bool>
-                </attribute>
-                <attribute name="horizontalHeaderCascadingSectionResizes">
-                 <bool>false</bool>
-                </attribute>
                 <attribute name="horizontalHeaderDefaultSectionSize">
-                 <number>141</number>
-                </attribute>
-                <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
-                 <bool>false</bool>
+                 <number>160</number>
                 </attribute>
                 <attribute name="horizontalHeaderStretchLastSection">
                  <bool>true</bool>
                 </attribute>
-                <attribute name="verticalHeaderShowSortIndicator" stdset="0">
-                 <bool>false</bool>
-                </attribute>
-                <attribute name="verticalHeaderStretchLastSection">
-                 <bool>false</bool>
-                </attribute>
                 <column>
                  <property name="text">
                   <string>Número de Série</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
                  </property>
                 </column>
                 <column>
                  <property name="text">
                   <string>Modelo</string>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Arial</family>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
                 </column>
                 <column>
                  <property name="text">
                   <string>Setor da Impressora</string>
                  </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
                 </column>
                 <column>
                  <property name="text">
-                  <string>Sigla Setor</string>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
+                  <string>Sigla do Setor</string>
                  </property>
                 </column>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QCheckBox" name="BT_TodasImpressoras">
+                <property name="text">
+                 <string>Todas</string>
+                </property>
+                <property name="tristate">
+                 <bool>false</bool>
+                </property>
                </widget>
               </item>
              </layout>

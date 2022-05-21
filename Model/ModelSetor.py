@@ -11,14 +11,14 @@ class ModelSetor():
             for j in range(0, 4):
                 if j == 2:
                     if lista[i][j] == 0:
-                        self.tela.TB_Setor.setItem(i, j, QtWidgets.QTableWidgetItem(str("Normal")))
+                        self.Lista(i, j, str("Normal"))
                     elif lista[i][j] == 1:
-                        self.tela.TB_Setor.setItem(i, j, QtWidgets.QTableWidgetItem(str("Baixa")))
+                        self.Lista(i, j, str("Baixa"))
                     elif lista[i][j] == 2:
-                        self.tela.TB_Setor.setItem(i, j, QtWidgets.QTableWidgetItem(str("Alta")))
+                        self.Lista(i, j, str("Alta"))
                     elif lista[i][j] == 3:
-                        self.tela.TB_Setor.setItem(i, j, QtWidgets.QTableWidgetItem(str("Urgente")))
+                        self.Lista(i, j, str("Urgente"))
                     else:
-                        self.tela.TB_Setor.setItem(i, j, QtWidgets.QTableWidgetItem(str("Não Específico")))
+                        self.Lista(i, j, str("Não Específico"))
                 else:
                     self.Lista(i,j,str(lista[i][j]))
