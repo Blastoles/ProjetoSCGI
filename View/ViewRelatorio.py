@@ -9,8 +9,49 @@ class viewRelatorio():
     def Close(self):
         self.tela.close()
 
+    def Status(self):
+        if self.tela.BT_TodosStatus.isChecked():
+            return ''
+        elif self.tela.BT_Funcionando.isChecked():
+            return '1'
+        elif self.tela.BT_Desativada.isChecked():
+            return '0'
+
+    def Condicao(self):
+        if self.tela.BT_TodosCond.isChecked():
+            return ''
+        elif self.tela.BT_Comprada.isChecked():
+            return '0'
+        elif self.tela.BT_Alugada.isChecked():
+            return '1'
+
     def Lista(self,i,j,texto):
         self.tela.TB_Impressora.setItem(i, j, QtWidgets.QTableWidgetItem(texto))
+
+    def DataCheck(self):
+        if self.tela.BT_DataInicial.isChecked():
+            self.tela.CP_DataInicial.setDisabled(False)
+        else:
+            self.tela.CP_DataInicial.setDisabled(True)
+        if self.tela.BT_DataFinal.isChecked():
+            self.tela.CP_DataFinal.setDisabled(False)
+        else:
+            self.tela.CP_DataFinal.setDisabled(True)
+
+    def TabelaCheck(self):
+        if self.tela.BT_TodasImpressoras.isChecked():
+            self.tela.TB_Impressora.setDisabled(True)
+        else:
+            self.tela.TB_Impressora.setDisabled(False)
+
+    def ColetaDadosContagem(self):
+        Dados = []
+        if self.tela.BT_TodasImpressoras.isChecked():
+            Dados.append('NOT NULL')
+        else:
+            linha = self.tela.TB_Impressora.selectedRows()
+            print(linha)
+
 
     def __init__(self):
         Local = getcwd()

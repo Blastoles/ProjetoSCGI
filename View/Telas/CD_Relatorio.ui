@@ -178,6 +178,9 @@
              <layout class="QGridLayout" name="gridLayout_7">
               <item row="1" column="0">
                <widget class="QLineEdit" name="CP_DataInicial">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
                   <horstretch>0</horstretch>
@@ -196,6 +199,9 @@
               </item>
               <item row="3" column="0">
                <widget class="QLineEdit" name="CP_DataFinal">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
                   <horstretch>0</horstretch>
@@ -266,6 +272,9 @@
                 <property name="text">
                  <string>Todos</string>
                 </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
                </widget>
               </item>
               <item row="1" column="0">
@@ -309,6 +318,9 @@
                <widget class="QRadioButton" name="BT_TodosStatus">
                 <property name="text">
                  <string>Todos</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>
