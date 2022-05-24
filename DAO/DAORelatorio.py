@@ -9,7 +9,7 @@ class DAORelatorio():
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
         try:
-            cursor.execute("SELECT NUM_DE_SERIE, MODELO, SETOR_NOME, SETOR_SIGLA "
+            cursor.execute("SELECT NUM_DE_SERIE, MODELO, SETOR_NOME, SETOR_SIGLA, ATIVO, ALUGADA "
                            "FROM IMPRESSORA "
                            "WHERE ATIVO {} {} AND ALUGADA {} {}".format(cond[0],filtro[0],cond[1],filtro[1]))
             lista = cursor.fetchall()

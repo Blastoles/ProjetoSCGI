@@ -1,5 +1,5 @@
 from os import getcwd
-
+from collections import OrderedDict
 from PyQt5 import uic, QtWidgets
 
 class viewRelatorio():
@@ -45,12 +45,13 @@ class viewRelatorio():
             self.tela.TB_Impressora.setDisabled(False)
 
     def ColetaDadosContagem(self):
-        Dados = []
         if self.tela.BT_TodasImpressoras.isChecked():
-            Dados.append('NOT NULL')
+            return []
         else:
-            linha = self.tela.TB_Impressora.selectedRows()
-            print(linha)
+            lst = []
+            for LinhasSelecionadas in self.tela.TB_Impressora.selectedIndexes():
+                lst.append(self.tela.TB_Impressora.item(LinhasSelecionadas.row(), 0).text())
+            return (list(OrderedDict.fromkeys(lst)))
 
 
     def __init__(self):

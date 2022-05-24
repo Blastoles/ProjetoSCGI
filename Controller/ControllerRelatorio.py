@@ -39,7 +39,8 @@ class SistemaRelatorio():
         self.ViewRela.TabelaCheck()
 
     def GerarContagem(self):
-        self.ViewRela.ColetaDadosContagem()
+        lista = self.ViewRela.ColetaDadosContagem()
+        print(lista)
 
     def __init__(self):
         self.ViewRela = viewRelatorio()

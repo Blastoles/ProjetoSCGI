@@ -7,5 +7,16 @@ class Modelrelatorio():
         self.tela.TB_Impressora.clearContents()
         self.tela.TB_Impressora.setRowCount(nLista)
         for i in range(0,nLista):
-            for j in range(0,4):
-                self.Lista(i, j, str(lista[i][j]))
+            for j in range(0,6):
+                if j == 4:
+                    if lista[i][j] == 1:
+                        self.Lista(i, j, "Funcionando")
+                    else:
+                        self.Lista(i, j, "Desativada")
+                elif j == 5:
+                    if lista[i][j] == 1:
+                        self.Lista(i, j, "Alugada")
+                    else:
+                        self.Lista(i, j, "Comprada")
+                else:
+                    self.Lista(i, j, str(lista[i][j]))

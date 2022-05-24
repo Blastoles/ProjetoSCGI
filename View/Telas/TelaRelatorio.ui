@@ -50,7 +50,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../Arte/3643764-back-backward-left-reply-turn_113415.ico</normaloff>../Arte/3643764-back-backward-left-reply-turn_113415.ico</iconset>
+           <normaloff>../../../../.designer/Arte/3643764-back-backward-left-reply-turn_113415.ico</normaloff>../../../../.designer/Arte/3643764-back-backward-left-reply-turn_113415.ico</iconset>
          </property>
         </widget>
        </item>
