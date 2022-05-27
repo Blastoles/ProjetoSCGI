@@ -1,9 +1,8 @@
 from os import getcwd
 
 from PyQt5 import uic, QtWidgets
-from PyQt5.QtWidgets import QMessageBox
 
-class viewConfirmacao(QMessageBox):
+class viewManutencao():
     def Show(self):
         self.tela.show()
 
@@ -14,4 +13,4 @@ class viewConfirmacao(QMessageBox):
         Local = getcwd()
         Local = Local.split('Controller')
         Local = Local[0].replace('C:','C:\\')
-        self.tela = uic.loadUi("{}View\Telas\Confirmar.ui".format(Local))
+        self.tela = uic.loadUi("{}View\Telas\CD_Manutencao.ui".format(Local))

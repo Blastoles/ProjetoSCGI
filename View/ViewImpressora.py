@@ -30,4 +30,3 @@ class viewImpressora():
         Local = Local.split('Controller')
         Local = Local[0].replace('C:','C:\\')
         self.tela = uic.loadUi("{}View\Telas\CD_Impressora.ui".format(Local))
-        #self.tela = uic.loadUi(".\View\Telas\CD_Impressora.ui")
