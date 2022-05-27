@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Manutencao</class>
+ <widget class="QMainWindow" name="Manutencao">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>852</width>
+    <height>603</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Manutencao</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QFrame" name="frame_2">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QFrame" name="frame">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="BT_Criar">
+              <property name="text">
+               <string>Novo</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../Arte/new_page_document_1560.ico</normaloff>../Arte/new_page_document_1560.ico</iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="BT_Alterar">
+              <property name="text">
+               <string>Alterar</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../Arte/edit_pencil_write_1574.ico</normaloff>../Arte/edit_pencil_write_1574.ico</iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="BT_Exclui">
+              <property name="text">
+               <string>Excluir</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../Arte/delete_delete_exit_1577.ico</normaloff>../Arte/delete_delete_exit_1577.ico</iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="BT_Voltar">
+              <property name="text">
+               <string>Voltar</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../Arte/3643764-back-backward-left-reply-turn_113415.ico</normaloff>../Arte/3643764-back-backward-left-reply-turn_113415.ico</iconset>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="frame_3">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <item row="0" column="0">
+             <widget class="QLabel" name="TX_Impressora">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="font">
+               <font>
+                <family>Arial</family>
+                <pointsize>8</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Impressora</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QComboBox" name="CP_Impressora">
+              <property name="styleSheet">
+               <string notr="true">font: 8pt &quot;Arial&quot;;</string>
+              </property>
+              <item>
+               <property name="text">
+                <string>Selecione a Impressora</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Número de Serie -- Modelo -- Setor -- Sigla do Setor</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QPushButton" name="BT_Selecionar">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Selecionar</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" colspan="3">
+             <widget class="QTableWidget" name="TB_Manutencao">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="tabletTracking">
+               <bool>false</bool>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::WheelFocus</enum>
+              </property>
+              <property name="layoutDirection">
+               <enum>Qt::LeftToRight</enum>
+              </property>
+              <property name="autoFillBackground">
+               <bool>true</bool>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::Box</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <property name="verticalScrollBarPolicy">
+               <enum>Qt::ScrollBarAlwaysOn</enum>
+              </property>
+              <property name="horizontalScrollBarPolicy">
+               <enum>Qt::ScrollBarAsNeeded</enum>
+              </property>
+              <property name="sizeAdjustPolicy">
+               <enum>QAbstractScrollArea::AdjustToContents</enum>
+              </property>
+              <property name="autoScrollMargin">
+               <number>17</number>
+              </property>
+              <property name="editTriggers">
+               <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
+              <property name="dragEnabled">
+               <bool>false</bool>
+              </property>
+              <property name="dragDropMode">
+               <enum>QAbstractItemView::NoDragDrop</enum>
+              </property>
+              <property name="alternatingRowColors">
+               <bool>true</bool>
+              </property>
+              <property name="selectionMode">
+               <enum>QAbstractItemView::SingleSelection</enum>
+              </property>
+              <property name="selectionBehavior">
+               <enum>QAbstractItemView::SelectRows</enum>
+              </property>
+              <property name="verticalScrollMode">
+               <enum>QAbstractItemView::ScrollPerItem</enum>
+              </property>
+              <property name="showGrid">
+               <bool>true</bool>
+              </property>
+              <property name="gridStyle">
+               <enum>Qt::DashLine</enum>
+              </property>
+              <attribute name="horizontalHeaderVisible">
+               <bool>true</bool>
+              </attribute>
+              <attribute name="horizontalHeaderCascadingSectionResizes">
+               <bool>false</bool>
+              </attribute>
+              <attribute name="horizontalHeaderDefaultSectionSize">
+               <number>162</number>
+              </attribute>
+              <attribute name="horizontalHeaderHighlightSections">
+               <bool>true</bool>
+              </attribute>
+              <attribute name="horizontalHeaderMinimumSectionSize">
+               <number>39</number>
+              </attribute>
+              <attribute name="horizontalHeaderStretchLastSection">
+               <bool>true</bool>
+              </attribute>
+              <column>
+               <property name="text">
+                <string>Número de Série</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Modelo</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Nome do Setor</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Sigla do Setor</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Data</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Motivo</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>New Column</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Tempo Parada</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>BT_Criar</tabstop>
+  <tabstop>BT_Alterar</tabstop>
+  <tabstop>BT_Exclui</tabstop>
+  <tabstop>BT_Voltar</tabstop>
+  <tabstop>CP_Impressora</tabstop>
+  <tabstop>BT_Selecionar</tabstop>
+  <tabstop>TB_Manutencao</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
