@@ -409,105 +409,6 @@
           </property>
          </widget>
         </item>
-        <item row="5" column="1">
-         <widget class="QLineEdit" name="CP_CPreto">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-           </font>
-          </property>
-          <property name="autoFillBackground">
-           <bool>false</bool>
-          </property>
-          <property name="inputMask">
-           <string/>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="maxLength">
-           <number>32767</number>
-          </property>
-          <property name="dragEnabled">
-           <bool>false</bool>
-          </property>
-          <property name="readOnly">
-           <bool>false</bool>
-          </property>
-          <property name="placeholderText">
-           <string>R$</string>
-          </property>
-          <property name="clearButtonEnabled">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="1">
-         <widget class="QLineEdit" name="CP_CMargenta">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-           </font>
-          </property>
-          <property name="inputMask">
-           <string/>
-          </property>
-          <property name="placeholderText">
-           <string>R$</string>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="1">
-         <widget class="QLineEdit" name="CP_CAmarelo">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-           </font>
-          </property>
-          <property name="inputMask">
-           <string/>
-          </property>
-          <property name="placeholderText">
-           <string>R$</string>
-          </property>
-         </widget>
-        </item>
-        <item row="8" column="1">
-         <widget class="QLineEdit" name="CP_CAzul">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-           </font>
-          </property>
-          <property name="inputMethodHints">
-           <set>Qt::ImhNone</set>
-          </property>
-          <property name="inputMask">
-           <string/>
-          </property>
-          <property name="frame">
-           <bool>true</bool>
-          </property>
-          <property name="cursorPosition">
-           <number>0</number>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-          </property>
-          <property name="dragEnabled">
-           <bool>true</bool>
-          </property>
-          <property name="readOnly">
-           <bool>false</bool>
-          </property>
-          <property name="placeholderText">
-           <string>R$</string>
-          </property>
-          <property name="cursorMoveStyle">
-           <enum>Qt::LogicalMoveStyle</enum>
-          </property>
-         </widget>
-        </item>
         <item row="9" column="0" colspan="3">
          <widget class="QFrame" name="frame_5">
           <property name="frameShape">
@@ -554,6 +455,34 @@
             </widget>
            </item>
           </layout>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QDoubleSpinBox" name="CP_CPreto">
+          <property name="maximum">
+           <double>9999.989999999999782</double>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="1">
+         <widget class="QDoubleSpinBox" name="CP_CMargenta">
+          <property name="maximum">
+           <double>9999.989999999999782</double>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="1">
+         <widget class="QDoubleSpinBox" name="CP_CAmarelo">
+          <property name="maximum">
+           <double>9999.989999999999782</double>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="1">
+         <widget class="QDoubleSpinBox" name="CP_CAzul">
+          <property name="maximum">
+           <double>9999.989999999999782</double>
+          </property>
          </widget>
         </item>
        </layout>
@@ -621,10 +550,6 @@
   <tabstop>CP_Impressora</tabstop>
   <tabstop>CP_Contagem</tabstop>
   <tabstop>CP_Data</tabstop>
-  <tabstop>CP_CPreto</tabstop>
-  <tabstop>CP_CMargenta</tabstop>
-  <tabstop>CP_CAmarelo</tabstop>
-  <tabstop>CP_CAzul</tabstop>
   <tabstop>BT_Salvar</tabstop>
   <tabstop>BT_Cancelar</tabstop>
  </tabstops>

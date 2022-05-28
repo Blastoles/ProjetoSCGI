@@ -51,6 +51,7 @@ class SistemaCContagem():
             if dado[0] != '' and dado[1] != '//':
                 linhadb = self.banco.ContLista()
                 dado.append(check)
+                print(dado)
                 self.banco.InsertContagem(dado,linhadb)
                 self.viewCContagem.Close()
             else:

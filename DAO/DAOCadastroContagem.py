@@ -47,7 +47,7 @@ class DAOCadastrarContagem():
             cursor.execute("INSERT INTO "
                            "CONTADOR "
                            "VALUES "
-                           "({},'{}','{}','{}','{}','{}','{}','{}')".format(linhadb+1,dado[0],dado[1],dado[2],dado[3],dado[4],dado[5],dado[6]))
+                           "({},'{}','{}','{}','{}','{}','{}','{}')".format(linhadb+1,dado[0],dado[1],dado[2],dado[3],dado[4],dado[5],dado[7]))
             banco.commit()
             self.msg.MsgRealizadoComSucesso()
         except:

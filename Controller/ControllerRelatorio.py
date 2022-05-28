@@ -40,7 +40,6 @@ class SistemaRelatorio():
 
     def GerarContagem(self):
         lista = self.ViewRela.ColetaDadosContagem()
-        print(lista)
 
     def __init__(self):
         self.ViewRela = viewRelatorio()
