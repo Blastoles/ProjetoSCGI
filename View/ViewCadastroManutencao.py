@@ -10,6 +10,32 @@ class viewCadastroManutencao():
         self.tela.CP_Impressora.addItem("Selecione a Impressora")
         self.tela.CP_Impressora.setCurrentIndex(0)
 
+    def LimpaInfo(self):
+        self.tela.CP_ID.setText('')
+        self.tela.Info_Num.setText('')
+        self.tela.Info_Modelo.setText('')
+        self.tela.Info_Amigavel.setText('')
+        self.tela.Info_Setor.setText('')
+        self.tela.Info_MPreto.setText('')
+        self.tela.Info_MMargenta.setText('')
+        self.tela.Info_MAmarelo.setText('')
+        self.tela.Info_MAzul.setText('')
+        self.tela.CP_UltimaContagem.setText('')
+
+    def Close(self):
+        self.tela.close()
+
+    def __init__(self):
+        Local = getcwd()
+        Local = Local.split('Controller')
+        Local = Local[0].replace('C:','C:\\')
+        self.tela = uic.loadUi("{}View\Telas\CadastroManutencao.ui".format(Local))
+
+"""    def LimpeLista(self):
+        self.tela.CP_Impressora.clear()
+        self.tela.CP_Impressora.addItem("Selecione a Impressora")
+        self.tela.CP_Impressora.setCurrentIndex(0)
+
     def LimpeTela(self):
         self.tela.CP_Impressora.setDisabled(False)
         self.tela.BT_Selecionar.setDisabled(False)
@@ -64,13 +90,4 @@ class viewCadastroManutencao():
 
     def PegarImpressora(self):
         check = self.tela.Info_Num.text()
-        return check
-
-    def Close(self):
-        self.tela.close()
-
-    def __init__(self):
-        Local = getcwd()
-        Local = Local.split('Controller')
-        Local = Local[0].replace('C:','C:\\')
-        self.tela = uic.loadUi("{}View\Telas\CadastroManutencao.ui".format(Local))
+        return check"""

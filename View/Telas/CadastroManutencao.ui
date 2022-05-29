@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>749</width>
-    <height>584</height>
+    <height>593</height>
    </rect>
   </property>
   <property name="acceptDrops">
@@ -281,54 +281,6 @@
         <enum>QFrame::Plain</enum>
        </property>
        <layout class="QGridLayout" name="gridLayout_2">
-        <item row="1" column="0">
-         <widget class="QLabel" name="TX_Impressora">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-            <pointsize>8</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Impressora</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1" colspan="5">
-         <widget class="QComboBox" name="CP_Impressora">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <family>Arial</family>
-           </font>
-          </property>
-          <property name="focusPolicy">
-           <enum>Qt::WheelFocus</enum>
-          </property>
-          <property name="contextMenuPolicy">
-           <enum>Qt::DefaultContextMenu</enum>
-          </property>
-          <item>
-           <property name="text">
-            <string>Selecione a Impressora</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="1" column="6">
-         <widget class="QPushButton" name="BT_Selecionar">
-          <property name="text">
-           <string>Selecionar</string>
-          </property>
-         </widget>
-        </item>
         <item row="3" column="0" colspan="7">
          <widget class="QFrame" name="frame_6">
           <property name="frameShape">
@@ -338,129 +290,7 @@
            <enum>QFrame::Plain</enum>
           </property>
           <layout class="QGridLayout" name="gridLayout_5">
-           <item row="3" column="0">
-            <widget class="QLabel" name="TX_Custo">
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Custo</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="1">
-            <widget class="QDoubleSpinBox" name="CP_Custo">
-             <property name="font">
-              <font>
-               <family>Arial</family>
-              </font>
-             </property>
-             <property name="maximum">
-              <double>99999.990000000005239</double>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="1">
-            <widget class="QTextEdit" name="CP_Descricao">
-             <property name="font">
-              <font>
-               <family>Arial</family>
-              </font>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="TX_Data">
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Data que Parou</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="0">
-            <widget class="QLabel" name="TX_Tipo">
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Tipo de Manutenção</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="QLabel" name="TX_Descricao">
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Descrição</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QComboBox" name="CP_Tipo">
-             <property name="font">
-              <font>
-               <family>Arial</family>
-              </font>
-             </property>
-             <item>
-              <property name="text">
-               <string>Escolha o tipo de manutenção</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Manutenção Preventiva</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Manutenção Corretiva</string>
-              </property>
-             </item>
-            </widget>
-           </item>
            <item row="2" column="2">
-            <widget class="QLabel" name="TX_Dobrigatorio">
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <pointsize>12</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">color: rgb(255, 0, 0);</string>
-             </property>
-             <property name="text">
-              <string>*</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="2">
             <widget class="QLabel" name="TX_Cobrigatorio">
              <property name="font">
               <font>
@@ -481,7 +311,7 @@
              </property>
             </widget>
            </item>
-           <item row="1" column="1">
+           <item row="2" column="1">
             <widget class="QLineEdit" name="CP_Data">
              <property name="font">
               <font>
@@ -505,6 +335,191 @@
              </property>
             </widget>
            </item>
+           <item row="4" column="1">
+            <widget class="QDoubleSpinBox" name="CP_Custo">
+             <property name="font">
+              <font>
+               <family>Arial</family>
+              </font>
+             </property>
+             <property name="maximum">
+              <double>99999.990000000005239</double>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="TX_Custo">
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Custo</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="TX_Data">
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Data que Parou</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="TX_Tipo">
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Tipo de Manutenção</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QTextEdit" name="CP_Descricao">
+             <property name="font">
+              <font>
+               <family>Arial</family>
+              </font>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="TX_Descricao">
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Descrição</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="QLabel" name="TX_Dobrigatorio">
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>12</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 0, 0);</string>
+             </property>
+             <property name="text">
+              <string>*</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QComboBox" name="CP_Tipo">
+             <property name="font">
+              <font>
+               <family>Arial</family>
+              </font>
+             </property>
+             <item>
+              <property name="text">
+               <string>Escolha o tipo de manutenção</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Manutenção Preventiva</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Manutenção Corretiva</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="TX_Impressora">
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>8</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Impressora</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QComboBox" name="CP_Impressora">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <family>Arial</family>
+              </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::WheelFocus</enum>
+             </property>
+             <property name="contextMenuPolicy">
+              <enum>Qt::DefaultContextMenu</enum>
+             </property>
+             <item>
+              <property name="text">
+               <string>Selecione a Impressora</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QPushButton" name="BT_Selecionar">
+             <property name="text">
+              <string>Selecionar</string>
+             </property>
+            </widget>
+           </item>
           </layout>
          </widget>
         </item>
@@ -517,30 +532,6 @@
            <enum>QFrame::Raised</enum>
           </property>
           <layout class="QGridLayout" name="gridLayout_3">
-           <item row="1" column="1">
-            <widget class="QComboBox" name="CP_Situacao">
-             <property name="font">
-              <font>
-               <family>Arial</family>
-              </font>
-             </property>
-             <item>
-              <property name="text">
-               <string>Selecione a Situação</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Voltou Funcionar</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Não Funcionou</string>
-              </property>
-             </item>
-            </widget>
-           </item>
            <item row="0" column="1">
             <widget class="QLabel" name="TX_Situacao">
              <property name="font">
@@ -623,6 +614,23 @@
              </property>
              <property name="timeSpec">
               <enum>Qt::LocalTime</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QRadioButton" name="CP_Voltou">
+             <property name="text">
+              <string>Voltou a funcionar</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QRadioButton" name="CP_NVoltou">
+             <property name="text">
+              <string>Não Voltou a funcionar</string>
              </property>
             </widget>
            </item>
