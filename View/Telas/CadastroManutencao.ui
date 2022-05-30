@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>749</width>
-    <height>593</height>
+    <height>596</height>
    </rect>
   </property>
   <property name="acceptDrops">
@@ -532,20 +532,6 @@
            <enum>QFrame::Raised</enum>
           </property>
           <layout class="QGridLayout" name="gridLayout_3">
-           <item row="0" column="1">
-            <widget class="QLabel" name="TX_Situacao">
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Situação</string>
-             </property>
-            </widget>
-           </item>
            <item row="0" column="2">
             <widget class="QLabel" name="TX_DataVt">
              <property name="font">
@@ -557,6 +543,20 @@
              </property>
              <property name="text">
               <string>Data que Voltou</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="TX_Situacao">
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Situação</string>
              </property>
             </widget>
            </item>
@@ -578,42 +578,10 @@
              </property>
             </widget>
            </item>
-           <item row="2" column="2">
-            <widget class="QLabel" name="TX_Horas">
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
+           <item row="2" column="1">
+            <widget class="QRadioButton" name="CP_NVoltou">
              <property name="text">
-              <string>Horas Parada</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="2">
-            <widget class="QTimeEdit" name="CP_Horas">
-             <property name="font">
-              <font>
-               <family>Arial</family>
-              </font>
-             </property>
-             <property name="showGroupSeparator" stdset="0">
-              <bool>false</bool>
-             </property>
-             <property name="maximumTime">
-              <time>
-               <hour>23</hour>
-               <minute>59</minute>
-               <second>59</second>
-              </time>
-             </property>
-             <property name="currentSection">
-              <enum>QDateTimeEdit::HourSection</enum>
-             </property>
-             <property name="timeSpec">
-              <enum>Qt::LocalTime</enum>
+              <string>Não Voltou a funcionar</string>
              </property>
             </widget>
            </item>
@@ -624,13 +592,6 @@
              </property>
              <property name="checked">
               <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="1">
-            <widget class="QRadioButton" name="CP_NVoltou">
-             <property name="text">
-              <string>Não Voltou a funcionar</string>
              </property>
             </widget>
            </item>
@@ -699,6 +660,15 @@
   </layout>
  </widget>
  <tabstops>
+  <tabstop>CP_Impressora</tabstop>
+  <tabstop>BT_Selecionar</tabstop>
+  <tabstop>CP_Tipo</tabstop>
+  <tabstop>CP_Data</tabstop>
+  <tabstop>CP_Descricao</tabstop>
+  <tabstop>CP_Custo</tabstop>
+  <tabstop>CP_Voltou</tabstop>
+  <tabstop>CP_NVoltou</tabstop>
+  <tabstop>CP_DataVt</tabstop>
   <tabstop>BT_Salvar</tabstop>
   <tabstop>BT_Cancelar</tabstop>
  </tabstops>
