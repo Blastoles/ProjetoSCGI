@@ -46,7 +46,10 @@ class DAOCadastrarimpressora():
         try:
             cursor.execute("SELECT ID_IMPRESSORA FROM IMPRESSORA ORDER BY ID_IMPRESSORA DESC LIMIT 1")
             ContLista = cursor.fetchall()
-            NumLista = ContLista[0][0]
+            if ContLista != []:
+                NumLista = ContLista[0][0]
+            else:
+                NumLista = 0
         except:
             self.msg.MsgErroBancoDados()
         banco.close()

@@ -37,7 +37,7 @@ class DAOCadastrarManutencao():
             cursor.execute("INSERT INTO "
                            "MANUTENCAO "
                            "VALUES "
-                           "({},'{}','{}','{}','{}','{}','{}','{}')".format(linhadb+1,dado[0],dado[1],dado[2],dado[3],dado[4],dado[5],dado[6],dado[8]))
+                           "({},'{}','{}','{}','{}','{}','{}','{}')".format(linhadb+1,dado[0],dado[1],dado[2],dado[3],dado[4],dado[5],dado[6]))
             banco.commit()
             self.msg.MsgRealizadoComSucesso()
         except:
@@ -69,7 +69,10 @@ class DAOCadastrarManutencao():
         try:
             cursor.execute("SELECT ID_MANUTENCAO FROM MANUTENCAO ORDER BY ID_MANUTENCAO DESC LIMIT 1")
             ContLista = cursor.fetchall()
-            NumLista = ContLista[0][0]
+            if ContLista != []:
+                NumLista = ContLista[0][0]
+            else:
+                NumLista = 0
         except:
             self.msg.MsgErroBancoDados()
         banco.close()

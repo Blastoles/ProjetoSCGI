@@ -78,7 +78,10 @@ class DAOCadastrarContagem():
         try:
             cursor.execute("SELECT ID_CONTADOR FROM CONTADOR ORDER BY ID_CONTADOR DESC LIMIT 1")
             ContLista = cursor.fetchall()
-            NumLista = ContLista[0][0]
+            if ContLista != []:
+                NumLista = ContLista[0][0]
+            else:
+                NumLista = 0
         except:
             self.msg.MsgErroBancoDados()
         banco.close()

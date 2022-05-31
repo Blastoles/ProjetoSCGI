@@ -8,11 +8,12 @@ class SistemaCManutencao():
     def Show(self,cond):
         self.opcao = cond
         self.CManu.LimpaInfo()
-        self.CManu.LimpeLista()
+        self.CManu.LimpaDado()
         self.MostreLista()
         self.CManu.Show()
 
     def MostreLista(self):
+        self.CManu.LimpeLista()
         lista = self.banco.Lista()
         lista = self.model.TratarLista(lista)
         self.CManu.ColocarImpressora(lista)
@@ -36,11 +37,22 @@ class SistemaCManutencao():
         if check != '':
             dados = self.CManu.ColetarDados()
             dados.append(check)
-            if dados[0] != 'Escolha o tipo de manutenção':
-                print(dados)
+            if dados[0] != 'Escolha o tipo de manutenção' and dados[1] != '//' and dados[2] != '':
+                dado = self.model.TratarDados(dados)
+                linhadb = self.banco.ContLista()
+                self.banco.InsertManutencao(dado,linhadb)
+                self.CManu.Close()
             else:
-                falta = ['Tipo de Manutenção','','']
+                falta = ['', '', '']
+                if dados[0] == 'Escolha o tipo de manutenção':
+                    falta[0] = 'Tipo de Manutenção\n'
+                if dados[1] == '//':
+                    falta[1] = 'Data que Parou\n'
+                if dados[2] == '':
+                    falta[2] = 'Descrição\n'
                 self.msg.MsgFaltaDados(falta)
+        else:
+            self.msg.MsgSelecionarImpr()
 
 
     def Update(self):

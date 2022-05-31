@@ -37,7 +37,10 @@ class DAOCadastrarSetor():
         try:
             cursor.execute("SELECT ID_SETOR FROM SETOR ORDER BY ID_SETOR DESC LIMIT 1")
             ContLista = cursor.fetchall()
-            NumLista = ContLista[0][0]
+            if ContLista != []:
+                NumLista = ContLista[0][0]
+            else:
+                NumLista = 0
         except:
             self.msg.MsgErroBancoDados()
         banco.close()

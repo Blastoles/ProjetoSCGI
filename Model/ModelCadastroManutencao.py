@@ -8,3 +8,14 @@ class ModelCadastrarManutencao():
             lst = ' -- '.join(lst)
             Lst.append(lst)
         return Lst
+
+    def TratarDados(self,dados):
+        dado = []
+        for i in dados:
+            if i == "Manutenção Corretiva":
+                dado.append(1)
+            elif i == "Manutenção Preventiva":
+                dado.append(2)
+            else:
+                dado.append(i)
+        return dado

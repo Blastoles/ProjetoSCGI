@@ -1,4 +1,5 @@
 from Controller.ControllerCadastroManutencao import SistemaCManutencao
+from DAO.DAOManutencao import DAOManutencao
 from View.ViewManutencao import viewManutencao
 from Controller.ControllerConfirmacao import SistemaConfirmacao
 from Controller.ControllerMensagem import SistemaMensagem
@@ -14,20 +15,7 @@ class SistemaManutencao():
     def Criar(self):
         self.CManu.Show('Criar')
 
-    def __init__(self):
-        self.viewManu = viewManutencao()
-        self.msg = SistemaMensagem()
-        self.CManu = SistemaCManutencao()
-        #self.banco =
-        self.viewManu.tela.BT_Voltar.clicked.connect(self.Close)
-        self.viewManu.tela.BT_Criar.clicked.connect(self.Criar)
-        """
-        
-        self.viewManu.tela.BT_Exclui.clicked.connect(self.Close)
-        self.viewManu.tela.BT_Alterar.clicked.connect(self.Close)
-        self.viewManu.tela.BT_Selecionar.clicked.connect(self.Close)
-        
-            def Alterar(self):
+    def Alterar(self):
         linhaSelect = self.viewManu.LinhaSelect()
         if linhaSelect != -1:
             TextoLinha = self.viewManu.TextoSelectLinha(linhaSelect)
@@ -36,6 +24,29 @@ class SistemaManutencao():
             self.CManu.ColoqueDados(Dados)
         else:
             self.msg.MsgSelecionarLinha()
+
+    def __init__(self):
+        self.viewManu = viewManutencao()
+        self.msg = SistemaMensagem()
+        self.CManu = SistemaCManutencao()
+        self.banco = DAOManutencao()
+        self.viewManu.tela.BT_Voltar.clicked.connect(self.Close)
+        self.viewManu.tela.BT_Criar.clicked.connect(self.Criar)
+        """
+        
+        self.viewManu.tela.BT_Exclui.clicked.connect(self.Close)
+        self.viewManu.tela.BT_Alterar.clicked.connect(self.Close)
+        self.viewManu.tela.BT_Selecionar.clicked.connect(self.Close)
+        
+        def Alterar(self):
+            linhaSelect = self.viewManu.LinhaSelect()
+            if linhaSelect != -1:
+                TextoLinha = self.viewManu.TextoSelectLinha(linhaSelect)
+                Dados = self.banco.Localizar(TextoLinha)
+                self.CManu.Show('Alterar')
+                self.CManu.ColoqueDados(Dados)
+            else:
+                self.msg.MsgSelecionarLinha()
 
     def Lista(self):
         lista = self.banco.Lista()

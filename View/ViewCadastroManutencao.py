@@ -22,7 +22,7 @@ class viewCadastroManutencao():
         self.tela.Info_MAzul.setText('')
 
     def LimpaDado(self):
-        self.tela.CP_Tipo.currentText()
+        self.tela.CP_Tipo.setCurrentIndex(0)
         self.tela.CP_Data.setText('')
         self.tela.CP_Descricao.setText('')
         self.tela.CP_Custo.setValue(0.00)
@@ -53,8 +53,10 @@ class viewCadastroManutencao():
         dados.append(self.tela.CP_Data.text())
         dados.append(self.tela.CP_Descricao.toPlainText())
         dados.append(self.tela.CP_Custo.text())
-        dados.append(self.tela.CP_Voltou.isChecked())
-        dados.append(self.tela.CP_NVoltou.isChecked())
+        if self.tela.CP_Voltou.isChecked() == True:
+            dados.append(1)
+        elif self.tela.CP_NVoltou.isChecked() == True:
+            dados.append(0)
         dados.append(self.tela.CP_DataVt.text())
         return dados
 
