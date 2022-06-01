@@ -54,6 +54,8 @@ class SistemaCManutencao():
         else:
             self.msg.MsgSelecionarImpr()
 
+    def ColoqueDados(Dados):
+        print('0')
 
     def Update(self):
         print('1')

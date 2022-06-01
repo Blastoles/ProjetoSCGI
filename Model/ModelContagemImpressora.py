@@ -1,4 +1,3 @@
-from PyQt5 import QtWidgets
 
 class ModelContagemImpressora():
     def TratarLista(self,lista):
