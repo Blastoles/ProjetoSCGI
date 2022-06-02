@@ -23,6 +23,7 @@ class SistemaManutencao():
         if linhaSelect != -1:
             TextoLinha = self.viewManu.TextoSelectLinha(linhaSelect)
             Dados = self.banco.Localizar(TextoLinha)
+            Dados = self.model.Motivo(Dados)
             self.CManu.Show('Alterar')
             self.CManu.ColoqueDados(Dados)
         else:
@@ -51,10 +52,11 @@ class SistemaManutencao():
         self.viewManu.tela.BT_Voltar.clicked.connect(self.Close)
         self.viewManu.tela.BT_Criar.clicked.connect(self.Criar)
         self.viewManu.tela.BT_Selecionar.clicked.connect(self.Pesquisa)
+        self.viewManu.tela.BT_Alterar.clicked.connect(self.Alterar)
         """
         
         self.viewManu.tela.BT_Exclui.clicked.connect(self.Close)
-        self.viewManu.tela.BT_Alterar.clicked.connect(self.Close)
+        
         
         
         def Alterar(self):

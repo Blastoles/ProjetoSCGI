@@ -19,6 +19,7 @@ class DAOManutencao():
     def Pesquisa(self,Impre):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
+        filtro = ['BETWEEN','AND']
         try:
             cursor.execute("SELECT "
                            "NUM_DE_SERIE, MODELO, SETOR_NOME, SETOR_SIGLA, DATA_PARADA, TIPO, DESCRICAO, CUSTO, VOLTOU_FUNCIONAR, DATA_VOLTA "

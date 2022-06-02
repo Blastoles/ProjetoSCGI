@@ -54,8 +54,10 @@ class SistemaCManutencao():
         else:
             self.msg.MsgSelecionarImpr()
 
-    def ColoqueDados(Dados):
-        print('0')
+    def ColoqueDados(self, dados):
+        dados = self.banco.BuscarDados(dados[0][1])
+        self.CManu.ColocarInfo(dados)
+        self.CManu.ColocarDados(dados)
 
     def Update(self):
         print('1')

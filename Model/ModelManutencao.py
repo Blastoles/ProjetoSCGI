@@ -30,3 +30,14 @@ class ModelManutencao():
                 else:
                     self.Lista(i, j , str(lista[i][j]))
                 n += 1
+
+    def Motivo(self,mot):
+        dado = []
+        for i in mot:
+            if i == "Manutenção Corretiva":
+                dado.append(1)
+            elif i == "Manutenção Preventiva":
+                dado.append(2)
+            else:
+                dado.append(i)
+        return dado
