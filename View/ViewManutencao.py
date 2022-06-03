@@ -39,7 +39,7 @@ class viewManutencao():
         TextoLinha = []
         TextoLinha.append(self.tela.TB_Manutencao.item(linhaSelect, 0).text())
         TextoLinha.append(self.tela.TB_Manutencao.item(linhaSelect, 4).text())
-        TextoLinha.append(self.tela.TB_Manutencao.item(linhaSelect, 5).text())
+        TextoLinha.append(self.tela.TB_Manutencao.item(linhaSelect, 6).text())
         return TextoLinha
 
     def __init__(self):

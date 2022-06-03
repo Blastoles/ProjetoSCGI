@@ -59,7 +59,10 @@ class viewCadastroManutencao():
             dados.append(1)
         elif self.tela.CP_NVoltou.isChecked() == True:
             dados.append(0)
-        dados.append(self.tela.CP_DataVt.text())
+        if self.tela.CP_NVoltou.isChecked() == True:
+            dados.append('//')
+        else:
+            dados.append(self.tela.CP_DataVt.text())
         return dados
 
     def PegarImpressora(self):
@@ -69,15 +72,25 @@ class viewCadastroManutencao():
     def ColocarDados(self,dados):
         self.tela.CP_Impressora.setDisabled(True)
         self.tela.BT_Selecionar.setDisabled(True)
-        self.tela.CP_Tipo.setCurrentIndex()
-        self.tela.CP_Data.setText()
-        self.tela.CP_Descricao.setText()
-        self.tela.CP_Custo.setText()
-        if self.tela.CP_Voltou.isChecked() == True:
-            dados.append(1)
-        elif self.tela.CP_NVoltou.isChecked() == True:
-            dados.append(0)
-        self.tela.CP_DataVt.setText(dados)
+        self.tela.CP_ID.setText(str(dados[0][0]))
+        self.tela.CP_Tipo.setCurrentIndex(dados[0][1]-1)
+        self.tela.CP_Data.setText(dados[0][2])
+        self.tela.CP_Descricao.setText(dados[0][3])
+        self.tela.CP_Custo.setValue(float(dados[0][4].replace(",",".")))
+        if dados[0][5] == 1:
+            self.tela.CP_Voltou.setChecked(True)
+            self.tela.CP_NVoltou.setChecked(False)
+        else:
+            self.tela.CP_Voltou.setChecked(False)
+            self.tela.CP_NVoltou.setChecked(True)
+        self.tela.CP_DataVt.setText(dados[0][6])
+
+    def DataVtFuncionar(self):
+        if self.tela.CP_NVoltou.isChecked() == True:
+            self.tela.CP_DataVt.setDisabled(True)
+        elif self.tela.CP_NVoltou.isChecked() == False:
+            self.tela.CP_DataVt.setDisabled(False)
+
 
     def Close(self):
         self.tela.close()

@@ -55,8 +55,8 @@ class SistemaCManutencao():
             self.msg.MsgSelecionarImpr()
 
     def ColoqueDados(self, dados):
-        dados = self.banco.BuscarDados(dados[0][1])
-        self.CManu.ColocarInfo(dados)
+        dado = self.banco.BuscarDados(dados[0][7])
+        self.CManu.ColocarInfo(dado)
         self.CManu.ColocarDados(dados)
 
     def Update(self):
@@ -68,6 +68,8 @@ class SistemaCManutencao():
         elif self.opcao == 'Alterar':
             self.Update()
 
+    def DataVtFuncionar(self):
+        self.CManu.DataVtFuncionar()
 
     def __init__(self):
         self.CManu = viewCadastroManutencao()
@@ -78,3 +80,5 @@ class SistemaCManutencao():
         self.CManu.tela.BT_Cancelar.clicked.connect(self.Close)
         self.CManu.tela.BT_Salvar.clicked.connect(self.Opcao)
         self.CManu.tela.BT_Selecionar.clicked.connect(self.Selecionado)
+        self.CManu.tela.CP_Voltou.clicked.connect(self.DataVtFuncionar)
+        self.CManu.tela.CP_NVoltou.clicked.connect(self.DataVtFuncionar)
