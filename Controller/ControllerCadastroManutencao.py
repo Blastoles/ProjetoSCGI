@@ -60,7 +60,21 @@ class SistemaCManutencao():
         self.CManu.ColocarDados(dados)
 
     def Update(self):
-        print('1')
+        dados = self.CManu.ColetarDados()
+        dados.append(self.CManu.ColetaID())
+        if dados[0] != 'Escolha o tipo de manutenção' and dados[1] != '//' and dados[2] != '':
+            dados = self.model.TratarDados(dados)
+            self.banco.UpdateManutencao(dados)
+            self.CManu.Close()
+        else:
+            falta = ['', '', '']
+            if dados[0] == 'Escolha o tipo de manutenção':
+                falta[0] = 'Tipo de Manutenção\n'
+            if dados[1] == '//':
+                falta[1] = 'Data que Parou\n'
+            if dados[2] == '':
+                falta[2] = 'Descrição\n'
+            self.msg.MsgFaltaDados(falta)
 
     def Opcao(self):
         if self.opcao == 'Criar':

@@ -65,6 +65,11 @@ class viewCadastroManutencao():
             dados.append(self.tela.CP_DataVt.text())
         return dados
 
+    def ColetaID(self):
+        dado = []
+        dado.append(self.tela.CP_ID.text())
+        return dado
+
     def PegarImpressora(self):
         check = self.tela.Info_Num.text()
         return check

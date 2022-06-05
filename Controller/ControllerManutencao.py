@@ -43,36 +43,6 @@ class SistemaManutencao():
         lista = self.model.TratarLista(lista)
         self.viewManu.SetImpressora(lista)
 
-    def __init__(self):
-        self.viewManu = viewManutencao()
-        self.msg = SistemaMensagem()
-        self.CManu = SistemaCManutencao()
-        self.banco = DAOManutencao()
-        self.model = ModelManutencao()
-        self.viewManu.tela.BT_Voltar.clicked.connect(self.Close)
-        self.viewManu.tela.BT_Criar.clicked.connect(self.Criar)
-        self.viewManu.tela.BT_Selecionar.clicked.connect(self.Pesquisa)
-        self.viewManu.tela.BT_Alterar.clicked.connect(self.Alterar)
-        """
-        
-        self.viewManu.tela.BT_Exclui.clicked.connect(self.Close)
-        
-        
-        
-        def Alterar(self):
-            linhaSelect = self.viewManu.LinhaSelect()
-            if linhaSelect != -1:
-                TextoLinha = self.viewManu.TextoSelectLinha(linhaSelect)
-                Dados = self.banco.Localizar(TextoLinha)
-                self.CManu.Show('Alterar')
-                self.CManu.ColoqueDados(Dados)
-            else:
-                self.msg.MsgSelecionarLinha()
-
-
-
-
-
     def ExcluirManutencao(self):
         linhaSelect = self.viewManu.LinhaSelect()
         if linhaSelect != -1:
@@ -85,4 +55,16 @@ class SistemaManutencao():
         Dados = self.banco.Localizar(TextoLinha)
         self.banco.ExcluirContagem(Dados)
         self.Pesquisa()
-        """
+
+    def __init__(self):
+        self.viewManu = viewManutencao()
+        self.msg = SistemaMensagem()
+        self.CManu = SistemaCManutencao()
+        self.banco = DAOManutencao()
+        self.model = ModelManutencao()
+        self.conf = SistemaConfirmacao()
+        self.viewManu.tela.BT_Voltar.clicked.connect(self.Close)
+        self.viewManu.tela.BT_Criar.clicked.connect(self.Criar)
+        self.viewManu.tela.BT_Selecionar.clicked.connect(self.Pesquisa)
+        self.viewManu.tela.BT_Alterar.clicked.connect(self.Alterar)
+        self.viewManu.tela.BT_Exclui.clicked.connect(self.Close)
