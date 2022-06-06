@@ -53,7 +53,7 @@ class SistemaManutencao():
     def ExcluirConfirmado(self,linhaSelect):
         TextoLinha = self.viewManu.TextoSelectLinha(linhaSelect)
         Dados = self.banco.Localizar(TextoLinha)
-        self.banco.ExcluirContagem(Dados)
+        self.banco.ExcluirManutencao(Dados)
         self.Pesquisa()
 
     def __init__(self):
@@ -67,4 +67,4 @@ class SistemaManutencao():
         self.viewManu.tela.BT_Criar.clicked.connect(self.Criar)
         self.viewManu.tela.BT_Selecionar.clicked.connect(self.Pesquisa)
         self.viewManu.tela.BT_Alterar.clicked.connect(self.Alterar)
-        self.viewManu.tela.BT_Exclui.clicked.connect(self.Close)
+        self.viewManu.tela.BT_Exclui.clicked.connect(self.ExcluirManutencao)

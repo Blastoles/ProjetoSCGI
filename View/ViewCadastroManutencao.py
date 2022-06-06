@@ -105,17 +105,3 @@ class viewCadastroManutencao():
         Local = Local.split('Controller')
         Local = Local[0].replace('C:','C:\\')
         self.tela = uic.loadUi("{}View\Telas\CadastroManutencao.ui".format(Local))
-
-"""
-    def LimpeTela(self):
-        self.tela.CP_Impressora.setDisabled(False)
-        self.tela.BT_Selecionar.setDisabled(False)
-        self.tela.CP_Contagem.setText('')
-        self.tela.CP_Data.setText('')
-        self.tela.CP_CPreto.setText('')
-        self.tela.CP_CMargenta.setText('')
-        self.tela.CP_CAmarelo.setText('')
-        self.tela.CP_CAzul.setText('')
-        self.tela.CP_UltimaContagem.setText('')
-
-"""

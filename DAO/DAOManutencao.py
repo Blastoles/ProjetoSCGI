@@ -1,8 +1,6 @@
 import sqlite3
 from os import getcwd
-
 from Controller.ControllerMensagem import SistemaMensagem
-
 
 class DAOManutencao():
     def Lista(self):
@@ -36,11 +34,11 @@ class DAOManutencao():
         banco.close()
         return pesq
 
-    def ExcluirContagem(self,dado):
+    def ExcluirManutencao(self,dado):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
         try:
-            cursor.execute("DELETE FROM CONTADOR WHERE ID_CONTADOR = '{}' AND IMPRESSORA_NUM_DE_SERIE = '{}' AND CONTAGEM = '{}' AND DATA = '{}'".format(dado[0][0],dado[0][1],dado[0][2],dado[0][3]))
+            cursor.execute("DELETE FROM MANUTENCAO WHERE ID_MANUTENCAO = '{}' AND IMPRESSORA_NUM_DE_SERIE = '{}' AND DATA_PARADA = '{}' AND DESCRICAO = '{}'".format(dado[0][0],dado[0][7],dado[0][2],dado[0][3]))
             banco.commit()
         except:
             self.msg.MsgErroBancoDados()
