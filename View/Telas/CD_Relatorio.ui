@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Contagem</class>
- <widget class="QMainWindow" name="Contagem">
+ <class>Relatorio</class>
+ <widget class="QMainWindow" name="Relatorio">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -66,7 +66,7 @@
        <enum>QFrame::Raised</enum>
       </property>
       <layout class="QGridLayout" name="gridLayout_9">
-       <item row="0" column="0">
+       <item row="1" column="0">
         <widget class="QTabWidget" name="tabWidget">
          <property name="currentIndex">
           <number>0</number>
@@ -76,7 +76,7 @@
            <string>Relatório</string>
           </attribute>
           <layout class="QGridLayout" name="gridLayout_8">
-           <item row="1" column="1" rowspan="20">
+           <item row="1" column="1" rowspan="6">
             <widget class="QFrame" name="frame_3">
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -86,9 +86,22 @@
              </property>
              <layout class="QGridLayout" name="gridLayout_10">
               <item row="0" column="0">
-               <widget class="QGraphicsView" name="Grafico"/>
+               <widget class="grafico" name="grafico" native="true"/>
               </item>
              </layout>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QPushButton" name="pushButton_5">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Dados</string>
+             </property>
             </widget>
            </item>
            <item row="1" column="0">
@@ -101,6 +114,19 @@
              </property>
              <property name="text">
               <string>Contagem de Impressão</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QPushButton" name="pushButton_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Custo</string>
              </property>
             </widget>
            </item>
@@ -125,67 +151,6 @@
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="QPushButton" name="pushButton_5">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="text">
-              <string>Vida Impressora</string>
-             </property>
-            </widget>
-           </item>
-           <item row="6" column="0">
-            <widget class="QPushButton" name="pushButton_8">
-             <property name="text">
-              <string>Custo de Manutenção</string>
-             </property>
-            </widget>
-           </item>
-           <item row="7" column="0">
-            <widget class="QPushButton" name="pushButton_6">
-             <property name="text">
-              <string>Quantidade de Impressoras</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="0">
-            <widget class="QPushButton" name="pushButton_2">
-             <property name="text">
-              <string>Impressora por Setor</string>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="0">
-            <widget class="QPushButton" name="pushButton_3">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="text">
-              <string>Custo Impressora</string>
-             </property>
-            </widget>
-           </item>
-           <item row="5" column="0">
-            <widget class="QPushButton" name="pushButton_4">
-             <property name="text">
-              <string>Custo por Setor</string>
-             </property>
-            </widget>
-           </item>
-           <item row="8" column="0">
-            <widget class="QPushButton" name="pushButton_7">
-             <property name="text">
-              <string>Quantidade de Manutenção</string>
              </property>
             </widget>
            </item>
@@ -520,8 +485,8 @@
           <widget class="QGroupBox" name="groupBox_6">
            <property name="geometry">
             <rect>
-             <x>70</x>
-             <y>320</y>
+             <x>90</x>
+             <y>330</y>
              <width>688</width>
              <height>129</height>
             </rect>
@@ -668,6 +633,14 @@
    </layout>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>grafico</class>
+   <extends>QWidget</extends>
+   <header>grafico.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <tabstops>
   <tabstop>BT_Voltar</tabstop>
  </tabstops>

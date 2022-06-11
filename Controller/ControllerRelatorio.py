@@ -3,6 +3,15 @@ from View.ViewRelatorio import viewRelatorio
 from DAO.DAORelatorio import DAORelatorio
 from Model.ModelRelatorio import Modelrelatorio
 
+import sys
+
+from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidgetItem
+from matplotlib.backends.backend_qt5agg import (NavigationToolbar2QT as NavigationToolbar)
+
+import pandas as pd
+import numpy as np
+
+
 class SistemaRelatorio():
 
     def Show(self):
