@@ -1,3 +1,5 @@
+from PyQt5.QtWidgets import QMainWindow
+
 from Controller.ControllerCadastroManutencao import SistemaCManutencao
 from DAO.DAOManutencao import DAOManutencao
 from Model.ModelManutencao import ModelManutencao
@@ -5,7 +7,7 @@ from View.ViewManutencao import viewManutencao
 from Controller.ControllerConfirmacao import SistemaConfirmacao
 from Controller.ControllerMensagem import SistemaMensagem
 
-class SistemaManutencao():
+class SistemaManutencao(QMainWindow):
 
     def Show(self):
         self.viewManu.LimparTela()
@@ -57,6 +59,7 @@ class SistemaManutencao():
         self.Pesquisa()
 
     def __init__(self):
+        super().__init__()
         self.viewManu = viewManutencao()
         self.msg = SistemaMensagem()
         self.CManu = SistemaCManutencao()

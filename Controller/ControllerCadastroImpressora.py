@@ -1,9 +1,11 @@
+from PyQt5.QtWidgets import QMainWindow
+
 from View.ViewCadastroImpressora import viewCadastroImpressora
 from DAO.DAOCadastroImpressora import DAOCadastrarimpressora
 from Model.ModelCadastroImpressora import ModelCadastroImpressora
 from Controller.ControllerMensagem import SistemaMensagem
 
-class SistemaCadastroImpressora():
+class SistemaCadastroImpressora(QMainWindow):
 
     def Show(self,opcao,Self):
         self.opcao = opcao
@@ -53,6 +55,7 @@ class SistemaCadastroImpressora():
             self.AlterarDados()
 
     def __init__(self):
+        super().__init__()
         self.viewcdImp = viewCadastroImpressora()
         self.opcao = ''
         self.imp = ''

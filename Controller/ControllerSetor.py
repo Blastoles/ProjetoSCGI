@@ -1,3 +1,5 @@
+from PyQt5.QtWidgets import QMainWindow
+
 from View.ViewSetor import viewSetor
 from Controller.ControllerCadastroSetor import SistemaCSetor
 from DAO.DAOSetor import DAOsetor
@@ -5,7 +7,7 @@ from Model.ModelSetor import ModelSetor
 from Controller.ControllerMensagem import SistemaMensagem
 from Controller.ControllerConfirmacao import SistemaConfirmacao
 
-class SistemaSetor():
+class SistemaSetor(QMainWindow):
 
     def Show(self):
         self.viewSetor.Show()
@@ -49,6 +51,7 @@ class SistemaSetor():
         self.Tabela()
 
     def __init__(self):
+        super().__init__()
         self.viewSetor = viewSetor()
         self.CSetor = SistemaCSetor()
         self.model = ModelSetor()

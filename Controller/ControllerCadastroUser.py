@@ -1,8 +1,10 @@
+from PyQt5.QtWidgets import QMainWindow
+
 from View.ViewCadastroUser import viewCadastroUser
 from DAO.DAOCadastroUser import DAOCadastraruser
 from Controller.ControllerMensagem import SistemaMensagem
 
-class SistemaCadastroUser():
+class SistemaCadastroUser(QMainWindow):
     def Show(self,opcao,user):
         self.user = user
         self.opcao = opcao
@@ -77,6 +79,7 @@ class SistemaCadastroUser():
 
 
     def __init__(self):
+        super().__init__()
         self.cduser = viewCadastroUser()
         self.banco = DAOCadastraruser()
         self.msg = SistemaMensagem()

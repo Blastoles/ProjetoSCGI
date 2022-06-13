@@ -1,11 +1,13 @@
 from PyQt5 import uic, QtWidgets
+from PyQt5.QtWidgets import QMainWindow
+
 from View.ViewLogin import viewLogin
 from DAO.DAOLogin import DAOlogin
 from Controller.ControllerMensagem import SistemaMensagem
 from Controller.ControllerMenu import SistemaMenu
 
 
-class SistemaLogin():
+class SistemaLogin(QMainWindow):
     def Iniciar(self):
         self.login.Show()
 
@@ -35,6 +37,7 @@ class SistemaLogin():
         self.login.Close()
 
     def __init__(self):
+        super().__init__()
         self.login = viewLogin()
         self.login.tela.BT_Logar.clicked.connect(self.Validar)
         self.login.tela.BT_Cancelar.clicked.connect(self.Close)

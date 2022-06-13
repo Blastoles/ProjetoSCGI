@@ -1,10 +1,12 @@
+from PyQt5.QtWidgets import QMainWindow
+
 from Controller.ControllerMensagem import SistemaMensagem
 from DAO.DAOCadastroContagem import DAOCadastrarContagem
 from Model.ModelCadastrarContagem import ModelCadastrarContagem
 from View.ViewCadastroContagem import viewCadastroContagem
 
 
-class SistemaCContagem():
+class SistemaCContagem(QMainWindow):
 
     def Show(self,opcao):
         self.opcao = opcao
@@ -87,6 +89,7 @@ class SistemaCContagem():
             self.msg.MsgFaltaDados(falta)
 
     def __init__(self):
+        super().__init__()
         self.viewCContagem = viewCadastroContagem()
         self.msg = SistemaMensagem()
         self.banco = DAOCadastrarContagem()

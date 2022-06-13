@@ -1,9 +1,11 @@
+from PyQt5.QtWidgets import QMainWindow
+
 from View.ViewCadastroSetor import viewCadastroSetor
 from DAO.DAOCadastroSetor import DAOCadastrarSetor
 from Model.ModelCadastroSetor import modelCadastroSetor
 from Controller.ControllerMensagem import SistemaMensagem
 
-class SistemaCSetor():
+class SistemaCSetor(QMainWindow):
 
     def Show(self,opcao,setor):
         self.viewCSetor.LimpeTela()
@@ -61,6 +63,7 @@ class SistemaCSetor():
             self.AlterarSetor()
 
     def __init__(self):
+        super().__init__()
         self.viewCSetor = viewCadastroSetor()
         self.DAOSetor = DAOCadastrarSetor()
         self.ModelSetor = modelCadastroSetor()

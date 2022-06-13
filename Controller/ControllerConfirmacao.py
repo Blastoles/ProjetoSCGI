@@ -1,7 +1,9 @@
+from PyQt5.QtWidgets import QMainWindow
+
 from View.ViewConfirmacao import viewConfirmacao
 
 
-class SistemaConfirmacao():
+class SistemaConfirmacao(QMainWindow):
     def Show(self,Self,lista):
         self.Chamado = Self
         self.lista = lista
@@ -16,6 +18,7 @@ class SistemaConfirmacao():
 
 
     def __init__(self):
+        super().__init__()
         self.conf = viewConfirmacao()
         self.Chamado = ''
         self.lista = ''

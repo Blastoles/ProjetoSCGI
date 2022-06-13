@@ -1,7 +1,8 @@
 from PyQt5 import uic, QtWidgets
+from PyQt5.QtWidgets import QMainWindow
 from View.ViewMensagem import viewMensagem
 
-class SistemaMensagem():
+class SistemaMensagem(QMainWindow):
 
     def MsgErroLogin(self):
         self.msg.MsgErroLogin()
@@ -50,6 +51,7 @@ class SistemaMensagem():
         self.msg.MsgShow()
 
     def __init__(self):
+        super().__init__()
         self.msg = viewMensagem()
         self.msg.tela.BT_OK.clicked.connect(self.MsgClose)
 

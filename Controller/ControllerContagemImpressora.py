@@ -1,3 +1,5 @@
+from PyQt5.QtWidgets import QMainWindow
+
 from Controller.ControllerCadastroContagem import SistemaCContagem
 from Controller.ControllerConfirmacao import SistemaConfirmacao
 from Controller.ControllerMensagem import SistemaMensagem
@@ -5,7 +7,7 @@ from Model.ModelContagemImpressora import ModelContagemImpressora
 from View.ViewContagemImpressora import viewContagem
 from DAO.DAOContagemImpressora import DAOContagemimpressora
 
-class SistemaContagem():
+class SistemaContagem(QMainWindow):
     def Show(self):
         self.contagem.LimparTela()
         self.Lista()
@@ -56,6 +58,7 @@ class SistemaContagem():
 
 
     def __init__(self):
+        super().__init__()
         self.contagem = viewContagem()
         self.Ccontagem = SistemaCContagem()
         self.banco = DAOContagemimpressora()

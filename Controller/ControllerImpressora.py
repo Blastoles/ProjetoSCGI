@@ -1,4 +1,5 @@
 from PyQt5 import uic, QtWidgets
+from PyQt5.QtWidgets import QMainWindow
 
 from Controller.ControllerConfirmacao import SistemaConfirmacao
 from Model.ModelImpressora import ModelImpressora
@@ -7,7 +8,7 @@ from DAO.DAOImpressora import DAOimpressora
 from Controller.ControllerMensagem import SistemaMensagem
 from Controller.ControllerCadastroImpressora import SistemaCadastroImpressora
 
-class SistemaImpressora():
+class SistemaImpressora(QMainWindow):
     def Show(self):
         self.impressora.Show()
         self.Tabela()
@@ -51,6 +52,7 @@ class SistemaImpressora():
 
 
     def __init__(self):
+        super().__init__()
         self.impressora = viewImpressora()
         self.msg = SistemaMensagem()
         self.banco = DAOimpressora()

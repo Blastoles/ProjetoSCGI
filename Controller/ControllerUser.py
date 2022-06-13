@@ -1,4 +1,6 @@
 from PyQt5 import uic, QtWidgets
+from PyQt5.QtWidgets import QMainWindow
+
 from Controller.ControllerConfirmacao import SistemaConfirmacao
 from View.ViewUser import viewUser
 from DAO.DAOUser import DAOuser
@@ -6,7 +8,7 @@ from Model.ModelUser import Modeluser
 from Controller.ControllerCadastroUser import SistemaCadastroUser
 from Controller.ControllerMensagem import SistemaMensagem
 
-class SistemaUser():
+class SistemaUser(QMainWindow):
     def Show(self):
         self.user.Show()
         self.Tabela()
@@ -50,6 +52,7 @@ class SistemaUser():
         self.Tabela()
 
     def __init__(self):
+        super().__init__()
         self.user = viewUser()
         self.banco = DAOuser()
         self.model = Modeluser()

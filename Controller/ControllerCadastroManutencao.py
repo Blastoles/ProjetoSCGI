@@ -1,9 +1,11 @@
+from PyQt5.QtWidgets import QMainWindow
+
 from Controller.ControllerMensagem import SistemaMensagem
 from DAO.DAOCadastroManutencao import DAOCadastrarManutencao
 from Model.ModelCadastroManutencao import ModelCadastrarManutencao
 from View.ViewCadastroManutencao import viewCadastroManutencao
 
-class SistemaCManutencao():
+class SistemaCManutencao(QMainWindow):
 
     def Show(self,cond):
         self.opcao = cond
@@ -86,6 +88,7 @@ class SistemaCManutencao():
         self.CManu.DataVtFuncionar()
 
     def __init__(self):
+        super().__init__()
         self.CManu = viewCadastroManutencao()
         self.opcao = ''
         self.banco = DAOCadastrarManutencao()

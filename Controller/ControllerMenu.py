@@ -1,4 +1,5 @@
 from PyQt5 import uic, QtWidgets
+from PyQt5.QtWidgets import QMainWindow
 
 from Controller.ControllerContagemImpressora import SistemaContagem
 from Controller.ControllerManutencao import SistemaManutencao
@@ -8,7 +9,7 @@ from Controller.ControllerUser import SistemaUser
 from Controller.ControllerSetor import SistemaSetor
 from Controller.ControllerImpressora import SistemaImpressora
 
-class SistemaMenu():
+class SistemaMenu(QMainWindow):
     def Show(self):
         self.menu.Show()
 
@@ -33,6 +34,7 @@ class SistemaMenu():
         self.relatorio.Show()
 
     def __init__(self):
+        super().__init__()
         self.menu = viewMenu()
         self.user = SistemaUser()
         self.setor = SistemaSetor()

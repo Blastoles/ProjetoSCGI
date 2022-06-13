@@ -5,14 +5,16 @@ from Model.ModelRelatorio import Modelrelatorio
 
 import sys
 
-from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidgetItem
+from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidgetItem, QWidget
 from matplotlib.backends.backend_qt5agg import (NavigationToolbar2QT as NavigationToolbar)
 
 import pandas as pd
 import numpy as np
 
+from grafico import grafico
 
-class SistemaRelatorio():
+
+class SistemaRelatorio(QMainWindow):
 
     def Show(self):
         self.MostrarDados()
@@ -50,7 +52,13 @@ class SistemaRelatorio():
     def GerarContagem(self):
         lista = self.ViewRela.ColetaDadosContagem()
 
+    def Graf_Contagem(self):
+        print('11')
+        self.ViewRela.Grafico()
+
+
     def __init__(self):
+        super().__init__()
         self.ViewRela = viewRelatorio()
         self.banco = DAORelatorio()
         self.msg = SistemaMensagem()
@@ -66,3 +74,5 @@ class SistemaRelatorio():
         self.ViewRela.tela.BT_Comprada.clicked.connect(self.MostrarDados)
         self.ViewRela.tela.BT_Alugada.clicked.connect(self.MostrarDados)
         self.ViewRela.tela.BT_Voltar.clicked.connect(self.Close)
+        self.ViewRela.tela.Graf_Contagem.clicked.connect(self.Graf_Contagem)
+
