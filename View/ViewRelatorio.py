@@ -11,7 +11,6 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 import matplotlib.pyplot as plt
 
-from grafico import grafico
 
 
 class viewRelatorio(QWidget):
@@ -66,12 +65,19 @@ class viewRelatorio(QWidget):
             return (list(OrderedDict.fromkeys(lst)))
 
     def Grafico(self):
-        self.graf.Show()
+        x = ['Primeiro','Segundo','Terceiro','0','0']
+        x = np.arange(len(x))
+        y = ['1','2','3','4','5']
+        self.tela.grafico.canvas.axes.set_xlabel("Quantidade de Impressão")  # Inserta el título del eje X
+        self.tela.grafico.canvas.axes.set_ylabel("Quantidade de Impressoras")  # Inserta el título del eje Y
+        self.tela.grafico.canvas.axes.bar(x, y,label = "Impressora")
+        self.tela.grafico.canvas.draw()
 
     def __init__(self):
         super().__init__()
-        self.graf = grafico(self)
+        self.graf = FigureCanvas()
         Local = getcwd()
         Local = Local.split('Controller')
         Local = Local[0].replace('C:', 'C:\\')
         self.tela = uic.loadUi("{}View\Telas\CD_Relatorio.ui".format(Local))
+        self.tela.addToolBar(NavigationToolbar(self.tela.grafico.canvas, self))

@@ -8,16 +8,18 @@ from matplotlib.backends.backend_qt5agg import (NavigationToolbar2QT as Navigati
 import pandas as pd
 import numpy as np
 
+from View.ViewRelatorio import viewRelatorio
 
-class grafico(QWidget):
-    def Show(self):
-        plt.plot([1, 2, 3, 4])
-        plt.ylabel('some numbers')
-        plt.show()
 
+class Grafico(QWidget):
 
     def __init__(self,parent):
         QWidget.__init__(self, parent)
-
+        self.canvas = FigureCanvas(Figure())
+        vertical_layout = QVBoxLayout()
+        vertical_layout.addWidget(self.canvas)
+        self.canvas.axes = self.canvas.figure.add_subplot(111)
+        self.canvas.axes1 = self.canvas.axes.twinx()
+        self.setLayout(vertical_layout)
 
 

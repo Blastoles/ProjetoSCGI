@@ -2,16 +2,8 @@ from Controller.ControllerMensagem import SistemaMensagem
 from View.ViewRelatorio import viewRelatorio
 from DAO.DAORelatorio import DAORelatorio
 from Model.ModelRelatorio import Modelrelatorio
-
-import sys
-
 from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidgetItem, QWidget
-from matplotlib.backends.backend_qt5agg import (NavigationToolbar2QT as NavigationToolbar)
 
-import pandas as pd
-import numpy as np
-
-from grafico import grafico
 
 
 class SistemaRelatorio(QMainWindow):
@@ -53,7 +45,6 @@ class SistemaRelatorio(QMainWindow):
         lista = self.ViewRela.ColetaDadosContagem()
 
     def Graf_Contagem(self):
-        print('11')
         self.ViewRela.Grafico()
 
 

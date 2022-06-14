@@ -86,7 +86,7 @@
              </property>
              <layout class="QGridLayout" name="gridLayout_10">
               <item row="0" column="0">
-               <widget class="grafico" name="grafico" native="true"/>
+               <widget class="Grafico" name="grafico" native="true"/>
               </item>
              </layout>
             </widget>
@@ -635,9 +635,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>grafico</class>
+   <class>Grafico</class>
    <extends>QWidget</extends>
-   <header>grafico.h</header>
+   <header location="global">grafico.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
