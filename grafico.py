@@ -19,7 +19,6 @@ class Grafico(QWidget):
         vertical_layout = QVBoxLayout()
         vertical_layout.addWidget(self.canvas)
         self.canvas.axes = self.canvas.figure.add_subplot(111)
-        self.canvas.axes1 = self.canvas.axes.twinx()
         self.setLayout(vertical_layout)
 
 
