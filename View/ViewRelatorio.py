@@ -67,12 +67,14 @@ class viewRelatorio(QWidget):
 
     def Grafico(self):
         x = ['01/01/2022','02/01/2022','03/01/2022','04/01/2022','05/01/2022']
-        y = ['2','2','3','4','5']
-        y1 = ['1.3', '2.7', '3', '4.5', '5.9']
+        y = ['1','1.3', '2.7', '3', '4.5']
+        y1 = ['6','7','8','9','10']
+        y2 = ['8', '9', '6', '5', '1']
         self.tela.grafico.canvas.axes.set_xlabel("Data da Coleta")
         self.tela.grafico.canvas.axes.set_ylabel("Contagem de Impressão")
-        self.tela.grafico.canvas.axes.plot(x, y1, label="HP 2055",color = self.Color())
-        self.tela.grafico.canvas.axes.plot(x, y, label="HP 4020",color = self.Color())
+        self.tela.grafico.canvas.axes.plot(x, y, label="HP 2055",color = self.Color())
+        self.tela.grafico.canvas.axes.plot(x, y1, label="HP 4020",color = self.Color())
+        self.tela.grafico.canvas.axes.plot(x, y2, color=self.Color())
         self.tela.grafico.canvas.axes.legend()
         self.tela.grafico.canvas.draw()
 

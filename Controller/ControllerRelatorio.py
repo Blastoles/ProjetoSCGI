@@ -43,6 +43,7 @@ class SistemaRelatorio(QMainWindow):
 
     def GerarContagem(self):
         lista = self.ViewRela.ColetaDadosContagem()
+        print(lista)
 
     def Graf_Contagem(self):
         self.ViewRela.Grafico()
