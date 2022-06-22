@@ -1,4 +1,5 @@
 from Controller.ControllerMensagem import SistemaMensagem
+from Controller.ControllerRContagem import SistemaGRelatorio
 from View.ViewRelatorio import viewRelatorio
 from DAO.DAORelatorio import DAORelatorio
 from Model.ModelRelatorio import Modelrelatorio
@@ -44,6 +45,7 @@ class SistemaRelatorio(QMainWindow):
     def GerarContagem(self):
         lista = self.ViewRela.ColetaDadosContagem()
         print(lista)
+        self.GRela.Show()
 
     def Graf_Contagem(self):
         self.ViewRela.Grafico()
@@ -55,6 +57,7 @@ class SistemaRelatorio(QMainWindow):
         self.banco = DAORelatorio()
         self.msg = SistemaMensagem()
         self.model = Modelrelatorio()
+        self.GRela = SistemaGRelatorio()
         self.ViewRela.tela.BT_GerarContagem.clicked.connect(self.GerarContagem)
         self.ViewRela.tela.BT_TodasImpressoras.clicked.connect(self.Tabela)
         self.ViewRela.tela.BT_DataInicial.clicked.connect(self.Data)
