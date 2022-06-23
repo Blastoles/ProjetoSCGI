@@ -50,20 +50,11 @@ class viewRelatorio(QWidget):
         else:
             self.tela.CP_DataFinal.setDisabled(True)
 
-    def TabelaCheck(self):
-        if self.tela.BT_TodasImpressoras.isChecked():
-            self.tela.TB_Impressora.setDisabled(True)
-        else:
-            self.tela.TB_Impressora.setDisabled(False)
-
     def ColetaDadosContagem(self):
-        if self.tela.BT_TodasImpressoras.isChecked():
-            return []
-        else:
-            lst = []
-            for LinhasSelecionadas in self.tela.TB_Impressora.selectedIndexes():
-                lst.append(self.tela.TB_Impressora.item(LinhasSelecionadas.row(), 0).text())
-            return (list(OrderedDict.fromkeys(lst)))
+        lst = []
+        for LinhasSelecionadas in self.tela.TB_Impressora.selectedIndexes():
+            lst.append(self.tela.TB_Impressora.item(LinhasSelecionadas.row(), 0).text())
+        return (list(OrderedDict.fromkeys(lst)))
 
     def Grafico(self):
         x = ['01/01/2022','02/01/2022','03/01/2022','04/01/2022','05/01/2022']

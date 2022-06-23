@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>684</width>
-    <height>597</height>
+    <width>901</width>
+    <height>616</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,94 +18,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="0" column="0">
-     <widget class="QFrame" name="frame">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <spacer name="horizontalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QLabel" name="TX_ContPagina">
-         <property name="text">
-          <string>1/1</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Minimum</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QPushButton" name="BT_Anterior">
-         <property name="text">
-          <string>Anterior</string>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>../Arte/anterior.ico</normaloff>../Arte/anterior.ico</iconset>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="BT_Proximo">
-         <property name="text">
-          <string>Próximo</string>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>../Arte/proximo.ico</normaloff>../Arte/proximo.ico</iconset>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="BT_Voltar">
-         <property name="text">
-          <string>Voltar</string>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>../../../../.designer/Arte/3643764-back-backward-left-reply-turn_113415.ico</normaloff>../../../../.designer/Arte/3643764-back-backward-left-reply-turn_113415.ico</iconset>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="1" column="0">
+    <item row="2" column="0" colspan="2">
      <widget class="QFrame" name="frame_2">
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -121,17 +34,17 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="1">
-        <widget class="QLabel" name="TX_Num">
-         <property name="text">
-          <string>Número de Série</string>
-         </property>
-        </widget>
-       </item>
        <item row="0" column="4">
         <widget class="QLabel" name="DD_Setor">
          <property name="text">
           <string>Sem Dados</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="TX_Num">
+         <property name="text">
+          <string>Número de Série</string>
          </property>
         </widget>
        </item>
@@ -142,10 +55,30 @@
          </property>
         </widget>
        </item>
+       <item row="1" column="2">
+        <widget class="QLabel" name="DD_Modelo">
+         <property name="text">
+          <string>Sem Dados</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="TX_Modelo">
+         <property name="text">
+          <string>Modelo</string>
+         </property>
+        </widget>
+       </item>
        <item row="0" column="0" rowspan="3">
         <widget class="QLabel" name="Icone">
          <property name="acceptDrops">
           <bool>true</bool>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
          </property>
          <property name="text">
           <string/>
@@ -167,27 +100,6 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="1">
-        <widget class="QLabel" name="TX_Modelo">
-         <property name="text">
-          <string>Modelo</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="QLabel" name="DD_Modelo">
-         <property name="text">
-          <string>Sem Dados</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="3">
-        <widget class="QLabel" name="TX_IP">
-         <property name="text">
-          <string>IP</string>
-         </property>
-        </widget>
-       </item>
        <item row="1" column="4">
         <widget class="QLabel" name="DD_IP">
          <property name="text">
@@ -202,8 +114,15 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="2">
-        <widget class="QLabel" name="DD_MAC">
+       <item row="1" column="3">
+        <widget class="QLabel" name="TX_IP">
+         <property name="text">
+          <string>IP</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="4">
+        <widget class="QLabel" name="DD_Data">
          <property name="text">
           <string>Sem Dados</string>
          </property>
@@ -216,8 +135,8 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="4">
-        <widget class="QLabel" name="DD_Data">
+       <item row="2" column="2">
+        <widget class="QLabel" name="DD_MAC">
          <property name="text">
           <string>Sem Dados</string>
          </property>
@@ -226,7 +145,7 @@
       </layout>
      </widget>
     </item>
-    <item row="2" column="0">
+    <item row="3" column="0" colspan="2">
      <widget class="QFrame" name="frame_3">
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -236,9 +155,9 @@
       </property>
       <layout class="QGridLayout" name="gridLayout">
        <item row="0" column="1">
-        <widget class="QTableWidget" name="tableWidget">
+        <widget class="QTableWidget" name="TB_Contagem">
          <attribute name="horizontalHeaderDefaultSectionSize">
-          <number>115</number>
+          <number>158</number>
          </attribute>
          <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
           <bool>false</bool>
@@ -253,7 +172,12 @@
          </column>
          <column>
           <property name="text">
-           <string>Contagem</string>
+           <string>Contagem da Impressora</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Total de Impressão</string>
           </property>
          </column>
          <column>
@@ -268,21 +192,46 @@
          </column>
         </widget>
        </item>
-       <item row="0" column="3">
-        <widget class="Grafico" name="grafico" native="true"/>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QFrame" name="frame">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
        </item>
-       <item row="0" column="2">
-        <widget class="QTabWidget" name="tabWidget">
-         <widget class="QWidget" name="tab">
-          <attribute name="title">
-           <string>Tab 1</string>
-          </attribute>
-         </widget>
-         <widget class="QWidget" name="tab_2">
-          <attribute name="title">
-           <string>Tab 2</string>
-          </attribute>
-         </widget>
+       <item>
+        <widget class="QPushButton" name="BT_Voltar">
+         <property name="text">
+          <string>Voltar</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../Arte/3643764-back-backward-left-reply-turn_113415.ico</normaloff>../Arte/3643764-back-backward-left-reply-turn_113415.ico</iconset>
+         </property>
         </widget>
        </item>
       </layout>
@@ -291,14 +240,6 @@
    </layout>
   </widget>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>Grafico</class>
-   <extends>QWidget</extends>
-   <header location="global">grafico.h</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <tabstops>
   <tabstop>BT_Voltar</tabstop>
  </tabstops>

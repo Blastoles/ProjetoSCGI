@@ -69,7 +69,7 @@
        <item row="1" column="0">
         <widget class="QTabWidget" name="tabWidget">
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="tab_4">
           <attribute name="title">
@@ -363,7 +363,7 @@
               <string>Impressora(s)</string>
              </property>
              <layout class="QGridLayout" name="gridLayout_11">
-              <item row="1" column="0">
+              <item row="0" column="0">
                <widget class="QTableWidget" name="TB_Impressora">
                 <property name="enabled">
                  <bool>true</bool>
@@ -402,7 +402,7 @@
                  <bool>true</bool>
                 </property>
                 <property name="selectionMode">
-                 <enum>QAbstractItemView::MultiSelection</enum>
+                 <enum>QAbstractItemView::SingleSelection</enum>
                 </property>
                 <property name="selectionBehavior">
                  <enum>QAbstractItemView::SelectRows</enum>
@@ -461,16 +461,6 @@
                   <string>Situação</string>
                  </property>
                 </column>
-               </widget>
-              </item>
-              <item row="0" column="0">
-               <widget class="QCheckBox" name="BT_TodasImpressoras">
-                <property name="text">
-                 <string>Todas</string>
-                </property>
-                <property name="tristate">
-                 <bool>false</bool>
-                </property>
                </widget>
               </item>
              </layout>

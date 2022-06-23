@@ -23,9 +23,7 @@ class GRelatorio(QWidget):
 
     def __init__(self):
         super().__init__()
-        self.graf = FigureCanvas()
         Local = getcwd()
         Local = Local.split('Controller')
         Local = Local[0].replace('C:', 'C:\\')
         self.tela = uic.loadUi("{}View\Telas\TelaRelatorio.ui".format(Local))
-        self.tela.addToolBar(NavigationToolbar(self.tela.grafico.canvas, self))
