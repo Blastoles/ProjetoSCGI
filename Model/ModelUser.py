@@ -1,8 +1,7 @@
-from PyQt5 import QtWidgets
-
-
+## Classe de manipulação de dado ##
 class Modeluser():
 
+    ## Manipula o dado da tabela para ser exibido ##
     def Tabela(self,user,lista):
         self = user
         self.tela.TB_Cadastro.clearContents()

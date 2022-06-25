@@ -1,10 +1,12 @@
+## Bibliotecas ##
 import sqlite3
 from os import getcwd
-
 from Controller.ControllerMensagem import SistemaMensagem
 
+## Classe de acesso ao banco ##
 class DAOlogin():
 
+    ## Busca usuário no banco de dados ##
     def CheckUser(self,user):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
@@ -17,6 +19,7 @@ class DAOlogin():
         banco.close()
         return user_db
 
+    ## Busca senha no banco de dados ##
     def CheckSenha(self,senha):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
@@ -29,6 +32,7 @@ class DAOlogin():
         banco.close()
         return senha_db
 
+    ## Regras, Constante, e Ações ##
     def __init__(self):
         Local = getcwd()
         Local = Local.split('Controller')

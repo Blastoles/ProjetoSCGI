@@ -1,16 +1,18 @@
-from PyQt5 import uic, QtWidgets
+## Bibliotecas ##
 from PyQt5.QtWidgets import QMainWindow
-
 from View.ViewLogin import viewLogin
 from DAO.DAOLogin import DAOlogin
 from Controller.ControllerMensagem import SistemaMensagem
 from Controller.ControllerMenu import SistemaMenu
 
-
+## Classe principal ##
 class SistemaLogin(QMainWindow):
+
+    ## Chama a tela ##
     def Iniciar(self):
         self.login.Show()
 
+    ## Verifica os dados preenchidos e chama consulta no banco ##
     def Validar(self):
         user,senha = self.login.Dados()
         VeriUser = self.daolog.CheckUser(user)
@@ -33,9 +35,11 @@ class SistemaLogin(QMainWindow):
             self.login.MensagemErro()
             self.msg.MsgErroLogin()
 
+    ## Fecha a tela ##
     def Close(self):
         self.login.Close()
 
+    ## Regras, Constante, e Ações ##
     def __init__(self):
         super().__init__()
         self.login = viewLogin()
@@ -44,13 +48,3 @@ class SistemaLogin(QMainWindow):
         self.daolog = DAOlogin()
         self.msg = SistemaMensagem()
         self.menu = SistemaMenu()
-
-
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    self = SistemaLogin()
-    self.Iniciar()
-    sys.exit(app.exec())
