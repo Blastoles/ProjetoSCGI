@@ -67,4 +67,5 @@ class SistemaMensagem(QMainWindow):
     def __init__(self):
         super().__init__()
         self.msg = viewMensagem()
+        #Definição dos botões
         self.msg.tela.BT_OK.clicked.connect(self.MsgClose)

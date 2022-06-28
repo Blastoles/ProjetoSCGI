@@ -1,4 +1,7 @@
+## Classe de manipulação de dado ##
 class ModelManutencao():
+
+    ## Trata lista ##
     def TratarLista(self,lista):
         n = 0
         Lst = []
@@ -9,6 +12,7 @@ class ModelManutencao():
             Lst.append(lst)
         return Lst
 
+    ## Trata dados da tabela ##
     def Tabela(self, imp, lista):
         self = imp
         self.tela.TB_Manutencao.clearContents()
@@ -31,6 +35,7 @@ class ModelManutencao():
                     self.Lista(i, j , str(lista[i][j]))
                 n += 1
 
+    ## Trata Motivo ##
     def Motivo(self,mot):
         dado = []
         for i in mot:

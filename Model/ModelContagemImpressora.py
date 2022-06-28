@@ -1,5 +1,7 @@
-
+## Classe de manipulação de dado ##
 class ModelContagemImpressora():
+
+    ## Trata lista ##
     def TratarLista(self,lista):
         n = 0
         Lst = []
@@ -10,6 +12,7 @@ class ModelContagemImpressora():
             Lst.append(lst)
         return Lst
 
+    ## Trata dados da tabela ##
     def Tabela(self, imp, lista):
         self = imp
         self.tela.TB_Contagem.clearContents()

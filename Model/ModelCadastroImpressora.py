@@ -1,11 +1,14 @@
-
+## Classe de manipulação de dado ##
 class ModelCadastroImpressora():
+
+    ## Trata setor ##
     def TratarSetor(self,setor):
         lista = []
         for i in setor:
             lista.append(i)
         return lista
 
+    ## Trata inteiro para escrita ##
     def TratarConvert(self,dados):
         n = 0
         Dados = []
@@ -18,6 +21,7 @@ class ModelCadastroImpressora():
                 n += 1
         return Dados
 
+    ## Trata escrita para inteiro ##
     def TratarInsert(self,dados):
         n = 0
         for i in dados:

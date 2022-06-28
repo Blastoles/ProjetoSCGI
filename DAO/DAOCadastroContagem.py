@@ -1,8 +1,9 @@
+## Bibliotecas ##
 import sqlite3
 from os import getcwd
 from Controller.ControllerMensagem import SistemaMensagem
 
-
+## Classe acesso ao banco ##
 class DAOCadastrarContagem():
     def Lista(self):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))

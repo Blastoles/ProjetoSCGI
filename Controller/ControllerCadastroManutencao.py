@@ -1,12 +1,14 @@
+## Bibliotecas ##
 from PyQt5.QtWidgets import QMainWindow
-
 from Controller.ControllerMensagem import SistemaMensagem
 from DAO.DAOCadastroManutencao import DAOCadastrarManutencao
 from Model.ModelCadastroManutencao import ModelCadastrarManutencao
 from View.ViewCadastroManutencao import viewCadastroManutencao
 
+## Classe principal ##
 class SistemaCManutencao(QMainWindow):
 
+    ## Chama a tela ##
     def Show(self,cond):
         self.opcao = cond
         self.CManu.LimpaInfo()
@@ -14,12 +16,14 @@ class SistemaCManutencao(QMainWindow):
         self.MostreLista()
         self.CManu.Show()
 
+    ## Mostra na tela lista do banco ##
     def MostreLista(self):
         self.CManu.LimpeLista()
         lista = self.banco.Lista()
         lista = self.model.TratarLista(lista)
         self.CManu.ColocarImpressora(lista)
 
+    ## Busca na tela seleção e apresenta na tela dados complementares ##
     def Selecionado(self):
         selec = self.CManu.ImprSelect()
         self.CManu.LimpaDado()
@@ -31,9 +35,11 @@ class SistemaCManutencao(QMainWindow):
             self.CManu.LimpaInfo()
             self.msg.MsgSelecionarImpr()
 
+    ## Fecha a tela ##
     def Close(self):
         self.CManu.Close()
 
+    ## Coleta os dados da tela para inserção dos dados no registro ##
     def Insert(self):
         check = self.CManu.PegarImpressora()
         if check != '':
@@ -56,11 +62,13 @@ class SistemaCManutencao(QMainWindow):
         else:
             self.msg.MsgSelecionarImpr()
 
+    ## Mostra os dados na tela ##
     def ColoqueDados(self, dados):
         dado = self.banco.BuscarDados(dados[0][7])
         self.CManu.ColocarInfo(dado)
         self.CManu.ColocarDados(dados)
 
+    ## Coleta os dados na tela para alterar registro ##
     def Update(self):
         dados = self.CManu.ColetarDados()
         dados.append(self.CManu.ColetaID())
@@ -78,15 +86,18 @@ class SistemaCManutencao(QMainWindow):
                 falta[2] = 'Descrição\n'
             self.msg.MsgFaltaDados(falta)
 
+    ## Determina qual a configuração da tela ##
     def Opcao(self):
         if self.opcao == 'Criar':
             self.Insert()
         elif self.opcao == 'Alterar':
             self.Update()
 
+    ## Habilita opção na tela determinado com as opções ##
     def DataVtFuncionar(self):
         self.CManu.DataVtFuncionar()
 
+    ## Regras, Constante, e Ações ##
     def __init__(self):
         super().__init__()
         self.CManu = viewCadastroManutencao()
@@ -94,6 +105,7 @@ class SistemaCManutencao(QMainWindow):
         self.banco = DAOCadastrarManutencao()
         self.model = ModelCadastrarManutencao()
         self.msg = SistemaMensagem()
+        #Definição dos botões
         self.CManu.tela.BT_Cancelar.clicked.connect(self.Close)
         self.CManu.tela.BT_Salvar.clicked.connect(self.Opcao)
         self.CManu.tela.BT_Selecionar.clicked.connect(self.Selecionado)

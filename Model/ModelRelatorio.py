@@ -1,6 +1,7 @@
-
+## Classe de manipulação de dado ##
 class Modelrelatorio():
 
+    ## Trata dados da tabela ##
     def Tabela(self,lista,Tela):
         self = Tela
         nLista = len(lista)

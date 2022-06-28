@@ -1,6 +1,7 @@
-
+## Classe de manipulação de dado ##
 class modelCadastroSetor():
 
+    ## Trata escrita para inteiro ##
     def PrioridadeInt(self,dado):
         if dado == 'Normal':
             retorno = 0
@@ -14,6 +15,7 @@ class modelCadastroSetor():
             retorno = -1
         return retorno
 
+    ## Trata inteiro para escrita ##
     def PrioridadeStr(self,dado):
         if dado == 0:
             retorno = 'Normal'

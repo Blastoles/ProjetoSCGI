@@ -1,7 +1,7 @@
-from PyQt5 import QtWidgets
-
+## Classe de manipulação de dado ##
 class ModelSetor():
 
+    ## Trata dados da tabela ##
     def Tabela(self,setor,lista):
         self = setor
         self.tela.TB_Setor.clearContents()

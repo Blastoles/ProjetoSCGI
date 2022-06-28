@@ -1,10 +1,12 @@
+## Bibliotecas ##
 import sqlite3
 from os import getcwd
-
 from Controller.ControllerMensagem import SistemaMensagem
 
+## Classe de acesso ao banco ##
 class DAORelatorio():
 
+    ## Busca dados de impressoras com filtro ##
     def BuscarDadosBD(self,filtro,cond):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
@@ -18,7 +20,7 @@ class DAORelatorio():
         banco.close()
         return lista
 
-
+    ## Regras, Constante, e Ações ##
     def __init__(self):
         Local = getcwd()
         Local = Local.split('Controller')

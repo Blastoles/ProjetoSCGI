@@ -1,13 +1,14 @@
+## Bibliotecas ##
 from PyQt5.QtWidgets import QMainWindow
-
 from Controller.ControllerMensagem import SistemaMensagem
 from DAO.DAOCadastroContagem import DAOCadastrarContagem
 from Model.ModelCadastrarContagem import ModelCadastrarContagem
 from View.ViewCadastroContagem import viewCadastroContagem
 
-
+## Classe principal ##
 class SistemaCContagem(QMainWindow):
 
+    ## Chama a tela ##
     def Show(self,opcao):
         self.opcao = opcao
         self.viewCContagem.LimpeLista()
@@ -16,14 +17,17 @@ class SistemaCContagem(QMainWindow):
         self.MostreLista()
         self.viewCContagem.Show()
 
+    ## Fecha a tela ##
     def Close(self):
         self.viewCContagem.Close()
 
+    ## Mostra na tela lista do banco ##
     def MostreLista(self):
         lista = self.banco.Lista()
         lista = self.model.TratarLista(lista)
         self.viewCContagem.ColocarImpressora(lista)
 
+    ## Busca na tela seleção e apresenta na tela dados complementares ##
     def Selecionado(self):
         selec = self.viewCContagem.ImprSelect()
         self.viewCContagem.LimpeTela()
@@ -40,12 +44,14 @@ class SistemaCContagem(QMainWindow):
             self.viewCContagem.LimpaInfo()
             self.msg.MsgSelecionarImpr()
 
+    ## Determina qual a configuração da tela ##
     def Opcao(self):
         if self.opcao == 'Criar':
             self.InsertContagem()
         elif self.opcao == 'Alterar':
             self.AlterarContagem()
 
+    ## Coleta os dados da tela para inserção dos dados no registro ##
     def InsertContagem(self):
         check = self.viewCContagem.PegarImpressora()
         if check != '':
@@ -65,6 +71,7 @@ class SistemaCContagem(QMainWindow):
         else:
             self.msg.MsgSelecionarImpr()
 
+    ## Mostra dados na tela ##
     def ColoqueDados(self,dados):
         dado = self.banco.BuscarDados(dados[0][1])
         ultima = self.banco.UltimaContagem(dado[0][0])
@@ -75,6 +82,7 @@ class SistemaCContagem(QMainWindow):
         self.viewCContagem.ColocarInfo(dado, Ucont)
         self.viewCContagem.ColocarDados(dados)
 
+    ## Coleta dados na tela para alteração de registro ##
     def AlterarContagem(self):
         dado = self.viewCContagem.ColetaDados()
         if dado[0] != '' and dado[1] != '//':
@@ -88,6 +96,7 @@ class SistemaCContagem(QMainWindow):
                 falta[1] = 'Data\n'
             self.msg.MsgFaltaDados(falta)
 
+    ## Regras, Constante, e Ações ##
     def __init__(self):
         super().__init__()
         self.viewCContagem = viewCadastroContagem()
@@ -95,6 +104,7 @@ class SistemaCContagem(QMainWindow):
         self.banco = DAOCadastrarContagem()
         self.model = ModelCadastrarContagem()
         self.opcao = ''
+        #Definição dos botões
         self.viewCContagem.tela.BT_Cancelar.clicked.connect(self.Close)
         self.viewCContagem.tela.BT_Selecionar.clicked.connect(self.Selecionado)
         self.viewCContagem.tela.BT_Salvar.clicked.connect(self.Opcao)

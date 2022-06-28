@@ -76,6 +76,7 @@ class SistemaManutencao(QMainWindow):
         self.banco = DAOManutencao()
         self.model = ModelManutencao()
         self.conf = SistemaConfirmacao()
+        #Definição dos botões
         self.viewManu.tela.BT_Voltar.clicked.connect(self.Close)
         self.viewManu.tela.BT_Criar.clicked.connect(self.Criar)
         self.viewManu.tela.BT_Selecionar.clicked.connect(self.Pesquisa)

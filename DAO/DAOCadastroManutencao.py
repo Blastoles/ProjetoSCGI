@@ -1,9 +1,12 @@
+## Bibliotecas ##
 import sqlite3
 from os import getcwd
 from Controller.ControllerMensagem import SistemaMensagem
 
-
+## Classe de acesso ao banco ##
 class DAOCadastrarManutencao():
+
+    ## Busca lista de registro ##
     def Lista(self):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
@@ -15,6 +18,7 @@ class DAOCadastrarManutencao():
         banco.close()
         return lista
 
+    ## Pesquisa dados ##
     def BuscarDados(self,Selec):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
@@ -29,7 +33,7 @@ class DAOCadastrarManutencao():
         banco.close()
         return selec
 
-
+    ## Inserir dados ##
     def InsertManutencao(self,dado,linhadb):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
@@ -44,6 +48,7 @@ class DAOCadastrarManutencao():
             self.msg.MsgErroBancoDados()
         banco.close()
 
+    ## Atualizar dados ##
     def UpdateManutencao(self,dados):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
@@ -62,6 +67,7 @@ class DAOCadastrarManutencao():
             self.msg.MsgErroBancoDados()
         banco.close()
 
+    ## Contar quantidade de registro ##
     def ContLista(self):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
@@ -77,6 +83,7 @@ class DAOCadastrarManutencao():
         banco.close()
         return NumLista
 
+    ## Regras, Constante, e Ações ##
     def __init__(self):
         Local = getcwd()
         Local = Local.split('Controller')

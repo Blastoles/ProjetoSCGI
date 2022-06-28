@@ -1,26 +1,20 @@
+## Bibliotecas ##
 from os import getcwd
-from collections import OrderedDict
-from PyQt5 import uic, QtWidgets
-import random
-import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidgetItem,QToolBar, QWidget
-from matplotlib.backends.backend_qt5agg import (NavigationToolbar2QT as NavigationToolbar)
-import pandas as pd
-import numpy as np
-from PyQt5.QtWidgets import *
-from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
-from matplotlib.figure import Figure
-import matplotlib.pyplot as plt
+from PyQt5 import uic
+from PyQt5.QtWidgets import QWidget
 
-
-
+## Classe visualização da tela ##
 class GRelatorio(QWidget):
+
+    ## Chama a tela ##
     def Show(self):
         self.tela.show()
 
+    ## Fecha a tela ##
     def Close(self):
         self.tela.close()
 
+    ## Regras, Constante, e Ações ##
     def __init__(self):
         super().__init__()
         Local = getcwd()

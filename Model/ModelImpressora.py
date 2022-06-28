@@ -1,7 +1,7 @@
-from PyQt5 import QtWidgets
-
+## Classe de manipulação de dado ##
 class ModelImpressora():
 
+    ## Trata dados da tabela ##
     def Tabela(self,impr,lista):
         self = impr
         self.tela.TB_Impressora.clearContents()

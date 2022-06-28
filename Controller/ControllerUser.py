@@ -68,6 +68,7 @@ class SistemaUser(QMainWindow):
         self.cduser = SistemaCadastroUser()
         self.msg = SistemaMensagem()
         self.conf = SistemaConfirmacao()
+        #Definição dos botões
         self.user.tela.BT_Voltar.clicked.connect(self.Close)
         self.user.tela.BT_Pesquisar.clicked.connect(self.PesquisarCadastro)
         self.user.tela.BT_Criar.clicked.connect(self.Criar)

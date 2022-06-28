@@ -1,7 +1,7 @@
-
-
-
+## Classe de manipulação de dado ##
 class ModelCadastrarContagem():
+
+    ## Trata lista ##
     def TratarLista(self,lista):
         n = 0
         Lst = []

@@ -1,21 +1,25 @@
+## Bibliotecas ##
 from PyQt5.QtWidgets import QMainWindow
-
 from View.ViewCadastroSetor import viewCadastroSetor
 from DAO.DAOCadastroSetor import DAOCadastrarSetor
 from Model.ModelCadastroSetor import modelCadastroSetor
 from Controller.ControllerMensagem import SistemaMensagem
 
+## Classe principal ##
 class SistemaCSetor(QMainWindow):
 
+    ## Chama a tela ##
     def Show(self,opcao,setor):
         self.viewCSetor.LimpeTela()
         self.setor = setor
         self.opcao = opcao
         self.viewCSetor.Show()
 
+    ## Fecha a tela ##
     def Close(self):
         self.viewCSetor.Close()
 
+    ## Coleta os dados da tela para inserção dos dados no registro ##
     def InsertSetor(self):
         dados = self.viewCSetor.ColetarDados()
         if dados[1] != '' and dados[0] != '':
@@ -36,10 +40,11 @@ class SistemaCSetor(QMainWindow):
                 falta[1] = 'Sigla\n'
             self.msg.MsgFaltaDados(falta)
 
+    ## Mostra os dados na tela ##
     def MostrarDados(self,TextoLinha):
         self.viewCSetor.ColocarDados(TextoLinha)
 
-
+    ## Coleta os dados da tela para alterar registro ##
     def AlterarSetor(self):
         dados = self.viewCSetor.ColetarDados()
         if dados[3] == 'Normal':
@@ -56,12 +61,14 @@ class SistemaCSetor(QMainWindow):
         self.viewCSetor.Close()
         self.setor.Tabela()
 
+    ## Determina qual a configuração da tela ##
     def Opcao(self):
         if self.opcao == 'Criar':
             self.InsertSetor()
         elif self.opcao == 'Alterar':
             self.AlterarSetor()
 
+    ## Regras, Constante, e Ações ##
     def __init__(self):
         super().__init__()
         self.viewCSetor = viewCadastroSetor()
@@ -70,5 +77,6 @@ class SistemaCSetor(QMainWindow):
         self.msg = SistemaMensagem()
         self.opcao = ''
         self.setor = ''
+        #Definição dos botões
         self.viewCSetor.tela.BT_Cancelar.clicked.connect(self.Close)
         self.viewCSetor.tela.BT_Salvar.clicked.connect(self.Opcao)

@@ -1,10 +1,15 @@
+## Bibliotecas ##
 from os import getcwd
 from PyQt5 import uic
 
+## Classe visualização da tela ##
 class viewCadastroSetor():
+
+    ## Chama a tela ##
     def Show(self):
         self.tela.show()
 
+    ## Limpa dados da tela ##
     def LimpeTela(self):
         self.tela.CP_Nome.setText('')
         self.tela.CP_Responsavel.setText('')
@@ -12,6 +17,7 @@ class viewCadastroSetor():
         self.tela.CP_Prioridade.setCurrentIndex(0)
         self.tela.CP_Sigla.setDisabled(False)
 
+    ## Coleta dados da tela ##
     def ColetarDados(self):
         lista = []
         lista.append(self.tela.CP_Nome.text().upper())
@@ -20,6 +26,7 @@ class viewCadastroSetor():
         lista.append(self.tela.CP_Prioridade.currentText())
         return lista
 
+    ## Mostra dados na tela ##
     def ColocarDados(self,dados):
         self.tela.CP_Sigla.setDisabled(True)
         self.tela.CP_Nome.setText(dados[0][1])
@@ -27,9 +34,11 @@ class viewCadastroSetor():
         self.tela.CP_Responsavel.setText(dados[0][3])
         self.tela.CP_Prioridade.setCurrentIndex(dados[0][4])
 
+    ## Fecha a tela ##
     def Close(self):
         self.tela.close()
 
+    ## Regras, Constante, e Ações ##
     def __init__(self):
         Local = getcwd()
         Local = Local.split('Controller')

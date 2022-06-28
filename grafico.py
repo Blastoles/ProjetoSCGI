@@ -1,18 +1,12 @@
+## Bibliotecas ##
 from PyQt5.QtWidgets import *
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
-import matplotlib.pyplot as plt
-import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidgetItem
-from matplotlib.backends.backend_qt5agg import (NavigationToolbar2QT as NavigationToolbar)
-import pandas as pd
-import numpy as np
 
-from View.ViewRelatorio import viewRelatorio
-
-
+## Classe Widget ##
 class Grafico(QWidget):
 
+    ## Regras, Constante, e Ações ##
     def __init__(self,parent):
         QWidget.__init__(self, parent)
         self.canvas = FigureCanvas(Figure())

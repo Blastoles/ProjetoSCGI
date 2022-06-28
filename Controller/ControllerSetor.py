@@ -68,6 +68,7 @@ class SistemaSetor(QMainWindow):
         self.banco = DAOsetor()
         self.msg = SistemaMensagem()
         self.conf = SistemaConfirmacao()
+        #Definição dos botões
         self.viewSetor.tela.BT_Voltar.clicked.connect(self.Close)
         self.viewSetor.tela.BT_Pesquisar.clicked.connect(self.PesquisarCadastro)
         self.viewSetor.tela.BT_Criar.clicked.connect(self.Criar)

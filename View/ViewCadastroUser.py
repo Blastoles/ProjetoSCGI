@@ -1,14 +1,19 @@
+## Bibliotecas ##
 from os import getcwd
 from PyQt5 import uic, QtWidgets
 
+## Classe visualização da tela ##
+class viewCadastroUser(QtWidgets):
 
-class viewCadastroUser():
+    ## Chama a tela ##
     def Show(self):
         self.tela.show()
 
+    ## Fecha a tela ##
     def Close(self):
         self.tela.close()
 
+    ## Limpa os dados ##
     def LimparDados(self):
         self.tela.CP_Nome.setText("")
         self.tela.CP_Email.setText("")
@@ -19,6 +24,7 @@ class viewCadastroUser():
         self.tela.CP_Ativo.setCheckState(-1)
         self.tela.CP_Usuario.setDisabled(False)
 
+    ## Coleta os dados da tela ##
     def ColetaDados(self):
         lista = []
         lista.append(self.tela.CP_Nome.text().upper())
@@ -30,6 +36,7 @@ class viewCadastroUser():
         lista.append(self.tela.CP_Ativo.isChecked())
         return lista
 
+    ## Mostra dados na tela ##
     def ColocarDados(self,TextoLinha,box):
         self.tela.CP_Usuario.setDisabled(True)
         self.tela.CP_Nome.setText('{}'.format(TextoLinha[0][1]))
@@ -40,6 +47,7 @@ class viewCadastroUser():
         self.tela.CP_Administrador.setCheckState(box[0])
         self.tela.CP_Ativo.setCheckState(box[1])
 
+    ## Regras, Constante, e Ações ##
     def __init__(self):
         Local = getcwd()
         Local = Local.split('Controller')

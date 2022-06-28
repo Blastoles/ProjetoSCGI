@@ -53,6 +53,7 @@ class SistemaMenu(QMainWindow):
         self.contagem = SistemaContagem()
         self.manutencao = SistemaManutencao()
         self.relatorio = SistemaRelatorio()
+        #Definição dos botões
         self.menu.tela.BT_Usuario.clicked.connect(self.UserShow)
         self.menu.tela.BT_Setor.clicked.connect(self.SetorShow)
         self.menu.tela.BT_Impressora.clicked.connect(self.ImpressoraShow)

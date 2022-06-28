@@ -1,16 +1,21 @@
+## Bibliotecas ##
 from os import getcwd
-from PyQt5 import uic
+from PyQt5 import uic,QtWidgets
 
-class viewCadastroImpressora():
+## Classe visualização da tela ##
+class viewCadastroImpressora(QtWidgets):
 
+    ## Chama a tela ##
     def Show(self,setor):
         for i in setor:
             self.tela.CP_Setor.addItem(i[0]+' -- '+i[1])
         self.tela.show()
 
+    ## Fecha a tela ##
     def Close(self):
         self.tela.close()
 
+    ## Limpa dados ##
     def LimparDados(self):
         self.tela.CP_Num_Serie.setDisabled(False)
         self.tela.CP_Num_Serie.setText('')
@@ -33,6 +38,7 @@ class viewCadastroImpressora():
         self.tela.CP_MAmarelo.setText('')
         self.tela.CP_MAzul.setText('')
 
+    ## Coleta dados ##
     def ColetaDados(self):
         lista = []
         lista.append(self.tela.CP_Num_Serie.text().upper())
@@ -70,6 +76,7 @@ class viewCadastroImpressora():
             lista.append('')
         return lista
 
+    ## Mostra dados ##
     def ColocarDados(self,TextoLinha):
         self.tela.CP_Num_Serie.setDisabled(True)
         self.tela.CP_Num_Serie.setText(str(TextoLinha[1]))
@@ -99,6 +106,7 @@ class viewCadastroImpressora():
         self.tela.CP_MAmarelo.setText(str(TextoLinha[19]))
         self.tela.CP_MAzul.setText(str(TextoLinha[20]))
 
+    ## Habilita opção na tela ##
     def PossuiRede(self):
         marcadoRede = self.tela.CP_Rede.isChecked()
         marcadoWifi = self.tela.CP_Wifi.isChecked()
@@ -109,6 +117,7 @@ class viewCadastroImpressora():
             self.tela.CP_IP.hide()
             self.tela.TX_IP.hide()
 
+    ## Habilita opção na tela ##
     def MonoCromatico(self):
         marcadoPreto = self.tela.CP_Preto.isChecked()
         if marcadoPreto == True:
@@ -118,6 +127,7 @@ class viewCadastroImpressora():
             self.tela.CP_MPreto.hide()
             self.tela.TX_MPreto.hide()
 
+    ## Habilita opção na tela ##
     def Cromatico(self):
         marcadoColor = self.tela.CP_Color.isChecked()
         if marcadoColor == True:
@@ -135,6 +145,7 @@ class viewCadastroImpressora():
             self.tela.CP_MAzul.hide()
             self.tela.TX_MAzul.hide()
 
+    ## Regras, Constante, e Ações ##
     def __init__(self):
         Local = getcwd()
         Local = Local.split('Controller')

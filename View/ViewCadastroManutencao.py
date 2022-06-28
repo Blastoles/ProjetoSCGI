@@ -1,15 +1,21 @@
+## Bibliotecas ##
 from os import getcwd
-from PyQt5 import uic
+from PyQt5 import uic,QtWidgets
 
-class viewCadastroManutencao():
+## Classe visualização da tela ##
+class viewCadastroManutencao(QtWidgets):
+
+    ## Chama a tela ##
     def Show(self):
         self.tela.show()
 
+    ## Limpa a lista ##
     def LimpeLista(self):
         self.tela.CP_Impressora.clear()
         self.tela.CP_Impressora.addItem("Selecione a Impressora")
         self.tela.CP_Impressora.setCurrentIndex(0)
 
+    ## Limpa informação ##
     def LimpaInfo(self):
         self.tela.CP_ID.setText('')
         self.tela.Info_Num.setText('')
@@ -21,6 +27,7 @@ class viewCadastroManutencao():
         self.tela.Info_MAmarelo.setText('')
         self.tela.Info_MAzul.setText('')
 
+    ## Limpa os dados ##
     def LimpaDado(self):
         self.tela.CP_Impressora.setDisabled(False)
         self.tela.BT_Selecionar.setDisabled(False)
@@ -32,13 +39,16 @@ class viewCadastroManutencao():
         self.tela.CP_NVoltou.setChecked(False)
         self.tela.CP_DataVt.setText('')
 
+    ## Mostra impressora ##
     def ColocarImpressora(self,lista):
         self.tela.CP_Impressora.addItems(lista)
 
+    ## Coleta impressora ##
     def ImprSelect(self):
         impr = self.tela.CP_Impressora.currentText()
         return impr
 
+    ## Mostra infomação ##
     def ColocarInfo(self,dado):
         self.tela.Info_Num.setText(dado[0][0])
         self.tela.Info_Modelo.setText(dado[0][1])
@@ -49,6 +59,7 @@ class viewCadastroManutencao():
         self.tela.Info_MAmarelo.setText(dado[0][6])
         self.tela.Info_MAzul.setText(dado[0][7])
 
+    ## Coleta dados ##
     def ColetarDados(self):
         dados = []
         dados.append(self.tela.CP_Tipo.currentText())
@@ -65,15 +76,18 @@ class viewCadastroManutencao():
             dados.append(self.tela.CP_DataVt.text())
         return dados
 
+    ## Coleta ID ##
     def ColetaID(self):
         dado = []
         dado.append(self.tela.CP_ID.text())
         return dado
 
+    ## Coleta impressora ##
     def PegarImpressora(self):
         check = self.tela.Info_Num.text()
         return check
 
+    ## Mostra dados ##
     def ColocarDados(self,dados):
         self.tela.CP_Impressora.setDisabled(True)
         self.tela.BT_Selecionar.setDisabled(True)
@@ -90,16 +104,18 @@ class viewCadastroManutencao():
             self.tela.CP_NVoltou.setChecked(True)
         self.tela.CP_DataVt.setText(dados[0][6])
 
+    ## Habilita opção na tela ##
     def DataVtFuncionar(self):
         if self.tela.CP_NVoltou.isChecked() == True:
             self.tela.CP_DataVt.setDisabled(True)
         elif self.tela.CP_NVoltou.isChecked() == False:
             self.tela.CP_DataVt.setDisabled(False)
 
-
+    ## Fecha a tela ##
     def Close(self):
         self.tela.close()
 
+    ## Regras, Constante, e Ações ##
     def __init__(self):
         Local = getcwd()
         Local = Local.split('Controller')

@@ -1,8 +1,12 @@
+## Bibliotecas ##
 import sqlite3
 from os import getcwd
 from Controller.ControllerMensagem import SistemaMensagem
 
+## Classe de acesso ao banco ##
 class DAOManutencao():
+
+    ## Busca a lista de impressora ##
     def Lista(self):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
@@ -14,6 +18,7 @@ class DAOManutencao():
         banco.close()
         return lista
 
+    ## Pesquisa impressora, manutenção no banco ##
     def Pesquisa(self,Impre):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
@@ -34,6 +39,7 @@ class DAOManutencao():
         banco.close()
         return pesq
 
+    ## Exclui registro no banco ##
     def ExcluirManutencao(self,dado):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
@@ -44,6 +50,7 @@ class DAOManutencao():
             self.msg.MsgErroBancoDados()
         banco.close()
 
+    ## Busca manutenção com filtro ##
     def Localizar(self,dado):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
@@ -65,6 +72,7 @@ class DAOManutencao():
         banco.close()
         return Dados
 
+    ## Regras, Constante, e Ações ##
     def __init__(self):
         Local = getcwd()
         Local = Local.split('Controller')

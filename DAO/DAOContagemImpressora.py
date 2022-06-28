@@ -1,10 +1,12 @@
+## Bibliotecas ##
 import sqlite3
 from os import getcwd
-
 from Controller.ControllerMensagem import SistemaMensagem
 
-
+## Classe de acesso ao banco ##
 class DAOContagemimpressora():
+
+    ## Pesquisa impressora ##
     def Lista(self):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
@@ -16,6 +18,7 @@ class DAOContagemimpressora():
         banco.close()
         return lista
 
+    ## Pesquisa dados de contagem ##
     def Pesquisa(self,Impre):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
@@ -32,6 +35,7 @@ class DAOContagemimpressora():
         banco.close()
         return pesq
 
+    ## Exclui registro ##
     def ExcluirContagem(self,dado):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
@@ -42,6 +46,7 @@ class DAOContagemimpressora():
             self.msg.MsgErroBancoDados()
         banco.close()
 
+    ## Localiza contagem, impressora no banco ##
     def Localizar(self,dado):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
@@ -57,6 +62,7 @@ class DAOContagemimpressora():
         banco.close()
         return Dados
 
+    ## Regras, Constante, e Ações ##
     def __init__(self):
         Local = getcwd()
         Local = Local.split('Controller')

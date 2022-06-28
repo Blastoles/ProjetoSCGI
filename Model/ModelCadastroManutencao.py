@@ -1,4 +1,7 @@
+## Classe de manipulação de dado ##
 class ModelCadastrarManutencao():
+
+    ## Trata lista ##
     def TratarLista(self,lista):
         n = 0
         Lst = []
@@ -9,6 +12,7 @@ class ModelCadastrarManutencao():
             Lst.append(lst)
         return Lst
 
+    ## Trata escrita ##
     def TratarDados(self,dados):
         dado = []
         for i in dados:

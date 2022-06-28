@@ -1,6 +1,5 @@
-from PyQt5 import uic, QtWidgets
+## Bibliotecas ##
 from PyQt5.QtWidgets import QMainWindow
-
 from Controller.ControllerConfirmacao import SistemaConfirmacao
 from Model.ModelImpressora import ModelImpressora
 from View.ViewImpressora import viewImpressora
@@ -8,26 +7,34 @@ from DAO.DAOImpressora import DAOimpressora
 from Controller.ControllerMensagem import SistemaMensagem
 from Controller.ControllerCadastroImpressora import SistemaCadastroImpressora
 
+## Classe principal ##
 class SistemaImpressora(QMainWindow):
+
+    ## Chama a tela ##
     def Show(self):
         self.impressora.Show()
         self.Tabela()
 
+    ## Fecha a tela ##
     def Close(self):
         self.impressora.Close()
 
+    ## Chama os dados do banco e mostra na tela ##
     def Tabela(self):
         lista = self.banco.TodaLista()
         self.model.Tabela(self.impressora,lista)
 
+    ## Busca dados da tela e busca resultado no banco ##
     def PesquisarImpressora(self):
         texto = self.impressora.Dados()
         lista = self.banco.Pesquisa(texto)
         self.model.Tabela(self.impressora, lista)
 
+    ## Chama tela de criação ##
     def Criar(self):
         self.cdimpressora.Show('Incluir',self)
 
+    ## Chama tela de alterar cadastro pré-selecionado  ##
     def AlterarImpressora(self):
         linhaSelect = self.impressora.LinhaSelect()
         if linhaSelect != -1:
@@ -38,6 +45,7 @@ class SistemaImpressora(QMainWindow):
         else:
             self.msg.MsgSelecionarLinha()
 
+    ## Chama tela de confirmação de ação de excluir registro pré-selecionado ##
     def ExcluirImpressora(self):
         linhaSelect = self.impressora.LinhaSelect()
         if linhaSelect != -1:
@@ -45,12 +53,13 @@ class SistemaImpressora(QMainWindow):
         else:
             self.msg.MsgSelecionarLinha()
 
+    ## Chama exclusão no banco de dados do registro ##
     def ExcluirConfirmado(self,linhaSelect):
         TextoLinha = self.impressora.TextoSelectLinha(linhaSelect)
         self.banco.ExcluirImpr(TextoLinha)
         self.Tabela()
 
-
+    ## Regras, Constante, e Ações ##
     def __init__(self):
         super().__init__()
         self.impressora = viewImpressora()
@@ -65,17 +74,3 @@ class SistemaImpressora(QMainWindow):
         self.impressora.tela.BT_Criar.clicked.connect(self.Criar)
         self.impressora.tela.BT_Alterar.clicked.connect(self.AlterarImpressora)
         self.impressora.tela.BT_Exclui.clicked.connect(self.ExcluirImpressora)
-
-
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-
-    # Atribuindo o objeto
-    menu = ()
-
-    # Show das telas
-    menu.tela.show()
-    sys.exit(app.exec())

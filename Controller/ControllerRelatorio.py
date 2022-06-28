@@ -48,7 +48,7 @@ class SistemaRelatorio(QMainWindow):
     def Graf_Contagem(self):
         self.ViewRela.Grafico()
 
-
+    ## Regras, Constante, e Ações ##
     def __init__(self):
         super().__init__()
         self.ViewRela = viewRelatorio()
@@ -56,6 +56,7 @@ class SistemaRelatorio(QMainWindow):
         self.msg = SistemaMensagem()
         self.model = Modelrelatorio()
         self.GRela = SistemaGRelatorio()
+        #Definição dos botões
         self.ViewRela.tela.BT_GerarContagem.clicked.connect(self.GerarContagem)
         self.ViewRela.tela.BT_DataInicial.clicked.connect(self.Data)
         self.ViewRela.tela.BT_DataFinal.clicked.connect(self.Data)

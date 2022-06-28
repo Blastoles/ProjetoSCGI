@@ -43,8 +43,9 @@ class SistemaLogin(QMainWindow):
     def __init__(self):
         super().__init__()
         self.login = viewLogin()
-        self.login.tela.BT_Logar.clicked.connect(self.Validar)
-        self.login.tela.BT_Cancelar.clicked.connect(self.Close)
         self.daolog = DAOlogin()
         self.msg = SistemaMensagem()
         self.menu = SistemaMenu()
+        #Definição dos botões
+        self.login.tela.BT_Logar.clicked.connect(self.Validar)
+        self.login.tela.BT_Cancelar.clicked.connect(self.Close)

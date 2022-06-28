@@ -1,11 +1,12 @@
+## Bibliotecas ##
 import sqlite3
 from os import getcwd
-
 from Controller.ControllerMensagem import SistemaMensagem
 
-
+## Classe de acesso ao banco ##
 class DAOCadastraruser():
 
+    ## Inserir dados ##
     def InserirDados(self,dados,linhadb):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
@@ -15,13 +16,13 @@ class DAOCadastraruser():
                                " VALUES "
                                "({},'{}','{}','{}','{}',{},{},'{}')"
                                "".format(linhadb+1,dados[0],dados[3],dados[1],dados[2],int(dados[5]),int(dados[6]),dados[4]))
-            #Linha,Nome,Usuario,Email,Telefone,Admin,Ativo,Senha
             banco.commit()
             self.msg.MsgRealizadoComSucesso()
         except:
             self.msg.MsgErroBancoDados()
         banco.close()
 
+    ## Verificar registro ##
     def CheckUser(self,user):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
@@ -33,6 +34,7 @@ class DAOCadastraruser():
         banco.close()
         return checkuser
 
+    ## Contar registros no banco ##
     def ContLista(self):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
@@ -48,6 +50,7 @@ class DAOCadastraruser():
         banco.close()
         return NumLista
 
+    ## Atualizar dados ##
     def UpdateDados(self,Dados):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
@@ -62,6 +65,7 @@ class DAOCadastraruser():
             self.msg.MsgErroBancoDados()
         banco.close()
 
+    ## Regras, Constante, e Ações ##
     def __init__(self):
         Local = getcwd()
         Local = Local.split('Controller')
