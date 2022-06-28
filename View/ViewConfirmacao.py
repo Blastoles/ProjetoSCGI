@@ -16,6 +16,7 @@ class viewConfirmacao(QMessageBox):
 
     ## Regras, Constante, e Ações ##
     def __init__(self):
+        super().__init__()
         Local = getcwd()
         Local = Local.split('Controller')
         Local = Local[0].replace('C:','C:\\')

@@ -1,4 +1,5 @@
 ## Bibliotecas ##
+from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QMainWindow
 from View.ViewLogin import viewLogin
 from DAO.DAOLogin import DAOlogin
@@ -49,3 +50,10 @@ class SistemaLogin(QMainWindow):
         #Definição dos botões
         self.login.tela.BT_Logar.clicked.connect(self.Validar)
         self.login.tela.BT_Cancelar.clicked.connect(self.Close)
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    self = SistemaLogin()
+    self.Iniciar()
+    sys.exit(app.exec())
