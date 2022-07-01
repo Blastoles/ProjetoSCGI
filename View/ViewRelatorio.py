@@ -58,31 +58,11 @@ class viewRelatorio(QWidget):
             lst.append(self.tela.TB_Impressora.item(LinhasSelecionadas.row(), 0).text())
         return (list(OrderedDict.fromkeys(lst)))
 
-    ## Grafico da tela ##
-    def Grafico(self):
-        x = ['01/01/2022','02/01/2022','03/01/2022','04/01/2022','05/01/2022']
-        y = ['1','1.3', '2.7', '3', '4.5']
-        y1 = ['6','7','8','9','10']
-        y2 = ['8', '9', '6', '5', '1']
-        self.tela.grafico.canvas.axes.set_xlabel("Data da Coleta")
-        self.tela.grafico.canvas.axes.set_ylabel("Contagem de Impressão")
-        self.tela.grafico.canvas.axes.plot(x, y, label="HP 2055",color = self.Color())
-        self.tela.grafico.canvas.axes.plot(x, y1, label="HP 4020",color = self.Color())
-        self.tela.grafico.canvas.axes.plot(x, y2, color=self.Color())
-        self.tela.grafico.canvas.axes.legend()
-        self.tela.grafico.canvas.draw()
-
-    ## Gera cor aleatoria ##
-    def Color(self):
-        cor = ["#" + ''.join([random.choice('0123456789ABCDEF') for j in range(6)])]
-        return cor[0]
 
     ## Regras, Constante, e Ações ##
     def __init__(self):
         super().__init__()
-        self.graf = FigureCanvas()
         Local = getcwd()
         Local = Local.split('Controller')
         Local = Local[0].replace('C:', 'C:\\')
         self.tela = uic.loadUi("{}View\Telas\CD_Relatorio.ui".format(Local))
-        self.tela.addToolBar(NavigationToolbar(self.tela.grafico.canvas, self))

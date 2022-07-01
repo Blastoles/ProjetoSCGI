@@ -4,21 +4,30 @@ from os import getcwd
 from Controller.ControllerMensagem import SistemaMensagem
 
 ## Classe de acesso ao banco ##
-class DAOGRelatorio():
+class DAORContagem():
 
     ## Pesquisa dados de impressora com filtro ##
-    def BuscarDadosBD(self,filtro,cond):
+    def BuscarDadosImp(self,imp):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
         try:
-            cursor.execute("SELECT NUM_DE_SERIE, MODELO, SETOR_NOME, SETOR_SIGLA, ATIVO, ALUGADA "
-                           "FROM IMPRESSORA "
-                           "WHERE ATIVO {} {} AND ALUGADA {} {}".format(cond[0],filtro[0],cond[1],filtro[1]))
-            lista = cursor.fetchall()
+            cursor.execute("")
+            banco.commit()
+            self.msg.MsgRealizadoComSucesso()
         except:
             self.msg.MsgErroBancoDados()
         banco.close()
-        return lista
+
+    def BuscarContagemImp(self):
+        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        cursor = banco.cursor()
+        try:
+            cursor.execute("")
+            banco.commit()
+            self.msg.MsgRealizadoComSucesso()
+        except:
+            self.msg.MsgErroBancoDados()
+        banco.close()
 
     ## Regras, Constante, e Ações ##
     def __init__(self):

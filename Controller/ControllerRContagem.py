@@ -1,12 +1,15 @@
 ## Bibliotecas ##
 from PyQt5.QtWidgets import QWidget
-from View.ViewRContagem import GRelatorio
+from DAO.DAORContagem import DAORContagem
+from View.ViewRContagem import viewRContagem
+
 
 ## Classe principal ##
-class SistemaGRelatorio(QWidget):
+class SistemaRContagem(QWidget):
 
     ## Chama a tela ##
-    def Show(self):
+    def Show(self,Impressora):
+        self.imp = Impressora
         self.GRela.Show()
 
     ## Fecha a tela ##
@@ -16,6 +19,8 @@ class SistemaGRelatorio(QWidget):
     ## Regras, Constante, e Ações ##
     def __init__(self):
         super().__init__()
-        self.GRela = GRelatorio()
+        self.GRela = viewRContagem()
+        self.banco = DAORContagem()
+        self.imp = ''
         #Definição dos botões
         self.GRela.tela.BT_Voltar.clicked.connect(self.Close)

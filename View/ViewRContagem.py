@@ -4,7 +4,7 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget
 
 ## Classe visualização da tela ##
-class GRelatorio(QWidget):
+class viewRContagem(QWidget):
 
     ## Chama a tela ##
     def Show(self):
