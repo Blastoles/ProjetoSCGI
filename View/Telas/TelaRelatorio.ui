@@ -123,6 +123,9 @@
        </item>
        <item row="2" column="4">
         <widget class="QLabel" name="DD_Data">
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 0, 0);</string>
+         </property>
          <property name="text">
           <string>Sem Dados</string>
          </property>
@@ -183,11 +186,6 @@
          <column>
           <property name="text">
            <string>Custo</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Impressão por Toner</string>
           </property>
          </column>
         </widget>
