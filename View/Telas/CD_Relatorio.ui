@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>874</width>
-    <height>599</height>
+    <width>877</width>
+    <height>581</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -89,7 +89,7 @@
           <enum>QTabWidget::Triangular</enum>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <property name="iconSize">
           <size>
@@ -111,203 +111,7 @@
            <string>Contagem de Impressão</string>
           </attribute>
           <layout class="QGridLayout" name="gridLayout">
-           <item row="0" column="1">
-            <widget class="QGroupBox" name="data">
-             <property name="title">
-              <string>Data</string>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_7">
-              <item row="1" column="0">
-               <widget class="QLineEdit" name="CP_DataInicial">
-                <property name="enabled">
-                 <bool>false</bool>
-                </property>
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>Arial</family>
-                 </font>
-                </property>
-                <property name="inputMask">
-                 <string>99/99/9999</string>
-                </property>
-               </widget>
-              </item>
-              <item row="3" column="0">
-               <widget class="QLineEdit" name="CP_DataFinal">
-                <property name="enabled">
-                 <bool>false</bool>
-                </property>
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>Arial</family>
-                 </font>
-                </property>
-                <property name="inputMask">
-                 <string>99/99/9999</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="0">
-               <widget class="QCheckBox" name="BT_DataInicial">
-                <property name="font">
-                 <font>
-                  <family>Arial</family>
-                  <pointsize>10</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Data Inicial</string>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
-                </property>
-                <property name="checked">
-                 <bool>false</bool>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="0">
-               <widget class="QCheckBox" name="BT_DataFinal">
-                <property name="font">
-                 <font>
-                  <family>Arial</family>
-                  <pointsize>10</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                  <underline>false</underline>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Data Final</string>
-                </property>
-                <property name="checked">
-                 <bool>false</bool>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item row="2" column="1">
-            <widget class="QGroupBox" name="Condicao">
-             <property name="title">
-              <string>Condição da Impressora</string>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_3">
-              <item row="0" column="0">
-               <widget class="QRadioButton" name="BT_TodosCond">
-                <property name="text">
-                 <string>Todos</string>
-                </property>
-                <property name="checked">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="0">
-               <widget class="QRadioButton" name="BT_Alugada">
-                <property name="text">
-                 <string>Alugada</string>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="0">
-               <widget class="QRadioButton" name="BT_Comprada">
-                <property name="text">
-                 <string>Comprada</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QGroupBox" name="status">
-             <property name="title">
-              <string>Status</string>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_6">
-              <item row="2" column="0">
-               <widget class="QRadioButton" name="BT_Desativada">
-                <property name="text">
-                 <string>Desativada</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="0">
-               <widget class="QRadioButton" name="BT_Funcionando">
-                <property name="text">
-                 <string>Funcionando</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="0">
-               <widget class="QRadioButton" name="BT_TodosStatus">
-                <property name="text">
-                 <string>Todos</string>
-                </property>
-                <property name="checked">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item row="3" column="1">
-            <widget class="QPushButton" name="BT_GerarContagem">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>40</height>
-              </size>
-             </property>
-             <property name="sizeIncrement">
-              <size>
-               <width>0</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <pointsize>10</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-               <underline>false</underline>
-               <strikeout>false</strikeout>
-              </font>
-             </property>
-             <property name="text">
-              <string>Gerar Relatório</string>
-             </property>
-             <property name="icon">
-              <iconset>
-               <normaloff>../Arte/check_ok_accept_apply_1582.ico</normaloff>../Arte/check_ok_accept_apply_1582.ico</iconset>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="0" rowspan="4">
+           <item row="0" column="0" rowspan="3">
             <widget class="QGroupBox" name="impressora">
              <property name="title">
               <string>Impressora(s)</string>
@@ -416,159 +220,270 @@
              </layout>
             </widget>
            </item>
+           <item row="1" column="1">
+            <widget class="QGroupBox" name="Condicao">
+             <property name="title">
+              <string>Condição da Impressora</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_3">
+              <item row="0" column="0">
+               <widget class="QRadioButton" name="BT_TodosCond">
+                <property name="text">
+                 <string>Todos</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QRadioButton" name="BT_Alugada">
+                <property name="text">
+                 <string>Alugada</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QRadioButton" name="BT_Comprada">
+                <property name="text">
+                 <string>Comprada</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QGroupBox" name="status">
+             <property name="title">
+              <string>Status</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_6">
+              <item row="2" column="0">
+               <widget class="QRadioButton" name="BT_Desativada">
+                <property name="text">
+                 <string>Desativada</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QRadioButton" name="BT_Funcionando">
+                <property name="text">
+                 <string>Funcionando</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QRadioButton" name="BT_TodosStatus">
+                <property name="text">
+                 <string>Todos</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QPushButton" name="BT_GerarContagem">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="sizeIncrement">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+               <underline>false</underline>
+               <strikeout>false</strikeout>
+              </font>
+             </property>
+             <property name="text">
+              <string>Gerar Relatório</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../Arte/check_ok_accept_apply_1582.ico</normaloff>../Arte/check_ok_accept_apply_1582.ico</iconset>
+             </property>
+            </widget>
+           </item>
           </layout>
          </widget>
          <widget class="QWidget" name="tab_Manutencao">
           <attribute name="title">
            <string>Manutenção de Impressora</string>
           </attribute>
-         </widget>
-         <widget class="QWidget" name="tab_2">
-          <attribute name="title">
-           <string>Custo</string>
-          </attribute>
-          <widget class="QGroupBox" name="groupBox_6">
-           <property name="geometry">
-            <rect>
-             <x>90</x>
-             <y>330</y>
-             <width>688</width>
-             <height>129</height>
-            </rect>
-           </property>
-           <property name="title">
-            <string>Campos</string>
-           </property>
-           <layout class="QGridLayout" name="gridLayout_12">
-            <item row="2" column="0">
-             <widget class="QCheckBox" name="BT_Modelo_2">
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="1" column="0">
+            <widget class="QComboBox" name="comboBox_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <item>
               <property name="text">
-               <string>Modelo</string>
+               <string>Escolha Qual Manutenção</string>
               </property>
-             </widget>
-            </item>
-            <item row="0" column="0">
-             <widget class="QCheckBox" name="BT_NumDeSerie_2">
+             </item>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QComboBox" name="comboBox">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <item>
               <property name="text">
-               <string>Número de Série</string>
+               <string>Escolha uma Impressora</string>
               </property>
-             </widget>
-            </item>
-            <item row="5" column="0">
-             <widget class="QCheckBox" name="BT_AnoAquisicao_2">
-              <property name="text">
-               <string>Ano da Aquisição</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="0">
-             <widget class="QCheckBox" name="BT_Fabricante_2">
-              <property name="text">
-               <string>Fabricante</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="QCheckBox" name="BT_MAC_2">
-              <property name="text">
-               <string>MAC</string>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="0">
-             <widget class="QCheckBox" name="BT_NomeAmigavel_2">
-              <property name="text">
-               <string>Nome Amigavel</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="1">
-             <widget class="QCheckBox" name="BT_Alugada_3">
-              <property name="text">
-               <string>Alugada</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="1">
-             <widget class="QCheckBox" name="BT_SiglaSetor_2">
-              <property name="text">
-               <string>Sigla Setor</string>
-              </property>
-              <property name="checked">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1">
-             <widget class="QCheckBox" name="BT_NomeSetor_2">
-              <property name="text">
-               <string>Nome Setor</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="2">
-             <widget class="QCheckBox" name="BT_Wifi_2">
-              <property name="text">
-               <string>Wifi</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="1">
-             <widget class="QCheckBox" name="BT_Status_2">
-              <property name="text">
-               <string>Status</string>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="1">
-             <widget class="QCheckBox" name="BT_USB_2">
-              <property name="text">
-               <string>USB</string>
-              </property>
-             </widget>
-            </item>
-            <item row="5" column="1">
-             <widget class="QCheckBox" name="BT_Rede_2">
-              <property name="text">
-               <string>Rede</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="2">
-             <widget class="QCheckBox" name="BT_IP_2">
-              <property name="text">
-               <string>Endereço de IP</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="2">
-             <widget class="QCheckBox" name="BT_Monocromatico_2">
-              <property name="text">
-               <string>Monocromatico</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="2">
-             <widget class="QCheckBox" name="BT_Cromatico_2">
-              <property name="text">
-               <string>Cromatico</string>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="2">
-             <widget class="QCheckBox" name="BT_ModeloToner_2">
-              <property name="text">
-               <string>Modelo Toner(s)</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </widget>
-         <widget class="QWidget" name="tab_3">
-          <attribute name="title">
-           <string>Dados</string>
-          </attribute>
+             </item>
+            </widget>
+           </item>
+           <item row="2" column="0" colspan="2">
+            <widget class="QFrame" name="frame_3">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_5">
+              <item row="0" column="1">
+               <widget class="QLabel" name="CP_Data">
+                <property name="text">
+                 <string>Dado</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="TX_Data">
+                <property name="text">
+                 <string>Data Realizada</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="0" colspan="4">
+               <widget class="QTextEdit" name="CP_Desc"/>
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="TX_Desc">
+                <property name="text">
+                 <string>Descrição</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="TX_Custo">
+                <property name="text">
+                 <string>Custo</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLabel" name="CP_Custo">
+                <property name="text">
+                 <string>Dado</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="TX_Tipo">
+                <property name="text">
+                 <string>Tipo de Manutenção</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLabel" name="CP_Tipo">
+                <property name="text">
+                 <string>Dado</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="2">
+               <widget class="QLabel" name="TX_Status">
+                <property name="text">
+                 <string>Status</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="3">
+               <widget class="QLabel" name="CP_Status">
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 0, 0);</string>
+                </property>
+                <property name="text">
+                 <string>Dado</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <widget class="QLabel" name="TX_Quanti">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Quantidade de Manutenção</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="3">
+               <widget class="QLabel" name="CP_Quantidade">
+                <property name="text">
+                 <string>Dado</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="BT_Buscar">
+             <property name="text">
+              <string>Buscar</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QPushButton" name="BT_Selecionar">
+             <property name="text">
+              <string>Selecionar</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </widget>
        </item>
