@@ -40,6 +40,10 @@ class viewRelatorio(QWidget):
     def Lista(self,i,j,texto):
         self.tela.TB_Impressora.setItem(i, j, QtWidgets.QTableWidgetItem(texto))
 
+    ## Mostra lista ##
+    def ListaManu(self,lista):
+        self.tela.CB_Impressora.addItems(lista)
+
     ## Habilita opção na tela ##
     def DataCheck(self):
         if self.tela.BT_DataInicial.isChecked():

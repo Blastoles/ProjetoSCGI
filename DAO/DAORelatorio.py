@@ -20,6 +20,19 @@ class DAORelatorio():
         banco.close()
         return lista
 
+    ## Busca manutenção de impressoras com filtro ##
+    def BuscarManutencao(self,manu):
+        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        cursor = banco.cursor()
+        try:
+            cursor.execute("SELECT NUM_DE_SERIE, MODELO, SETOR_NOME, SETOR_SIGLA, ATIVO, ALUGADA "
+                           "FROM IMPRESSORA ")
+            lista = cursor.fetchall()
+        except:
+            self.msg.MsgErroBancoDados()
+        banco.close()
+        return lista
+
     ## Regras, Constante, e Ações ##
     def __init__(self):
         Local = getcwd()

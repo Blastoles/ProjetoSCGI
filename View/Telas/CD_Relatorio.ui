@@ -333,7 +333,7 @@
           </attribute>
           <layout class="QGridLayout" name="gridLayout_4">
            <item row="1" column="0">
-            <widget class="QComboBox" name="comboBox_2">
+            <widget class="QComboBox" name="CB_Manutencao">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -348,7 +348,7 @@
             </widget>
            </item>
            <item row="0" column="0">
-            <widget class="QComboBox" name="comboBox">
+            <widget class="QComboBox" name="CB_Impressora">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                <horstretch>0</horstretch>
