@@ -89,7 +89,7 @@
           <enum>QTabWidget::Triangular</enum>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <property name="iconSize">
           <size>
@@ -342,7 +342,7 @@
              </property>
              <item>
               <property name="text">
-               <string>Escolha Qual Manutenção</string>
+               <string>Escolha qual Manutenção</string>
               </property>
              </item>
             </widget>

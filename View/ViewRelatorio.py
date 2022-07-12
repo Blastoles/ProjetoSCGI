@@ -42,7 +42,15 @@ class viewRelatorio(QWidget):
 
     ## Mostra lista ##
     def ListaManu(self,lista):
+        self.tela.CB_Impressora.clear()
+        self.tela.CB_Impressora.addItem("Escolha uma Impressora")
         self.tela.CB_Impressora.addItems(lista)
+
+    ## Mostra lista ##
+    def ListaManuInfo(self,lista):
+        self.tela.CB_Manutencao.clear()
+        self.tela.CB_Manutencao.addItem("Escolha qual Manutenção")
+        self.tela.CB_Manutencao.addItems(lista)
 
     ## Habilita opção na tela ##
     def DataCheck(self):
@@ -62,6 +70,13 @@ class viewRelatorio(QWidget):
             lst.append(self.tela.TB_Impressora.item(LinhasSelecionadas.row(), 0).text())
         return (list(OrderedDict.fromkeys(lst)))
 
+    def PegarSelecaoImp(self):
+        imp = self.tela.CB_Impressora.currentText()
+        return imp
+
+    def PegarSelecaoManu(self):
+        manu = self.tela.CB_Manutencao.currentText()
+        return manu
 
     ## Regras, Constante, e Ações ##
     def __init__(self):

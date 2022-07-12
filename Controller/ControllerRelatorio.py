@@ -46,7 +46,19 @@ class SistemaRelatorio(QMainWindow):
             self.msg.MsgSelecionarImpr()
 
     def Buscar(self):
+        imp = self.ViewRela.PegarSelecaoImp()
+        NumSerie = imp.split(' -- ')
+        if NumSerie != '':
+            dados = self.banco.BuscarManutencao(NumSerie[0])
+            modDados = self.model.ListaManu(dados)
+            self.ViewRela.ListaManuInfo(modDados)
+        else:
+            self.msg.MsgSelecionarImpr()
 
+    def BuscarManu(self):
+        manu = self.ViewRela.PegarSelecaoManu()
+        dados = manu.split(' -- ')
+        print(manu)
 
     ## Regras, Constante, e Ações ##
     def __init__(self):
@@ -65,4 +77,5 @@ class SistemaRelatorio(QMainWindow):
         self.ViewRela.tela.BT_Comprada.clicked.connect(self.MostrarDados)
         self.ViewRela.tela.BT_Alugada.clicked.connect(self.MostrarDados)
         self.ViewRela.tela.BT_Buscar.clicked.connect(self.Buscar)
+        self.ViewRela.tela.BT_Selecionar.clicked.connect(self.BuscarManu)
         self.ViewRela.tela.BT_Voltar.clicked.connect(self.Close)

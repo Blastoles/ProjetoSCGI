@@ -34,3 +34,21 @@ class Modelrelatorio():
             LtManu.append(linhaManu)
             linhaManu = ''
         self.ListaManu(LtManu)
+
+
+    def ListaManu(self,lista):
+        nLista = len(lista)
+        LtManu = []
+        linhaManu = ''
+        for i in range(0,nLista):
+            for j in range(0,3):
+                if j == 0:
+                    if lista[i][j] == 1:
+                        linhaManu = "Manutenção Preventiva"
+                    elif lista[i][j] == 2:
+                        linhaManu = "Manutenção Corretiva"
+                else:
+                    linhaManu = linhaManu + " -- " + lista[i][j]
+            LtManu.append(linhaManu)
+            linhaManu = ''
+        return LtManu

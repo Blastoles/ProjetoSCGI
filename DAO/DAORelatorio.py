@@ -33,11 +33,11 @@ class DAORelatorio():
         return lista
 
     ## Busca DADOS de MANUTENCAO com filtro ##
-    def BuscarDadoManu(self,manu):
+    def BuscarDadoManu(self,Num, Data, Custo):
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
         try:
-            cursor.execute("SELECT DATA_PARADA, CUSTO, TIPO, DATA_VOLTA FROM MANUTENCAO WHERE IMPRESSORA_NUM_DE_SERIE = '{}' AND DATA_PARADA = '{}' AND CUSTO = '{}'")
+            cursor.execute("SELECT DATA_PARADA, CUSTO, TIPO, DATA_VOLTA, DESCRICAO FROM MANUTENCAO WHERE IMPRESSORA_NUM_DE_SERIE = '{}' AND DATA_PARADA = '{}' AND CUSTO = '{}'".format(Num, Data, Custo))
             lista = cursor.fetchall()
         except:
             self.msg.MsgErroBancoDados()
