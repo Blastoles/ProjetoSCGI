@@ -57,8 +57,11 @@ class SistemaRelatorio(QMainWindow):
 
     def BuscarManu(self):
         manu = self.ViewRela.PegarSelecaoManu()
-        dados = manu.split(' -- ')
-        print(manu)
+        imp = self.ViewRela.PegarSelecaoImp()
+        dados = manu.split(' -- ') + imp.split(' -- ')
+        Campos = self.banco.BuscarDadoManu(dados[3],dados[1],dados[2])
+        self.ViewRela.ColocarDdManu(Campos[0])
+        print(dados,Campos)
 
     ## Regras, Constante, e Ações ##
     def __init__(self):
@@ -79,3 +82,11 @@ class SistemaRelatorio(QMainWindow):
         self.ViewRela.tela.BT_Buscar.clicked.connect(self.Buscar)
         self.ViewRela.tela.BT_Selecionar.clicked.connect(self.BuscarManu)
         self.ViewRela.tela.BT_Voltar.clicked.connect(self.Close)
+
+
+
+
+
+
+
+

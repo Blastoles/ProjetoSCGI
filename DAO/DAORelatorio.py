@@ -37,7 +37,7 @@ class DAORelatorio():
         banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
         cursor = banco.cursor()
         try:
-            cursor.execute("SELECT DATA_PARADA, CUSTO, TIPO, DATA_VOLTA, DESCRICAO FROM MANUTENCAO WHERE IMPRESSORA_NUM_DE_SERIE = '{}' AND DATA_PARADA = '{}' AND CUSTO = '{}'".format(Num, Data, Custo))
+            cursor.execute("SELECT DATA_VOLTA, CUSTO, TIPO, VOLTOU_FUNCIONAR, (SELECT COUNT(ID_MANUTENCAO) FROM MANUTENCAO WHERE IMPRESSORA_NUM_DE_SERIE = '{}')AS QUANTIDADE, DESCRICAO FROM MANUTENCAO WHERE IMPRESSORA_NUM_DE_SERIE = '{}' AND DATA_PARADA = '{}' AND CUSTO = '{}'".format(Num, Num, Data, Custo))
             lista = cursor.fetchall()
         except:
             self.msg.MsgErroBancoDados()

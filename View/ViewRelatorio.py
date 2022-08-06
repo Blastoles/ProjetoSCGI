@@ -78,6 +78,14 @@ class viewRelatorio(QWidget):
         manu = self.tela.CB_Manutencao.currentText()
         return manu
 
+    def ColocarDdManu(self,campos):
+        self.tela.CP_Data.setText(campos[0])
+        self.tela.CP_Custo.setText(campos[1])
+        self.tela.CP_Tipo.setText(campos[2])
+        self.tela.CP_Status.setText(campos[3])
+        self.tela.CP_Quantidade.setText(campos[4])
+        self.tela.CP_Desc.setText(campos[5])
+
     ## Regras, Constante, e Ações ##
     def __init__(self):
         super().__init__()
