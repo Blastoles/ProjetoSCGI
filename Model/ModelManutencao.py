@@ -23,9 +23,9 @@ class ModelManutencao():
             for j in range(0, 10):
                 if j == 5:
                     if lista[i][j] == 1:
-                        self.Lista(i, j, "Manutenção Corretiva")
-                    if lista[i][j] == 2:
                         self.Lista(i, j, "Manutenção Preventiva")
+                    if lista[i][j] == 2:
+                        self.Lista(i, j, "Manutenção Corretiva")
                 elif j == 8:
                     if lista[i][j] == 1:
                         self.Lista(i, j, str("Sim"))
@@ -39,9 +39,9 @@ class ModelManutencao():
     def Motivo(self,mot):
         dado = []
         for i in mot:
-            if i == "Manutenção Corretiva":
+            if i == "Manutenção Preventiva":
                 dado.append(1)
-            elif i == "Manutenção Preventiva":
+            elif i == "Manutenção Corretiva":
                 dado.append(2)
             else:
                 dado.append(i)

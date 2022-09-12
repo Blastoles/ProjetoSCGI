@@ -1,3 +1,4 @@
+## Bibliotecas ##
 from Controller.ControllerMensagem import SistemaMensagem
 from Controller.ControllerRContagem import SistemaRContagem
 from View.ViewRelatorio import viewRelatorio
@@ -56,12 +57,13 @@ class SistemaRelatorio(QMainWindow):
             self.msg.MsgSelecionarImpr()
 
     def BuscarManu(self):
+        self.ViewRela.LimpaDdManu()
         manu = self.ViewRela.PegarSelecaoManu()
         imp = self.ViewRela.PegarSelecaoImp()
         dados = manu.split(' -- ') + imp.split(' -- ')
         Campos = self.banco.BuscarDadoManu(dados[3],dados[1],dados[2])
-        self.ViewRela.ColocarDdManu(Campos[0])
-        print(dados,Campos)
+        if Campos != []:
+            self.ViewRela.ColocarDdManu(Campos[0])
 
     ## Regras, Constante, e Ações ##
     def __init__(self):

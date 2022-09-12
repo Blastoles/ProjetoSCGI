@@ -2,10 +2,7 @@
 from os import getcwd
 from collections import OrderedDict
 from PyQt5 import uic, QtWidgets
-import random
-from matplotlib.backends.backend_qt5agg import (NavigationToolbar2QT as NavigationToolbar)
 from PyQt5.QtWidgets import *
-from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 
 ## Classe visualização da tela ##
 class viewRelatorio(QWidget):
@@ -70,21 +67,39 @@ class viewRelatorio(QWidget):
             lst.append(self.tela.TB_Impressora.item(LinhasSelecionadas.row(), 0).text())
         return (list(OrderedDict.fromkeys(lst)))
 
+    ## Coleta Dado da Tela ##
     def PegarSelecaoImp(self):
         imp = self.tela.CB_Impressora.currentText()
         return imp
 
+    ## Coleta Dado da Tela ##
     def PegarSelecaoManu(self):
         manu = self.tela.CB_Manutencao.currentText()
         return manu
 
+    ## Coloca Dado ##
     def ColocarDdManu(self,campos):
         self.tela.CP_Data.setText(campos[0])
         self.tela.CP_Custo.setText(campos[1])
-        self.tela.CP_Tipo.setText(campos[2])
-        self.tela.CP_Status.setText(campos[3])
-        self.tela.CP_Quantidade.setText(campos[4])
+        if campos[2] == 1:
+            self.tela.CP_Tipo.setText("Manutenção Preventiva")
+        elif campos[2] == 2:
+            self.tela.CP_Tipo.setText("Manutenção Corretiva")
+        if campos[3] == 0:
+            self.tela.CP_Status.setText("Não voltou funcionar")
+        elif campos[3] == 1:
+            self.tela.CP_Status.setText("Voltou funcionar")
+        self.tela.CP_Quantidade.setText(str(campos[4]))
         self.tela.CP_Desc.setText(campos[5])
+
+    ## Limpa tela ##
+    def LimpaDdManu(self):
+        self.tela.CP_Data.setText("")
+        self.tela.CP_Custo.setText("")
+        self.tela.CP_Tipo.setText("")
+        self.tela.CP_Status.setText("")
+        self.tela.CP_Quantidade.setText("")
+        self.tela.CP_Desc.setText("")
 
     ## Regras, Constante, e Ações ##
     def __init__(self):
