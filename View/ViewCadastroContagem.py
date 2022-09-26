@@ -1,5 +1,4 @@
 ## Bibliotecas ##
-from os import getcwd
 from PyQt5 import uic
 from PyQt5.QtWidgets import QWidget
 
@@ -98,7 +97,4 @@ class viewCadastroContagem(QWidget):
     ## Regras, Constante, e Ações ##
     def __init__(self):
         super().__init__()
-        Local = getcwd()
-        Local = Local.split('Controller')
-        Local = Local[0].replace('C:','C:\\')
-        self.tela = uic.loadUi("{}View\Telas\CadastroContagem.ui".format(Local))
+        self.tela = uic.loadUi("..\\View\Telas\CadastroContagem.ui")

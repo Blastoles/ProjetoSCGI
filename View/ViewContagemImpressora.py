@@ -58,7 +58,4 @@ class viewContagem(QWidget):
     ## Regras, Constante, e Ações ##
     def __init__(self):
         super().__init__()
-        Local = getcwd()
-        Local = Local.split('Controller')
-        Local = Local[0].replace('C:','C:\\')
-        self.tela = uic.loadUi("{}View\Telas\CD_Contagem.ui".format(Local))
+        self.tela = uic.loadUi("..\\View\Telas\CD_Contagem.ui")

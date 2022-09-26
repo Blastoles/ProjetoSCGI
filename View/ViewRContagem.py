@@ -1,5 +1,4 @@
 ## Bibliotecas ##
-from os import getcwd
 from PyQt5 import uic, QtWidgets
 from PyQt5.QtWidgets import QWidget
 
@@ -37,7 +36,4 @@ class viewRContagem(QWidget):
     ## Regras, Constante, e Ações ##
     def __init__(self):
         super().__init__()
-        Local = getcwd()
-        Local = Local.split('Controller')
-        Local = Local[0].replace('C:', 'C:\\')
-        self.tela = uic.loadUi("{}View\Telas\TelaRelatorio.ui".format(Local))
+        self.tela = uic.loadUi("..\\View\Telas\TelaRelatorio.ui")
