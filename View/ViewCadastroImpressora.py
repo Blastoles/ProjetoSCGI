@@ -24,6 +24,8 @@ class viewCadastroImpressora(QWidget):
         self.tela.CP_Fabricante.setText('')
         self.tela.CP_Nome.setText('')
         self.tela.CP_Data.setText('')
+        self.tela.CP_Setor.clear()
+        self.tela.CP_Setor.addItem("Nome -- Sigla")
         self.tela.CP_Setor.setCurrentIndex(0)
         self.tela.CP_Ativo.setCheckState(-1)
         self.tela.CP_Terceiros.setCheckState(0)
@@ -37,6 +39,9 @@ class viewCadastroImpressora(QWidget):
         self.tela.CP_MMagenta.setText('')
         self.tela.CP_MAmarelo.setText('')
         self.tela.CP_MAzul.setText('')
+        self.PossuiRede()
+        self.MonoCromatico()
+        self.Cromatico()
 
     ## Coleta dados ##
     def ColetaDados(self):
