@@ -1,6 +1,5 @@
 ## Bibliotecas ##
 import sqlite3
-from os import getcwd
 from Controller.ControllerMensagem import SistemaMensagem
 
 ## Classe de acesso ao banco ##
@@ -8,7 +7,7 @@ class DAOimpressora():
 
     ## Busca lista de impressora ##
     def TodaLista(self):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT "
@@ -23,7 +22,7 @@ class DAOimpressora():
 
     ## Pesquisa impressora com filtro ##
     def Pesquisa(self, texto):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT "
@@ -48,7 +47,7 @@ class DAOimpressora():
 
     ## Busca impressora ##
     def LocalizarImp(self, TextoLista):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT * FROM IMPRESSORA WHERE NUM_DE_SERIE = '{}'".format(TextoLista))
@@ -60,7 +59,7 @@ class DAOimpressora():
 
     ## Exclui registro ##
     def ExcluirImpr(self, Setor):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("DELETE FROM IMPRESSORA WHERE NUM_DE_SERIE = '{}'".format(Setor))
@@ -71,7 +70,5 @@ class DAOimpressora():
 
     ## Regras, Constante, e Ações ##
     def __init__(self):
-        Local = getcwd()
-        Local = Local.split('Controller')
-        self.Local = Local[0].replace('C:', 'C:\\')
+        self.Local = '..\\db_contator.db'
         self.msg = SistemaMensagem()

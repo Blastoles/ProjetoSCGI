@@ -8,7 +8,7 @@ class DAOCadastraruser():
 
     ## Inserir dados ##
     def InserirDados(self,dados,linhadb):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("INSERT INTO USUARIO "
@@ -24,7 +24,7 @@ class DAOCadastraruser():
 
     ## Verificar registro ##
     def CheckUser(self,user):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT USUARIO FROM USUARIO WHERE USUARIO = '{}'".format(user))
@@ -36,7 +36,7 @@ class DAOCadastraruser():
 
     ## Contar registros no banco ##
     def ContLista(self):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT ID_USUARIO USUARIO FROM USUARIO ORDER BY ID_USUARIO DESC LIMIT 1")
@@ -52,7 +52,7 @@ class DAOCadastraruser():
 
     ## Atualizar dados ##
     def UpdateDados(self,Dados):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("UPDATE USUARIO SET "
@@ -67,7 +67,5 @@ class DAOCadastraruser():
 
     ## Regras, Constante, e Ações ##
     def __init__(self):
-        Local = getcwd()
-        Local = Local.split('Controller')
-        self.Local = Local[0].replace('C:','C:\\')
+        self.Local = '..\\db_contator.db'
         self.msg = SistemaMensagem()

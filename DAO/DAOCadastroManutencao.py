@@ -1,6 +1,5 @@
 ## Bibliotecas ##
 import sqlite3
-from os import getcwd
 from Controller.ControllerMensagem import SistemaMensagem
 
 ## Classe de acesso ao banco ##
@@ -8,7 +7,7 @@ class DAOCadastrarManutencao():
 
     ## Busca lista de registro ##
     def Lista(self):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT NUM_DE_SERIE, MODELO, SETOR_NOME, SETOR_SIGLA FROM IMPRESSORA")
@@ -20,7 +19,7 @@ class DAOCadastrarManutencao():
 
     ## Pesquisa dados ##
     def BuscarDados(self,Selec):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT "
@@ -35,7 +34,7 @@ class DAOCadastrarManutencao():
 
     ## Inserir dados ##
     def InsertManutencao(self,dado,linhadb):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("INSERT INTO "
@@ -50,7 +49,7 @@ class DAOCadastrarManutencao():
 
     ## Atualizar dados ##
     def UpdateManutencao(self,dados):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("UPDATE MANUTENCAO SET "
@@ -69,7 +68,7 @@ class DAOCadastrarManutencao():
 
     ## Contar quantidade de registro ##
     def ContLista(self):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT ID_MANUTENCAO FROM MANUTENCAO ORDER BY ID_MANUTENCAO DESC LIMIT 1")
@@ -85,7 +84,5 @@ class DAOCadastrarManutencao():
 
     ## Regras, Constante, e Ações ##
     def __init__(self):
-        Local = getcwd()
-        Local = Local.split('Controller')
-        self.Local = Local[0].replace('C:','C:\\')
+        self.Local = '..\\db_contator.db'
         self.msg = SistemaMensagem()

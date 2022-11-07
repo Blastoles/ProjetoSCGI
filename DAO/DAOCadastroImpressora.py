@@ -1,6 +1,5 @@
 ## Bibliotecas ##
 import sqlite3
-from os import getcwd
 from Controller.ControllerMensagem import SistemaMensagem
 
 ## Classe de acesso ao banco ##
@@ -8,7 +7,7 @@ class DAOCadastrarimpressora():
 
     ## Inserir dados ##
     def InserirDados(self,dados,linhadb):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("INSERT INTO IMPRESSORA VALUES ({},'{}','{}','{}','{}','{}','{}','{}','{}',{},{},{},{},{},'{}',{},'{}',{},'{}','{}','{}'"
@@ -21,7 +20,7 @@ class DAOCadastrarimpressora():
 
     ## Consulta setor ##
     def ConsultaSetor(self):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT NOME_SETOR,SIGLA FROM SETOR")
@@ -33,7 +32,7 @@ class DAOCadastrarimpressora():
 
     ## Verificar registro ##
     def CheckImp(self,imp):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT NUM_DE_SERIE FROM IMPRESSORA WHERE NUM_DE_SERIE = '{}'".format(imp))
@@ -45,7 +44,7 @@ class DAOCadastrarimpressora():
 
     ## Conta quantidade de registro ##
     def ContLista(self):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT ID_IMPRESSORA FROM IMPRESSORA ORDER BY ID_IMPRESSORA DESC LIMIT 1")
@@ -61,7 +60,7 @@ class DAOCadastrarimpressora():
 
     ## Atualiza dados ##
     def UpdateDados(self,Dados):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("UPDATE IMPRESSORA SET "
@@ -96,7 +95,5 @@ class DAOCadastrarimpressora():
 
     ## Regras, Constante, e Ações ##
     def __init__(self):
-        Local = getcwd()
-        Local = Local.split('Controller')
-        self.Local = Local[0].replace('C:','C:\\')
+        self.Local = '..\\db_contator.db'
         self.msg = SistemaMensagem()

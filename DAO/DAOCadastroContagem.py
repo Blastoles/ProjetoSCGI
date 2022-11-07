@@ -1,12 +1,11 @@
 ## Bibliotecas ##
 import sqlite3
-from os import getcwd
 from Controller.ControllerMensagem import SistemaMensagem
 
 ## Classe acesso ao banco ##
 class DAOCadastrarContagem():
     def Lista(self):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT NUM_DE_SERIE, MODELO, SETOR_NOME, SETOR_SIGLA FROM IMPRESSORA")
@@ -17,7 +16,7 @@ class DAOCadastrarContagem():
         return lista
 
     def BuscarDados(self,Selec):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT "
@@ -31,7 +30,7 @@ class DAOCadastrarContagem():
         return selec
 
     def UltimaContagem(self,num):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT DATA,CONTAGEM FROM CONTADOR WHERE IMPRESSORA_NUM_DE_SERIE = '{}' ORDER BY CONTAGEM DESC LIMIT '1'".format(num))
@@ -42,7 +41,7 @@ class DAOCadastrarContagem():
         return Ultima
 
     def InsertContagem(self,dado,linhadb):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("INSERT INTO "
@@ -56,7 +55,7 @@ class DAOCadastrarContagem():
         banco.close()
 
     def UpdateContagem(self,dados):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("UPDATE CONTADOR SET "
@@ -74,7 +73,7 @@ class DAOCadastrarContagem():
         banco.close()
 
     def ContLista(self):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT ID_CONTADOR FROM CONTADOR ORDER BY ID_CONTADOR DESC LIMIT 1")
@@ -89,7 +88,5 @@ class DAOCadastrarContagem():
         return NumLista
 
     def __init__(self):
-        Local = getcwd()
-        Local = Local.split('Controller')
-        self.Local = Local[0].replace('C:','C:\\')
+        self.Local = '..\\db_contator.db'
         self.msg = SistemaMensagem()

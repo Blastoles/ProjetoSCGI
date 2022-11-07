@@ -1,6 +1,5 @@
 ## Bibliotecas ##
 import sqlite3
-from os import getcwd
 from Controller.ControllerMensagem import SistemaMensagem
 
 ## Classe de acesso ao banco ##
@@ -8,7 +7,7 @@ class DAOContagemimpressora():
 
     ## Pesquisa impressora ##
     def Lista(self):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT NUM_DE_SERIE, MODELO, SETOR_NOME, SETOR_SIGLA FROM IMPRESSORA")
@@ -20,7 +19,7 @@ class DAOContagemimpressora():
 
     ## Pesquisa dados de contagem ##
     def Pesquisa(self,Impre):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT NUM_DE_SERIE, MODELO, SETOR_NOME, SETOR_SIGLA, DATA, CONTAGEM, MODELO_TPRETO, CUSTO_PRETO, MODELO_TMARGENTA, CUSTO_MARGENTA, MODELO_TAMARELO, CUSTO_AMARELO, MODELO_TAZUL, CUSTO_AZUL "
@@ -37,7 +36,7 @@ class DAOContagemimpressora():
 
     ## Exclui registro ##
     def ExcluirContagem(self,dado):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("DELETE FROM CONTADOR WHERE ID_CONTADOR = '{}' AND IMPRESSORA_NUM_DE_SERIE = '{}' AND CONTAGEM = '{}' AND DATA = '{}'".format(dado[0][0],dado[0][1],dado[0][2],dado[0][3]))
@@ -48,7 +47,7 @@ class DAOContagemimpressora():
 
     ## Localiza contagem, impressora no banco ##
     def Localizar(self,dado):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT "
@@ -64,7 +63,5 @@ class DAOContagemimpressora():
 
     ## Regras, Constante, e Ações ##
     def __init__(self):
-        Local = getcwd()
-        Local = Local.split('Controller')
-        self.Local = Local[0].replace('C:','C:\\')
+        self.Local = '..\\db_contator.db'
         self.msg = SistemaMensagem()

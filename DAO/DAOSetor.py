@@ -1,6 +1,5 @@
 ## Bibliotecas ##
 import sqlite3
-from os import getcwd
 from Controller.ControllerMensagem import SistemaMensagem
 
 ## Classe de acesso ao banco ##
@@ -8,7 +7,7 @@ class DAOsetor():
 
     ## Busca setor ##
     def TodaLista(self):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT "
@@ -23,7 +22,7 @@ class DAOsetor():
 
     ## Pesquisa dados com filtro ##
     def Pesquisa(self,texto):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT "
@@ -40,7 +39,7 @@ class DAOsetor():
 
     ## Busca setor ##
     def LocalizarSetor(self,TextoLista):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT * FROM SETOR WHERE SIGLA = '{}'".format(TextoLista))
@@ -52,7 +51,7 @@ class DAOsetor():
 
     ## Exclui registro ##
     def ExcluirSetor(self,Setor):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("DELETE FROM SETOR WHERE SIGLA = '{}'".format(Setor))
@@ -63,7 +62,5 @@ class DAOsetor():
 
     ## Regras, Constante, e Ações ##
     def __init__(self):
-        Local = getcwd()
-        Local = Local.split('Controller')
-        self.Local = Local[0].replace('C:','C:\\')
+        self.Local = '..\\db_contator.db'
         self.msg = SistemaMensagem()

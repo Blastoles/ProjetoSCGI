@@ -1,6 +1,5 @@
 ## Bibliotecas ##
 import sqlite3
-from os import getcwd
 from Controller.ControllerMensagem import SistemaMensagem
 
 ## Classe acesso ao banco de dados ##
@@ -8,7 +7,7 @@ class DAOuser():
 
     ## Busca todos os dados de usuários cadastrados ##
     def TodaLista(self):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT "
@@ -27,7 +26,7 @@ class DAOuser():
 
     ## Pesquisa na tabela dos usuários determinado texto preenchido na tela ##
     def Pesquisa(self,texto):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT "
@@ -55,7 +54,7 @@ class DAOuser():
 
     ## Busca o usuário ##
     def LocalizarUser(self,TextoLista):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT * FROM USUARIO WHERE USUARIO = '{}'".format(TextoLista))
@@ -67,7 +66,7 @@ class DAOuser():
 
     ## Exclui registro no banco ##
     def ExcluirUser(self,User):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("DELETE FROM USUARIO WHERE USUARIO = '{}'".format(User))
@@ -78,7 +77,5 @@ class DAOuser():
 
     ## Regras, Constante, e Ações ##
     def __init__(self):
-        Local = getcwd()
-        Local = Local.split('Controller')
-        self.Local = Local[0].replace('C:','C:\\')
+        self.Local = '..\\db_contator.db'
         self.msg = SistemaMensagem()

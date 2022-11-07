@@ -8,7 +8,7 @@ class DAOManutencao():
 
     ## Busca a lista de impressora ##
     def Lista(self):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT NUM_DE_SERIE, MODELO, SETOR_NOME, SETOR_SIGLA FROM IMPRESSORA")
@@ -20,7 +20,7 @@ class DAOManutencao():
 
     ## Pesquisa impressora, manutenção no banco ##
     def Pesquisa(self,Impre):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         filtro = ['BETWEEN','AND']
         try:
@@ -41,7 +41,7 @@ class DAOManutencao():
 
     ## Exclui registro no banco ##
     def ExcluirManutencao(self,dado):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("DELETE FROM MANUTENCAO WHERE ID_MANUTENCAO = '{}' AND IMPRESSORA_NUM_DE_SERIE = '{}' AND DATA_PARADA = '{}' AND DESCRICAO = '{}'".format(dado[0][0],dado[0][7],dado[0][2],dado[0][3]))
@@ -52,7 +52,7 @@ class DAOManutencao():
 
     ## Busca manutenção com filtro ##
     def Localizar(self,dado):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT "
@@ -74,7 +74,5 @@ class DAOManutencao():
 
     ## Regras, Constante, e Ações ##
     def __init__(self):
-        Local = getcwd()
-        Local = Local.split('Controller')
-        self.Local = Local[0].replace('C:','C:\\')
+        self.Local = '..\\db_contator.db'
         self.msg = SistemaMensagem()

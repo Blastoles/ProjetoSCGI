@@ -1,6 +1,5 @@
 ## Bibliotecas ##
 import sqlite3
-from os import getcwd
 from Controller.ControllerMensagem import SistemaMensagem
 
 ## Classe de acesso ao banco ##
@@ -8,7 +7,7 @@ class DAOCadastrarSetor():
 
     ## Inserir dados ##
     def InserirDados(self,dados,linhadb):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("INSERT INTO SETOR"
@@ -23,7 +22,7 @@ class DAOCadastrarSetor():
 
     ## Confirmar dados ##
     def CheckUser(self,user):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT SIGLA FROM SETOR WHERE SIGLA = '{}'".format(user))
@@ -35,7 +34,7 @@ class DAOCadastrarSetor():
 
     ## Contar quantidade lista ##
     def ContLista(self):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("SELECT ID_SETOR FROM SETOR ORDER BY ID_SETOR DESC LIMIT 1")
@@ -51,7 +50,7 @@ class DAOCadastrarSetor():
 
     ## Atualizar dados ##
     def UpdateDados(self,Dados):
-        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        banco = sqlite3.connect(self.Local)
         cursor = banco.cursor()
         try:
             cursor.execute("UPDATE "
@@ -67,7 +66,5 @@ class DAOCadastrarSetor():
 
     ## Regras, Constante, e Ações ##
     def __init__(self):
-        Local = getcwd()
-        Local = Local.split('Controller')
-        self.Local = Local[0].replace('C:','C:\\')
+        self.Local = '..\\db_contator.db'
         self.msg = SistemaMensagem()
