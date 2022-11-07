@@ -32,6 +32,18 @@ class DAOlogin():
         banco.close()
         return senha_db
 
+    def CheckPermi(self,user):
+        banco = sqlite3.connect('{}db_contator.db'.format(self.Local))
+        cursor = banco.cursor()
+        user_permi = ''
+        try:
+            cursor.execute("SELECT ADMINISTRADOR FROM USUARIO WHERE USUARIO = '{}'".format(user.upper()))
+            user_permi = cursor.fetchall()
+        except:
+            self.msg.MsgErroBancoDados()
+        banco.close()
+        return user_permi
+
     ## Regras, Constante, e Ações ##
     def __init__(self):
         Local = getcwd()

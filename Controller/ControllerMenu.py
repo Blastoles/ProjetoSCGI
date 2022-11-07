@@ -12,8 +12,8 @@ from Controller.ControllerImpressora import SistemaImpressora
 class SistemaMenu(QMainWindow):
 
     ## Chama a tela ##
-    def Show(self):
-        self.menu.Show()
+    def Show(self, Permi):
+        self.menu.Show(Permi)
 
     ## Fecha a tela ##
     def Close(self):

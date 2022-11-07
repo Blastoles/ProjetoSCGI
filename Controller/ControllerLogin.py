@@ -22,7 +22,8 @@ class SistemaLogin(QMainWindow):
                 if VeriUser[0][1] == 1:
                     VeriSenha = self.daolog.CheckSenha(senha)
                     if VeriSenha != [] and VeriSenha[0][0] == senha:
-                        self.menu.Show()
+                        Permi = self.daolog.CheckPermi(user.upper())
+                        self.menu.Show(Permi[0][0])
                         self.login.Close()
                     else:
                         self.login.MensagemErro()
